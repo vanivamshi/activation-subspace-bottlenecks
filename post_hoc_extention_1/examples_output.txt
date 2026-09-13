@@ -1,0 +1,181 @@
+2026-01-16 22:46:02.238072: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-01-16 22:46:02.285257: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-01-16 22:46:03.183969: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+INFO: ================================================================================
+INFO: GENERATING INPUT-OUTPUT EXAMPLES
+INFO: ================================================================================
+INFO: 
+📦 Loading Mamba-130M...
+INFO: Loading Mamba model: state-spaces/mamba-130m-hf
+The fast path is not available because one of `(selective_state_update, selective_scan_fn, causal_conv1d_fn, causal_conv1d_update, mamba_inner_fn)` is None. Falling back to the sequential implementation of Mamba, as use_mambapy is set to False. To install follow https://github.com/state-spaces/mamba/#installation and https://github.com/Dao-AILab/causal-conv1d. For the mamba.py backend, follow https://github.com/alxndrTL/mamba.py.
+INFO: ✅ Successfully loaded model using MambaForCausalLM with memory optimization
+INFO: 🧹 Cleared CUDA cache
+INFO: 💾 Available CUDA memory: 23.55 GB
+INFO: 📊 Estimated model memory: 0.48 GB
+INFO: ✅ Enabled gradient checkpointing for memory efficiency
+INFO: ✅ Set CUDA memory fraction to 90%
+INFO: ✅ Model loaded successfully on cuda
+INFO: ✅ Model loaded on cuda:0
+INFO: 
+================================================================================
+INFO: PART 1: LONG CONTEXT EXAMPLES (from targeted_approach_6.py)
+INFO: ================================================================================
+INFO: 
+📝 Example 1: Alice's favorite color
+INFO: --------------------------------------------------------------------------------
+INFO: Input:
+Question: What is Alice's favorite color?
+Facts:
+- Alice is 25 years old
+- Alice lives in Paris
+- Alice likes cats
+- Alice's favorite color is blue
+- Alice works as a teacher
+- Alice speaks French
+
+Question: What is Alice's favorite color?
+Answer:
+INFO: 
+Expected Output: blue
+INFO: 
+❌ WITHOUT Steering:
+INFO:    Output: 'Blue
+
+A:
+
+The answer is blue.
+
+A:
+
+The answer is blue.
+
+A:
+
+The'
+INFO: 🎯 Applying steering: Layer 20, Strength 5.0x
+INFO: 
+✅ WITH Steering (Cluster 9, Layer 20, 5.0x):
+INFO:    Output: 'Blue
+
+A:
+
+I think you want to know the color of the cat.
+
+A:
+
+I think you want to'
+INFO: 
+📝 Example 2: Carol's study subject
+INFO: --------------------------------------------------------------------------------
+INFO: Input:
+Question: What does Carol study?
+Facts:
+- Alice studies math
+- Bob studies physics
+- Carol studies chemistry
+- David studies biology
+- Emma studies history
+
+Question: What does Carol study?
+Answer:
+INFO: 
+Expected Output: chemistry
+INFO: 
+❌ WITHOUT Steering:
+INFO:    Output: '- Carol is a student of history
+- Alice is a student of chemistry
+- David is a student of physics
+- Emma is a student'
+INFO: 🎯 Applying steering: Layer 20, Strength 5.0x
+INFO: 
+✅ WITH Steering (Cluster 9, Layer 20, 5.0x):
+INFO:    Output: '- Carol is a student of chemistry
+- Alice is a student of history
+- Emma is a student of biology
+- David is a student'
+INFO: 
+================================================================================
+INFO: PART 2: MINIMAL STEERING EXAMPLES (from targeted_approach_4.py)
+INFO: ================================================================================
+INFO: 
+📝 Long Context Recall - Example 1: Name recall
+INFO: --------------------------------------------------------------------------------
+INFO: Input: 'My name is Alice. I live in Paris. I like cats. What is my name?'
+INFO: Expected Output: 'Alice'
+INFO: 
+❌ WITHOUT Steering:
+INFO:    Output: 'I am a cat. I am a cat. I am a cat. I am a cat. I am a cat. I am a'
+INFO: 
+🎯 MINIMAL INTERFERENCE (Output Only)
+INFO:    Layer: 20
+INFO:    Strength: 4.0x on Cluster 9 only
+INFO: 
+✅ WITH Minimal Steering (Cluster 9, Layer 20, 4.0x):
+INFO:    Output: 'I'm a cat. I'm a cat. I'm a cat. I'm a cat. I'm a cat. I'm a'
+INFO: 
+📝 Long Context Recall - Example 2: Code recall
+INFO: --------------------------------------------------------------------------------
+INFO: Input: 'The secret code is BLUE42. Remember this code. Now tell me the secret code:'
+INFO: Expected Output: 'BLUE42'
+INFO: 
+❌ WITHOUT Steering:
+INFO:    Output: 'The secret code is BLUE42. Remember this code. Now tell me the secret code:
+
+The secret code is BLUE42'
+INFO: 
+🎯 MINIMAL INTERFERENCE (Output Only)
+INFO:    Layer: 20
+INFO:    Strength: 4.0x on Cluster 9 only
+INFO: 
+✅ WITH Minimal Steering (Cluster 9, Layer 20, 4.0x):
+INFO:    Output: 'I'm not sure what you're asking, but I'm sure you're not asking me to tell you the secret code.
+
+I'
+INFO: 
+📝 Associative Recall - Example 1: Key-value retrieval
+INFO: --------------------------------------------------------------------------------
+INFO: Input: 'Key1=Value1, Key2=Value2, Key3=Value3. What is Key2?'
+INFO: Expected Output: 'Value2'
+INFO: 
+❌ WITHOUT Steering:
+INFO:    Output: 'A:
+
+You can use the following syntax:
+var key1 = "Value1";
+var key2 = "Value2'
+INFO: 
+🎯 MINIMAL INTERFERENCE (Output Only)
+INFO:    Layer: 20
+INFO:    Strength: 4.0x on Cluster 9 only
+INFO: 
+✅ WITH Minimal Steering (Cluster 9, Layer 20, 4.0x):
+INFO:    Output: '<sarnold> I think it's a bit more complicated than that
+<sarnold> I think it's a bit more complicated'
+INFO: 
+📝 Associative Recall - Example 2: Capital city
+INFO: --------------------------------------------------------------------------------
+INFO: Input: 'Paris is the capital of France. Berlin is the capital of Germany. What is the capital of France?'
+INFO: Expected Output: 'Paris'
+INFO: 
+❌ WITHOUT Steering:
+INFO:    Output: 'The capital of France is the capital of France.
+
+What is the capital of Germany?
+
+The capital of Germany is the capital'
+INFO: 
+🎯 MINIMAL INTERFERENCE (Output Only)
+INFO:    Layer: 20
+INFO:    Strength: 4.0x on Cluster 9 only
+INFO: 
+✅ WITH Minimal Steering (Cluster 9, Layer 20, 4.0x):
+INFO:    Output: 'The capital of France is the capital of France.
+
+What is the capital of Germany?
+
+The capital of Germany is the capital'
+INFO: 
+================================================================================
+INFO: ✅ Examples generated successfully!
+INFO: ================================================================================

@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "steering_s6_types_densemamba.py", line 83, in <module>
+    from transformers import AutoTokenizer, AutoModelForCausalLM, MambaForCausalLM
+ModuleNotFoundError: No module named 'transformers'
+Error in sys.excepthook:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/apport_python_hook.py", line 66, in apport_excepthook
+    import apport.report
+  File "/usr/lib/python3/dist-packages/apport/__init__.py", line 7, in <module>
+    from apport.packaging_impl import impl as packaging
+  File "/usr/lib/python3/dist-packages/apport/packaging_impl/__init__.py", line 33, in <module>
+    impl = load_packaging_implementation()
+  File "/usr/lib/python3/dist-packages/apport/packaging_impl/__init__.py", line 28, in load_packaging_implementation
+    f"apport.packaging_impl.{determine_packaging_implementation()}"
+  File "/usr/lib/python3/dist-packages/apport/packaging_impl/__init__.py", line 12, in determine_packaging_implementation
+    info = platform.freedesktop_os_release()
+AttributeError: module 'platform' has no attribute 'freedesktop_os_release'
+
+Original exception was:
+Traceback (most recent call last):
+  File "steering_s6_types_densemamba.py", line 83, in <module>
+    from transformers import AutoTokenizer, AutoModelForCausalLM, MambaForCausalLM
+ModuleNotFoundError: No module named 'transformers'

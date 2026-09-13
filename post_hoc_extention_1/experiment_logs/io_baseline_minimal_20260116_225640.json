@@ -1,0 +1,417 @@
+{
+  "experiment": "baseline_only",
+  "timestamp": "20260116_225640",
+  "total_cases": 41,
+  "records": [
+    {
+      "method": "baseline",
+      "task_type": "long_context_recall",
+      "case_index": 1,
+      "input_prompt": "My name is Alice. I live in Paris. I like cats. What is my name?",
+      "expected_output": "Alice",
+      "actual_output": "I am a cat. I am a cat. I am a cat. I am a cat. I am a cat. I am a cat. I am a c",
+      "is_correct": false,
+      "task": "name recall from context"
+    },
+    {
+      "method": "baseline",
+      "task_type": "long_context_recall",
+      "case_index": 2,
+      "input_prompt": "The secret code is BLUE42. Remember this code. Now tell me the secret code:",
+      "expected_output": "BLUE42",
+      "actual_output": "The secret code is BLUE42. Remember this code. Now tell me the secret code:\n\nThe",
+      "is_correct": true,
+      "task": "exact code recall"
+    },
+    {
+      "method": "baseline",
+      "task_type": "long_context_recall",
+      "case_index": 3,
+      "input_prompt": "First: apple, Second: banana, Third: cherry. What was the first item?",
+      "expected_output": "apple",
+      "actual_output": "A:\n\nThe first item is apple.\nThe second item is banana.\nThe third item is cherry",
+      "is_correct": true,
+      "task": "first item recall"
+    },
+    {
+      "method": "baseline",
+      "task_type": "long_context_recall",
+      "case_index": 4,
+      "input_prompt": "John is 25 years old. Sarah is 30 years old. How old is John?",
+      "expected_output": "25",
+      "actual_output": "John is a young man. He is a young man. He is a young man. He is a young man. He",
+      "is_correct": false,
+      "task": "specific fact recall"
+    },
+    {
+      "method": "baseline",
+      "task_type": "long_context_recall",
+      "case_index": 5,
+      "input_prompt": "Colors: red, green, blue, yellow. The third color was",
+      "expected_output": "blue",
+      "actual_output": "a white one.\n\nThe color of the first two colors was the same, but the third one ",
+      "is_correct": false,
+      "task": "position-based recall"
+    },
+    {
+      "method": "baseline",
+      "task_type": "associative_recall",
+      "case_index": 1,
+      "input_prompt": "Key1=Value1, Key2=Value2, Key3=Value3. What is Key2?",
+      "expected_output": "Value2",
+      "actual_output": "A:\n\nYou can use the following syntax:\nvar key1 = \"Value1\";\nvar key2 = \"Value2\";\n",
+      "is_correct": true,
+      "task": "key-value retrieval"
+    },
+    {
+      "method": "baseline",
+      "task_type": "associative_recall",
+      "case_index": 2,
+      "input_prompt": "Paris is the capital of France. Berlin is the capital of Germany. What is the capital of France?",
+      "expected_output": "Paris",
+      "actual_output": "The capital of France is the capital of France.\n\nWhat is the capital of Germany?",
+      "is_correct": false,
+      "task": "fact association"
+    },
+    {
+      "method": "baseline",
+      "task_type": "associative_recall",
+      "case_index": 3,
+      "input_prompt": "Dog says woof. Cat says meow. What does a dog say?",
+      "expected_output": "woof",
+      "actual_output": "Cat: \"I'm a dog.\"\n\nDog: \"I'm a dog.\"\n\nCat: \"I'm a dog.\"\n\nDog: \"I'm a dog.\"\n\nCat:",
+      "is_correct": false,
+      "task": "simple association"
+    },
+    {
+      "method": "baseline",
+      "task_type": "squad_queries",
+      "case_index": 1,
+      "input_prompt": "Context: Newton came to realize that the effects of gravity might be observed in different ways at larger distances. In particular, Newton determined that the acceleration of the Moon around the Earth could be ascribed to the same force of gravity if the acceleration due to gravity decreased as an inverse square law. Further, Newton realized that the acceleration due to gravity is proportional to the mass of the attracting body. Combining these ideas gives a formula that relates the mass () and the radius () of the Earth to the gravitational acceleration:\n\nQuestion: How might gravity effects be observed differently according to Newton?\nAnswer:",
+      "expected_output": "at larger distances.",
+      "actual_output": "The gravitational acceleration is proportional to the mass of the Earth. The mas",
+      "is_correct": false,
+      "task": "squad_qa"
+    },
+    {
+      "method": "baseline",
+      "task_type": "squad_queries",
+      "case_index": 2,
+      "input_prompt": "Context: The question of whether P equals NP is one of the most important open questions in theoretical computer science because of the wide implications of a solution. If the answer is yes, many important problems can be shown to have more efficient solutions. These include various types of integer programming problems in operations research, many problems in logistics, protein structure prediction in biology, and the ability to find formal proofs of pure mathematics theorems. The P versus NP problem is one of the Millennium Prize Problems proposed by the Clay Mathematics Institute. There is a US$1,000,000 prize for resolving the problem.\n\nQuestion: What is the prize offered for finding a solution to P=NP?\nAnswer:",
+      "expected_output": "$1,000,000",
+      "actual_output": "The prize is $1,000,000$ for finding a solution to P=NP.\n\nQuestion: What is the ",
+      "is_correct": true,
+      "task": "squad_qa"
+    },
+    {
+      "method": "baseline",
+      "task_type": "squad_queries",
+      "case_index": 3,
+      "input_prompt": "Context: As the designated home team in the annual rotation between AFC and NFC teams, the Broncos elected to wear their road white jerseys with matching white pants. Elway stated, \"We've had Super Bowl success in our white uniforms.\" The Broncos last wore matching white jerseys and pants in the Super Bowl in Super Bowl XXXIII, Elway's last game as Denver QB, when they defeated the Atlanta Falcons 34\u201319. In their only other Super Bowl win in Super Bowl XXXII, Denver wore blue jerseys, which was their primary color at the time. They also lost Super Bowl XXI when they wore white jerseys, but they are 0-4 in Super Bowls when wearing orange jerseys, losing in Super Bowl XII, XXII, XXIV, and XLVIII. The only other AFC champion team to have worn white as the designated home team in the Super Bowl was the Pittsburgh Steelers; they defeated the Seattle Seahawks 21\u201310 in Super Bowl XL 10 seasons prior. The Broncos' decision to wear white meant the Panthers would wear their standard home uniform: black jerseys with silver pants.\n\nQuestion: What color were the Bronco's uniforms in Super Bowl 50?\nAnswer:",
+      "expected_output": "white",
+      "actual_output": "The Broncos' uniforms were white, with black pants.\n\nQuestion: What color were t",
+      "is_correct": true,
+      "task": "squad_qa"
+    },
+    {
+      "method": "baseline",
+      "task_type": "squad_queries",
+      "case_index": 4,
+      "input_prompt": "Context: Almost all ctenophores are predators, taking prey ranging from microscopic larvae and rotifers to the adults of small crustaceans; the exceptions are juveniles of two species, which live as parasites on the salps on which adults of their species feed. In favorable circumstances, ctenophores can eat ten times their own weight in a day. Only 100\u2013150 species have been validated, and possibly another 25 have not been fully described and named. The textbook examples are cydippids with egg-shaped bodies and a pair of retractable tentacles fringed with tentilla (\"little tentacles\") that are covered with colloblasts, sticky cells that capture prey. The phylum has a wide range of body forms, including the flattened, deep-sea platyctenids, in which the adults of most species lack combs, and the coastal beroids, which lack tentacles and prey on other ctenophores by using huge mouths armed with groups of large, stiffened cilia that act as teeth. These variations enable different species to build huge populations in the same area, because they specialize in different types of prey, which they capture by as wide a range of methods as spiders use.\n\nQuestion: What are the little tentacles that cydippids have called?\nAnswer:",
+      "expected_output": "tentilla",
+      "actual_output": "The little tentacles are the tentacles of the ctenophores, which are the most co",
+      "is_correct": false,
+      "task": "squad_qa"
+    },
+    {
+      "method": "baseline",
+      "task_type": "squad_queries",
+      "case_index": 5,
+      "input_prompt": "Context: In November 1969, Gemini veteran Charles \"Pete\" Conrad and rookie Alan L. Bean made a precision landing on Apollo 12 within walking distance of the Surveyor 3 unmanned lunar probe, which had landed in April 1967 on the Ocean of Storms. The Command Module Pilot was Gemini veteran Richard F. Gordon, Jr. Conrad and Bean carried the first lunar surface color television camera, but it was damaged when accidentally pointed into the Sun. They made two EVAs totaling 7 hours and 45 minutes. On one, they walked to the Surveyor, photographed it, and removed some parts which they returned to Earth.\n\nQuestion: Which lunar probe was near the Apollo 12 crew's landing site?\nAnswer:",
+      "expected_output": "Surveyor 3",
+      "actual_output": "The Apollo 12 crew's landing site was on the Moon.\n\nQuestion: What was the Apoll",
+      "is_correct": false,
+      "task": "squad_qa"
+    },
+    {
+      "method": "baseline",
+      "task_type": "squad_queries",
+      "case_index": 6,
+      "input_prompt": "Context: Oxygen gas can also be produced through electrolysis of water into molecular oxygen and hydrogen. DC electricity must be used: if AC is used, the gases in each limb consist of hydrogen and oxygen in the explosive ratio 2:1. Contrary to popular belief, the 2:1 ratio observed in the DC electrolysis of acidified water does not prove that the empirical formula of water is H2O unless certain assumptions are made about the molecular formulae of hydrogen and oxygen themselves. A similar method is the electrocatalytic O\n2 evolution from oxides and oxoacids. Chemical catalysts can be used as well, such as in chemical oxygen generators or oxygen candles that are used as part of the life-support equipment on submarines, and are still part of standard equipment on commercial airliners in case of depressurization emergencies. Another air separation technology involves forcing air to dissolve through ceramic membranes based on zirconium dioxide by either high pressure or an electric current, to produce nearly pure O\n2 gas.\n\nQuestion: Electrolysis of what can be used to produce oxygen and hydrogen?\nAnswer:",
+      "expected_output": "water",
+      "actual_output": "The electrolysis of water is a very simple process. The water is electrolyzed to",
+      "is_correct": true,
+      "task": "squad_qa"
+    },
+    {
+      "method": "baseline",
+      "task_type": "squad_queries",
+      "case_index": 7,
+      "input_prompt": "Context: Over the next five days, private conferences were held to determine Luther's fate. The Emperor presented the final draft of the Edict of Worms on 25 May 1521, declaring Luther an outlaw, banning his literature, and requiring his arrest: \"We want him to be apprehended and punished as a notorious heretic.\" It also made it a crime for anyone in Germany to give Luther food or shelter. It permitted anyone to kill Luther without legal consequence.\n\nQuestion: When was the Edict of Worms presented?\nAnswer:",
+      "expected_output": "25 May 1521",
+      "actual_output": "1521.\n\nQuestion: When was the Edict of Worms presented?\nAnswer: 1521.\n\nQuestion:",
+      "is_correct": false,
+      "task": "squad_qa"
+    },
+    {
+      "method": "baseline",
+      "task_type": "squad_queries",
+      "case_index": 8,
+      "input_prompt": "Context: On Tesla's 75th birthday in 1931, Time magazine put him on its cover. The cover caption \"All the world's his power house\" noted his contribution to electrical power generation. He received congratulatory letters from more than 70 pioneers in science and engineering, including Albert Einstein.\n\nQuestion: How many other important people sent letters?\nAnswer:",
+      "expected_output": "more than 70",
+      "actual_output": "The number of letters sent to Tesla is unknown.\n\nQuestion: How many other import",
+      "is_correct": false,
+      "task": "squad_qa"
+    },
+    {
+      "method": "baseline",
+      "task_type": "squad_queries",
+      "case_index": 9,
+      "input_prompt": "Context: Alternatively, glucose monomers in the chloroplast can be linked together to make starch, which accumulates into the starch grains found in the chloroplast. Under conditions such as high atmospheric CO2 concentrations, these starch grains may grow very large, distorting the grana and thylakoids. The starch granules displace the thylakoids, but leave them intact. Waterlogged roots can also cause starch buildup in the chloroplasts, possibly due to less sucrose being exported out of the chloroplast (or more accurately, the plant cell). This depletes a plant's free phosphate supply, which indirectly stimulates chloroplast starch synthesis. While linked to low photosynthesis rates, the starch grains themselves may not necessarily interfere significantly with the efficiency of photosynthesis, and might simply be a side effect of another photosynthesis-depressing factor.\n\nQuestion: What is an alternate way to make starch?\nAnswer:",
+      "expected_output": "glucose monomers in the chloroplast can be linked together",
+      "actual_output": "The starch grains are made from the starch granules of the chloroplast. The star",
+      "is_correct": false,
+      "task": "squad_qa"
+    },
+    {
+      "method": "baseline",
+      "task_type": "squad_queries",
+      "case_index": 10,
+      "input_prompt": "Context: Starting in 1894, Tesla began investigating what he referred to as radiant energy of \"invisible\" kinds after he had noticed damaged film in his laboratory in previous experiments (later identified as \"Roentgen rays\" or \"X-Rays\"). His early experiments were with Crookes tubes, a cold cathode electrical discharge tube. Soon after, much of Tesla's early research\u2014hundreds of invention models, plans, notes, laboratory data, tools, photographs, valued at $50,000\u2014was lost in the 5th Avenue laboratory fire of March 1895. Tesla is quoted by The New York Times as saying, \"I am in too much grief to talk. What can I say?\" Tesla may have inadvertently captured an X-ray image\u2014predating, by a few weeks, Wilhelm R\u00f6ntgen's December 1895 announcement of the discovery of x-rays\u2014when he tried to photograph Mark Twain illuminated by a Geissler tube, an earlier type of gas discharge tube. The only thing captured in the image was the metal locking screw on the camera lens.:134\n\nQuestion: What type of image was Tesla thought to have accidentally taken a week prior to the announcement of its discovery?\nAnswer:",
+      "expected_output": "X-ray image",
+      "actual_output": "The image was taken on March 25, 1895, by a Geissler tube. The tube was a small,",
+      "is_correct": false,
+      "task": "squad_qa"
+    },
+    {
+      "method": "baseline",
+      "task_type": "squad_queries",
+      "case_index": 11,
+      "input_prompt": "Context: Sayyid Abul Ala Maududi was an important early twentieth-century figure in the Islamic revival in India, and then after independence from Britain, in Pakistan. Trained as a lawyer he chose the profession of journalism, and wrote about contemporary issues and most importantly about Islam and Islamic law. Maududi founded the Jamaat-e-Islami party in 1941 and remained its leader until 1972. However, Maududi had much more impact through his writing than through his political organising. His extremely influential books (translated into many languages) placed Islam in a modern context, and influenced not only conservative ulema but liberal modernizer Islamists such as al-Faruqi, whose \"Islamization of Knowledge\" carried forward some of Maududi's key principles.\n\nQuestion: Where did Maududi's books place Islam?\nAnswer:",
+      "expected_output": "in a modern context",
+      "actual_output": "Maududi's books placed Islam in a modern context, and influenced not only conser",
+      "is_correct": true,
+      "task": "squad_qa"
+    },
+    {
+      "method": "baseline",
+      "task_type": "squad_queries",
+      "case_index": 12,
+      "input_prompt": "Context: Construction is the process of constructing a building or infrastructure. Construction differs from manufacturing in that manufacturing typically involves mass production of similar items without a designated purchaser, while construction typically takes place on location for a known client. Construction as an industry comprises six to nine percent of the gross domestic product of developed countries. Construction starts with planning,[citation needed] design, and financing and continues until the project is built and ready for use.\n\nQuestion: What is the process of constructing a building or infrastructure?\nAnswer:",
+      "expected_output": "Construction",
+      "actual_output": "The construction process is the process of constructing a building or infrastruc",
+      "is_correct": true,
+      "task": "squad_qa"
+    },
+    {
+      "method": "baseline",
+      "task_type": "squad_queries",
+      "case_index": 13,
+      "input_prompt": "Context: The Super Bowl 50 Host Committee has vowed to be \"the most giving Super Bowl ever\", and will dedicate 25 percent of all money it raises for philanthropic causes in the Bay Area. The committee created the 50 fund as its philanthropic initiative and focuses on providing grants to aid with youth development, community investment and sustainable environments.\n\nQuestion: How many will the host committee dedicate to local charities?\nAnswer:",
+      "expected_output": "25 percent",
+      "actual_output": "The host committee will dedicate 25 percent of all money it raises for philanthr",
+      "is_correct": true,
+      "task": "squad_qa"
+    },
+    {
+      "method": "baseline",
+      "task_type": "squad_queries",
+      "case_index": 14,
+      "input_prompt": "Context: The game's media day, which was typically held on the Tuesday afternoon prior to the game, was moved to the Monday evening and re-branded as Super Bowl Opening Night. The event was held on February 1, 2016 at SAP Center in San Jose. Alongside the traditional media availabilities, the event featured an opening ceremony with player introductions on a replica of the Golden Gate Bridge.\n\nQuestion: In what city is SAP Center located?\nAnswer:",
+      "expected_output": "San Jose",
+      "actual_output": "The SAP Center is located in the San Jose, California area.\n\nQuestion: What is t",
+      "is_correct": true,
+      "task": "squad_qa"
+    },
+    {
+      "method": "baseline",
+      "task_type": "squad_queries",
+      "case_index": 15,
+      "input_prompt": "Context: In 1928, Tesla received his last patent, U.S. Patent 1,655,114, for a biplane capable of taking off vertically (VTOL aircraft) and then be \"gradually tilted through manipulation of the elevator devices\" in flight until it was flying like a conventional plane. Tesla thought the plane would sell for less than $1,000.:251 Although the aircraft was probably impractical, it may be the earliest known design for what became the tiltrotor/tilt-wing concept as well as the earliest proposal for the use of turbine engines in rotor aircraft.[improper synthesis?]\n\nQuestion: For what invention was U.S. Patent 1,655,114 granted?\nAnswer:",
+      "expected_output": "VTOL aircraft",
+      "actual_output": "The patent was issued in 1928.\n\nQuestion: For what invention was U.S. Patent 1,6",
+      "is_correct": false,
+      "task": "squad_qa"
+    },
+    {
+      "method": "baseline",
+      "task_type": "squad_queries",
+      "case_index": 16,
+      "input_prompt": "Context: The common allotrope of elemental oxygen on Earth is called dioxygen, O\n2. It is the form that is a major part of the Earth's atmosphere (see Occurrence). O2 has a bond length of 121 pm and a bond energy of 498 kJ\u00b7mol\u22121, which is smaller than the energy of other double bonds or pairs of single bonds in the biosphere and responsible for the exothermic reaction of O2 with any organic molecule. Due to its energy content, O2 is used by complex forms of life, such as animals, in cellular respiration (see Biological role). Other aspects of O\n2 are covered in the remainder of this article.\n\nQuestion: For what purpose is oxygen used by animal life?\nAnswer:",
+      "expected_output": "cellular respiration",
+      "actual_output": "Oxygen is used by animals to produce oxygen for the production of oxygen-contain",
+      "is_correct": false,
+      "task": "squad_qa"
+    },
+    {
+      "method": "baseline",
+      "task_type": "squad_queries",
+      "case_index": 17,
+      "input_prompt": "Context: An increase in imported cars into North America forced General Motors, Ford and Chrysler to introduce smaller and fuel-efficient models for domestic sales. The Dodge Omni / Plymouth Horizon from Chrysler, the Ford Fiesta and the Chevrolet Chevette all had four-cylinder engines and room for at least four passengers by the late 1970s. By 1985, the average American vehicle moved 17.4 miles per gallon, compared to 13.5 in 1970. The improvements stayed even though the price of a barrel of oil remained constant at $12 from 1974 to 1979. Sales of large sedans for most makes (except Chrysler products) recovered within two model years of the 1973 crisis. The Cadillac DeVille and Fleetwood, Buick Electra, Oldsmobile 98, Lincoln Continental, Mercury Marquis, and various other luxury oriented sedans became popular again in the mid-1970s. The only full-size models that did not recover were lower price models such as the Chevrolet Bel Air, and Ford Galaxie 500. Slightly smaller, mid-size models such as the Oldsmobile Cutlass, Chevrolet Monte Carlo, Ford Thunderbird and various other models sold well.\n\nQuestion: By which year did the American cars mpg start to improve?\nAnswer:",
+      "expected_output": "1985",
+      "actual_output": "1970.\n\nQuestion: By which year did the American cars mpg start to improve?\nAnswe",
+      "is_correct": false,
+      "task": "squad_qa"
+    },
+    {
+      "method": "baseline",
+      "task_type": "squad_queries",
+      "case_index": 18,
+      "input_prompt": "Context: There were many religions practiced during the Yuan dynasty, such as Buddhism, Islam, and Christianity. The establishment of the Yuan dynasty had dramatically increased the number of Muslims in China. However, unlike the western khanates, the Yuan dynasty never converted to Islam. Instead, Kublai Khan, the founder of the Yuan dynasty, favored Buddhism, especially the Tibetan variants. As a result, Tibetan Buddhism was established as the de facto state religion. The top-level department and government agency known as the Bureau of Buddhist and Tibetan Affairs (Xuanzheng Yuan) was set up in Khanbaliq (modern Beijing) to supervise Buddhist monks throughout the empire. Since Kublai Khan only esteemed the Sakya sect of Tibetan Buddhism, other religions became less important. He and his successors kept a Sakya Imperial Preceptor (Dishi) at court. Before the end of the Yuan dynasty, 14 leaders of the Sakya sect had held the post of Imperial Preceptor, thereby enjoying special power. Furthermore, Mongol patronage of Buddhism resulted in a number of monuments of Buddhist art. Mongolian Buddhist translations, almost all from Tibetan originals, began on a large scale after 1300. Many Mongols of the upper class such as the Jalayir and the Oronar nobles as well as the emperors also patronized Confucian scholars and institutions. A considerable number of Confucian and Chinese historical works were translated into the Mongolian language.\n\nQuestion: Which religion did Kublai prefer?\nAnswer:",
+      "expected_output": "Buddhism, especially the Tibetan variants",
+      "actual_output": "The Sakya sect of Tibetan Buddhism.\n\nQuestion: Which religion did Kublai prefer?",
+      "is_correct": true,
+      "task": "squad_qa"
+    },
+    {
+      "method": "baseline",
+      "task_type": "squad_queries",
+      "case_index": 19,
+      "input_prompt": "Context: Orientalism, as theorized by Edward Said, refers to how the West developed an imaginative geography of the East. This imaginative geography relies on an essentializing discourse that represents neither the diversity nor the social reality of the East. Rather, by essentializing the East, this discourse uses the idea of place-based identities to create difference and distance between \"we\" the West and \"them\" the East, or \"here\" in the West and \"there\" in the East. This difference was particularly apparent in textual and visual works of early European studies of the Orient that positioned the East as irrational and backward in opposition to the rational and progressive West. Defining the East as a negative vision of itself, as its inferior, not only increased the West\u2019s sense of self, but also was a way of ordering the East and making it known to the West so that it could be dominated and controlled. The discourse of Orientalism therefore served as an ideological justification of early Western imperialism, as it formed a body of knowledge and ideas that rationalized social, cultural, political, and economic control of other territories.\n\nQuestion: Early Western texts referencing the East describe the people as being what?\nAnswer:",
+      "expected_output": "irrational and backward",
+      "actual_output": "The East was described as being what?\n\nQuestion: The East was described as being",
+      "is_correct": false,
+      "task": "squad_qa"
+    },
+    {
+      "method": "baseline",
+      "task_type": "squad_queries",
+      "case_index": 20,
+      "input_prompt": "Context: On June 4, 2014, the NFL announced that the practice of branding Super Bowl games with Roman numerals, a practice established at Super Bowl V, would be temporarily suspended, and that the game would be named using Arabic numerals as Super Bowl 50 as opposed to Super Bowl L. The use of Roman numerals will be reinstated for Super Bowl LI. Jaime Weston, the league's vice president of brand and creative, explained that a primary reason for the change was the difficulty of designing an aesthetically pleasing logo with the letter \"L\" using the standardized logo template introduced at Super Bowl XLV. The logo also deviates from the template by featuring large numerals, colored in gold, behind the Vince Lombardi Trophy, instead of underneath and in silver as in the standard logo.\n\nQuestion: Who is the NFL's vice president of brand and creative?\nAnswer:",
+      "expected_output": "Jaime Weston",
+      "actual_output": "The NFL's vice president of brand and creative, Mike D'Antoni, is the executive ",
+      "is_correct": false,
+      "task": "squad_qa"
+    },
+    {
+      "method": "baseline",
+      "task_type": "squad_queries",
+      "case_index": 21,
+      "input_prompt": "Context: Lake Constance consists of three bodies of water: the Obersee (\"upper lake\"), the Untersee (\"lower lake\"), and a connecting stretch of the Rhine, called the Seerhein (\"Lake Rhine\"). The lake is situated in Germany, Switzerland and Austria near the Alps. Specifically, its shorelines lie in the German states of Bavaria and Baden-W\u00fcrttemberg, the Austrian state of Vorarlberg, and the Swiss cantons of Thurgau and St. Gallen. The Rhine flows into it from the south following the Swiss-Austrian border. It is located at approximately 47\u00b039\u2032N 9\u00b019\u2032E\ufeff / \ufeff47.650\u00b0N 9.317\u00b0E\ufeff / 47.650; 9.317.\n\nQuestion: What does Obersee mean?\nAnswer:",
+      "expected_output": "upper lake",
+      "actual_output": "Obersee is a river that flows through the Obersee region of Germany. It is locat",
+      "is_correct": false,
+      "task": "squad_qa"
+    },
+    {
+      "method": "baseline",
+      "task_type": "squad_queries",
+      "case_index": 22,
+      "input_prompt": "Context: Steam engines are external combustion engines, where the working fluid is separate from the combustion products. Non-combustion heat sources such as solar power, nuclear power or geothermal energy may be used. The ideal thermodynamic cycle used to analyze this process is called the Rankine cycle. In the cycle, water is heated and transforms into steam within a boiler operating at a high pressure. When expanded through pistons or turbines, mechanical work is done. The reduced-pressure steam is then condensed and pumped back into the boiler.\n\nQuestion: What types of engines are steam engines?\nAnswer:",
+      "expected_output": "external combustion",
+      "actual_output": "Steam engines are engines that use steam to produce heat. Steam is a mixture of ",
+      "is_correct": false,
+      "task": "squad_qa"
+    },
+    {
+      "method": "baseline",
+      "task_type": "squad_queries",
+      "case_index": 23,
+      "input_prompt": "Context: While photosystem II photolyzes water to obtain and energize new electrons, photosystem I simply reenergizes depleted electrons at the end of an electron transport chain. Normally, the reenergized electrons are taken by NADP+, though sometimes they can flow back down more H+-pumping electron transport chains to transport more hydrogen ions into the thylakoid space to generate more ATP. This is termed cyclic photophosphorylation because the electrons are recycled. Cyclic photophosphorylation is common in C4 plants, which need more ATP than NADPH.\n\nQuestion: In what process are electrons recycled?\nAnswer:",
+      "expected_output": "cyclic photophosphorylation",
+      "actual_output": "The electron is recycled by the photosystem II enzyme, which is a complex of pho",
+      "is_correct": false,
+      "task": "squad_qa"
+    },
+    {
+      "method": "baseline",
+      "task_type": "squad_queries",
+      "case_index": 24,
+      "input_prompt": "Context: An important decision for civil disobedients is whether or not to plead guilty. There is much debate on this point, as some believe that it is a civil disobedient's duty to submit to the punishment prescribed by law, while others believe that defending oneself in court will increase the possibility of changing the unjust law. It has also been argued that either choice is compatible with the spirit of civil disobedience. ACT-UP's Civil Disobedience Training handbook states that a civil disobedient who pleads guilty is essentially stating, \"Yes, I committed the act of which you accuse me. I don't deny it; in fact, I am proud of it. I feel I did the right thing by violating this particular law; I am guilty as charged,\" but that pleading not guilty sends a message of, \"Guilt implies wrong-doing. I feel I have done no wrong. I may have violated some specific laws, but I am guilty of doing no wrong. I therefore plead not guilty.\" A plea of no contest is sometimes regarded as a compromise between the two. One defendant accused of illegally protesting nuclear power, when asked to enter his plea, stated, \"I plead for the beauty that surrounds us\"; this is known as a \"creative plea,\" and will usually be interpreted as a plea of not guilty.\n\nQuestion: What third type of plea uses creative words?\nAnswer:",
+      "expected_output": "creative plea",
+      "actual_output": "The third type of plea uses creative words. The first type of plea uses the word",
+      "is_correct": false,
+      "task": "squad_qa"
+    },
+    {
+      "method": "baseline",
+      "task_type": "squad_queries",
+      "case_index": 25,
+      "input_prompt": "Context: Singlet oxygen is a name given to several higher-energy species of molecular O\n2 in which all the electron spins are paired. It is much more reactive towards common organic molecules than is molecular oxygen per se. In nature, singlet oxygen is commonly formed from water during photosynthesis, using the energy of sunlight. It is also produced in the troposphere by the photolysis of ozone by light of short wavelength, and by the immune system as a source of active oxygen. Carotenoids in photosynthetic organisms (and possibly also in animals) play a major role in absorbing energy from singlet oxygen and converting it to the unexcited ground state before it can cause harm to tissues.\n\nQuestion: What objects in organisms absorb singlet oxygen to prevent harm?\nAnswer:",
+      "expected_output": "Carotenoids",
+      "actual_output": "The electron-hole pairs in the electron-hole pair of the electron-hole pair of t",
+      "is_correct": false,
+      "task": "squad_qa"
+    },
+    {
+      "method": "baseline",
+      "task_type": "squad_queries",
+      "case_index": 26,
+      "input_prompt": "Context: Neoclassical economics views inequalities in the distribution of income as arising from differences in value added by labor, capital and land. Within labor income distribution is due to differences in value added by different classifications of workers. In this perspective, wages and profits are determined by the marginal value added of each economic actor (worker, capitalist/business owner, landlord). Thus, in a market economy, inequality is a reflection of the productivity gap between highly-paid professions and lower-paid professions.\n\nQuestion: In a market economy, what is inequality a reflection of?\nAnswer:",
+      "expected_output": "productivity gap between highly-paid professions and lower-paid professions",
+      "actual_output": "The inequality of income distribution is a reflection of the productivity gap be",
+      "is_correct": true,
+      "task": "squad_qa"
+    },
+    {
+      "method": "baseline",
+      "task_type": "squad_queries",
+      "case_index": 27,
+      "input_prompt": "Context: The interpretation of Islam promoted by this funding was the strict, conservative Saudi-based Wahhabism or Salafism. In its harshest form it preached that Muslims should not only \"always oppose\" infidels \"in every way,\" but \"hate them for their religion ... for Allah's sake,\" that democracy \"is responsible for all the horrible wars of the 20th century,\" that Shia and other non-Wahhabi Muslims were infidels, etc. While this effort has by no means converted all, or even most Muslims to the Wahhabist interpretation of Islam, it has done much to overwhelm more moderate local interpretations, and has set the Saudi-interpretation of Islam as the \"gold standard\" of religion in minds of some or many Muslims.\n\nQuestion: What interpretation of Islam is, for many of the adherents, the \"gold standard\" of their religion?\nAnswer:",
+      "expected_output": "Saudi",
+      "actual_output": "The interpretation of Islam is the \"gold standard\" of the religion in which it i",
+      "is_correct": false,
+      "task": "squad_qa"
+    },
+    {
+      "method": "baseline",
+      "task_type": "squad_queries",
+      "case_index": 28,
+      "input_prompt": "Context: Ctenophores form an animal phylum that is more complex than sponges, about as complex as cnidarians (jellyfish, sea anemones, etc.), and less complex than bilaterians (which include almost all other animals). Unlike sponges, both ctenophores and cnidarians have: cells bound by inter-cell connections and carpet-like basement membranes; muscles; nervous systems; and some have sensory organs. Ctenophores are distinguished from all other animals by having colloblasts, which are sticky and adhere to prey, although a few ctenophore species lack them.\n\nQuestion: Ctenophores are less complex than what other group?\nAnswer:",
+      "expected_output": "bilaterians",
+      "actual_output": "Ctenophores are not as complex as other groups, but they are more complex than s",
+      "is_correct": false,
+      "task": "squad_qa"
+    },
+    {
+      "method": "baseline",
+      "task_type": "squad_queries",
+      "case_index": 29,
+      "input_prompt": "Context: In early 2012, NFL Commissioner Roger Goodell stated that the league planned to make the 50th Super Bowl \"spectacular\" and that it would be \"an important game for us as a league\".\n\nQuestion: Who was the NFL Commissioner in early 2012?\nAnswer:",
+      "expected_output": "Roger Goodell",
+      "actual_output": "The NFL Commissioner was the head of the league.\n\nQuestion: Who was the NFL Comm",
+      "is_correct": false,
+      "task": "squad_qa"
+    },
+    {
+      "method": "baseline",
+      "task_type": "squad_queries",
+      "case_index": 30,
+      "input_prompt": "Context: In the 1530s and 1540s, printed images of Luther that emphasized his monumental size were crucial to the spread of Protestantism. In contrast to images of frail Catholic saints, Luther was presented as a stout man with a \"double chin, strong mouth, piercing deep-set eyes, fleshy face, and squat neck.\" He was shown to be physically imposing, an equal in stature to the secular German princes with whom he would join forces to spread Lutheranism. His large body also let the viewer know that he did not shun earthly pleasures like drinking\u2014behavior that was a stark contrast to the ascetic life of the medieval religious orders. Famous images from this period include the woodcuts by Hans Brosamer (1530) and Lucas Cranach the Elder and Lucas Cranach the Younger (1546).\n\nQuestion: In contrast how were Catholic saints portrayed?\nAnswer:",
+      "expected_output": "frail Catholic saints",
+      "actual_output": "The most famous saints of the 15th century were the \"Benedictine\" saints, who we",
+      "is_correct": false,
+      "task": "squad_qa"
+    },
+    {
+      "method": "baseline",
+      "task_type": "simple_instructions",
+      "case_index": 1,
+      "input_prompt": "Repeat after me: hello",
+      "expected_output": "hello",
+      "actual_output": ", I'm a newbie. I'm a newbie. I'm a newbie. I'm a newbie. I'm a newbie. I'm a ne",
+      "is_correct": false,
+      "task": "exact repetition"
+    },
+    {
+      "method": "baseline",
+      "task_type": "simple_instructions",
+      "case_index": 2,
+      "input_prompt": "Answer with just the number: What is 5+3?",
+      "expected_output": "8",
+      "actual_output": "A:\n\nThe answer is 5+3.\n\nA:\n\nThe answer is 5+3.\n\nA:\n\nThe answer is 5+3.\n\nA:\n\nThe ",
+      "is_correct": false,
+      "task": "concise answer"
+    },
+    {
+      "method": "baseline",
+      "task_type": "simple_instructions",
+      "case_index": 3,
+      "input_prompt": "Say YES or NO only: Is water wet?",
+      "expected_output": "YES",
+      "actual_output": "A:\n\nYes, it is.\n\nA:\n\nYes, it is.\n\nA:\n\nYes, it is.\n\nA:\n\nYes, it is.\n\nA:",
+      "is_correct": true,
+      "task": "binary answer"
+    }
+  ]
+}

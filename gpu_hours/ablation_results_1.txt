@@ -1,0 +1,2041 @@
+{
+  "neuron_selection": {
+    "baseline": {
+      "validation": {
+        "accuracy": 0.45,
+        "correct": 45,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The AFC.\n\nThe AFC is the American Football Confere...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Carolina Panthers",
+            "response": "The New England Patriots.\n\nThe Super Bowl was play...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Santa Clara, California",
+            "response": "The Super Bowl 50 was played on February 7, 2016, ...",
+            "correct": true
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The Broncos.\n\nThe Super Bowl was played on Februar...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "gold",
+            "response": "The color of the logo was chosen by the NFL's Supe...",
+            "correct": false
+          }
+        ]
+      },
+      "squad": {
+        "accuracy": 0.45,
+        "correct": 45,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The AFC.\n\nThe AFC is the American Football Confere...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Carolina Panthers",
+            "response": "The New England Patriots.\n\nThe Super Bowl was play...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Santa Clara, California",
+            "response": "The Super Bowl 50 was played on February 7, 2016, ...",
+            "correct": true
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The Broncos.\n\nThe Super Bowl was played on Februar...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "gold",
+            "response": "The color of the logo was chosen by the NFL's Supe...",
+            "correct": false
+          }
+        ]
+      },
+      "triviaqa": {
+        "accuracy": 0.05,
+        "correct": 5,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Question: Who was the man behind The Chipmunks?\nAn...",
+            "expected": "David Seville",
+            "response": "The Chipmunks\n\nThe Chipmunks are a group of childr...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: What star sign is Jamie Lee Curtis?\nAnsw...",
+            "expected": "Scorpio",
+            "response": "Star sign is a star that is a symbol of love.\n\nA:\n...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Which Lloyd Webber musical premiered in ...",
+            "expected": "Sunset Boulevard",
+            "response": "The musical was performed in the US on 10th Decemb...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Who was the next British Prime Minister ...",
+            "expected": "Campbell-Bannerman",
+            "response": "The British Prime Minister was Arthur Balfour.\n\nA:...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Who had a 70s No 1 hit with Kiss You All...",
+            "expected": "Exile",
+            "response": "The Beatles.\n\nA:\n\nI think the answer is \"No\".\nThe ...",
+            "correct": false
+          }
+        ]
+      }
+    },
+    "cluster9": {
+      "neurons": [
+        4,
+        38,
+        84,
+        94,
+        163,
+        171,
+        268,
+        363,
+        401,
+        497,
+        564,
+        568,
+        582,
+        654,
+        659,
+        686
+      ],
+      "validation": {
+        "accuracy": 0.36,
+        "correct": 36,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The AFC.\n\nThe AFC is the American Football Confere...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Carolina Panthers",
+            "response": "The New England Patriots.\n\nThe Super Bowl was play...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Santa Clara, California",
+            "response": "The Super Bowl was played at Levi's Stadium in the...",
+            "correct": true
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The New England Patriots.\n\nThe Super Bowl was play...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "gold",
+            "response": "The color of the jersey was the color of the jerse...",
+            "correct": false
+          }
+        ]
+      },
+      "squad": {
+        "accuracy": 0.36,
+        "correct": 36,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The AFC.\n\nThe AFC is the American Football Confere...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Carolina Panthers",
+            "response": "The New England Patriots.\n\nThe Super Bowl was play...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Santa Clara, California",
+            "response": "The Super Bowl was played at Levi's Stadium in the...",
+            "correct": true
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The New England Patriots.\n\nThe Super Bowl was play...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "gold",
+            "response": "The color of the jersey was the color of the jerse...",
+            "correct": false
+          }
+        ]
+      },
+      "triviaqa": {
+        "accuracy": 0.06,
+        "correct": 6,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Question: Who was the man behind The Chipmunks?\nAn...",
+            "expected": "David Seville",
+            "response": "The Chipmunks\n\nThe Chipmunks\n\nThe Chipmunks\n\nThe C...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: What star sign is Jamie Lee Curtis?\nAnsw...",
+            "expected": "Scorpio",
+            "response": "The star sign is a symbol that is used to represen...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Which Lloyd Webber musical premiered in ...",
+            "expected": "Sunset Boulevard",
+            "response": "The first Lloyd Webber musical premiered in the US...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Who was the next British Prime Minister ...",
+            "expected": "Campbell-Bannerman",
+            "response": "The British Prime Minister was the first to be ele...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Who had a 70s No 1 hit with Kiss You All...",
+            "expected": "Exile",
+            "response": "\"I don't know.\"\n\nA:\n\nI think the answer is \"I don'...",
+            "correct": false
+          }
+        ]
+      }
+    },
+    "variance": {
+      "neurons": [
+        175,
+        300,
+        359,
+        575,
+        227,
+        243,
+        241,
+        288,
+        399,
+        93,
+        52,
+        323,
+        331,
+        717,
+        714,
+        320
+      ],
+      "validation": {
+        "accuracy": 0.07,
+        "correct": 7,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The NFL's \"Super hadronic\" team, the \"Super-\u0430\u0441\u0441\ufffd\" ...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Carolina Panthers",
+            "response": "The NFL's \"Super hadronic\" team, the \"Super-\u0430\u0441\u0441\ufffd\" ...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Santa Clara, California",
+            "response": "The \"Super-ccording-to-the-Goldacrylamide-and-the-...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The NFL's \"Super hadronic\" team, the \"Super-ccordi...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "gold",
+            "response": "The \"50%\" is a \"black\" and \"white\" and is a \"black...",
+            "correct": false
+          }
+        ]
+      },
+      "squad": {
+        "accuracy": 0.07,
+        "correct": 7,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The NFL's \"Super hadronic\" team, the \"Super-\u0430\u0441\u0441\ufffd\" ...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Carolina Panthers",
+            "response": "The NFL's \"Super hadronic\" team, the \"Super-\u0430\u0441\u0441\ufffd\" ...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Santa Clara, California",
+            "response": "The \"Super-ccording-to-the-Goldacrylamide-and-the-...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The NFL's \"Super hadronic\" team, the \"Super-ccordi...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "gold",
+            "response": "The \"50%\" is a \"black\" and \"white\" and is a \"black...",
+            "correct": false
+          }
+        ]
+      },
+      "triviaqa": {
+        "accuracy": 0.01,
+        "correct": 1,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Question: Who was the man behind The Chipmunks?\nAn...",
+            "expected": "David Seville",
+            "response": "The \"Matonin\" (ccording to the \"Matonin\" and \"Mato...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: What star sign is Jamie Lee Curtis?\nAnsw...",
+            "expected": "Scorpio",
+            "response": "The \"Star-\u0440\u0443\u0433\ufffd\" is the \"Star-\u0440\u0443\u0433avorable\" and \")}/...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Which Lloyd Webber musical premiered in ...",
+            "expected": "Sunset Boulevard",
+            "response": "The \"The Great\nFolk\" (ccording to the \"The\nBritish...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Who was the next British Prime Minister ...",
+            "expected": "Campbell-Bannerman",
+            "response": "The next British Primemanifold was the British Pri...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Who had a 70s No 1 hit with Kiss You All...",
+            "expected": "Exile",
+            "response": "The \"Kiss You All Over\" is a \"New\" \"New\" \"New\" \"Ne...",
+            "correct": false
+          }
+        ]
+      }
+    },
+    "random": {
+      "neurons": [
+        692,
+        504,
+        544,
+        361,
+        418,
+        761,
+        474,
+        130,
+        316,
+        129,
+        567,
+        583,
+        71,
+        226,
+        417,
+        391
+      ],
+      "validation": {
+        "accuracy": 0.45,
+        "correct": 45,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The AFC.\nQuestion: Which NFL team represented the ...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Carolina Panthers",
+            "response": "The New England Patriots.\n\nThe NFL's Super Bowl 50...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Santa Clara, California",
+            "response": "The Super Bowl 50 was played on February 7, 2016, ...",
+            "correct": true
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The Broncos.\n\nThe Super Bowl was played on Februar...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "gold",
+            "response": "The color of the logo was chosen by the NFL's Comm...",
+            "correct": false
+          }
+        ]
+      },
+      "squad": {
+        "accuracy": 0.45,
+        "correct": 45,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The AFC.\nQuestion: Which NFL team represented the ...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Carolina Panthers",
+            "response": "The New England Patriots.\n\nThe NFL's Super Bowl 50...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Santa Clara, California",
+            "response": "The Super Bowl 50 was played on February 7, 2016, ...",
+            "correct": true
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The Broncos.\n\nThe Super Bowl was played on Februar...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "gold",
+            "response": "The color of the logo was chosen by the NFL's Comm...",
+            "correct": false
+          }
+        ]
+      },
+      "triviaqa": {
+        "accuracy": 0.05,
+        "correct": 5,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Question: Who was the man behind The Chipmunks?\nAn...",
+            "expected": "David Seville",
+            "response": "The Chipmunks.\n\nThe Chipmunks are a group of child...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: What star sign is Jamie Lee Curtis?\nAnsw...",
+            "expected": "Scorpio",
+            "response": "The star sign is a star that is a symbol of love, ...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Which Lloyd Webber musical premiered in ...",
+            "expected": "Sunset Boulevard",
+            "response": "The musical, which was produced by the British Bro...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Who was the next British Prime Minister ...",
+            "expected": "Campbell-Bannerman",
+            "response": "The next Prime Minister was Arthur Balfour, who wa...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Who had a 70s No 1 hit with Kiss You All...",
+            "expected": "Exile",
+            "response": "\"I don't know.\"\n\nA:\n\nI think you're looking for th...",
+            "correct": false
+          }
+        ]
+      }
+    },
+    "best_method": "random",
+    "best_neurons": [
+      692,
+      504,
+      544,
+      361,
+      418,
+      761,
+      474,
+      130,
+      316,
+      129,
+      567,
+      583,
+      71,
+      226,
+      417,
+      391
+    ]
+  },
+  "layer_selection": {
+    "18": {
+      "description": "Pre-bottleneck (Phase 2)",
+      "validation": {
+        "accuracy": 0.43,
+        "correct": 43,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The AFC's Super Bowl team was the Denver Broncos.\n...",
+            "correct": true
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Carolina Panthers",
+            "response": "The NFC's Super Bowl team was the Carolina Panther...",
+            "correct": true
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Santa Clara, California",
+            "response": "The Super Bowl 50 was played at Levi's Stadium in ...",
+            "correct": true
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The New England Patriots.\n\nThe Super Bowl was play...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "gold",
+            "response": "The color of the jersey was the color of the jerse...",
+            "correct": false
+          }
+        ]
+      },
+      "squad": {
+        "accuracy": 0.43,
+        "correct": 43,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The AFC's Super Bowl team was the Denver Broncos.\n...",
+            "correct": true
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Carolina Panthers",
+            "response": "The NFC's Super Bowl team was the Carolina Panther...",
+            "correct": true
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Santa Clara, California",
+            "response": "The Super Bowl 50 was played at Levi's Stadium in ...",
+            "correct": true
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The New England Patriots.\n\nThe Super Bowl was play...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "gold",
+            "response": "The color of the jersey was the color of the jerse...",
+            "correct": false
+          }
+        ]
+      },
+      "triviaqa": {
+        "accuracy": 0.06,
+        "correct": 6,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Question: Who was the man behind The Chipmunks?\nAn...",
+            "expected": "David Seville",
+            "response": "The Chipmunks\n\nThe Chipmunks\n\nThe Chipmunks\n\nThe C...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: What star sign is Jamie Lee Curtis?\nAnsw...",
+            "expected": "Scorpio",
+            "response": "The star sign is a symbol that is used to represen...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Which Lloyd Webber musical premiered in ...",
+            "expected": "Sunset Boulevard",
+            "response": "The musical was performed in the US on 10th Decemb...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Who was the next British Prime Minister ...",
+            "expected": "Campbell-Bannerman",
+            "response": "The next Prime Minister was Arthur Balfour, who wa...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Who had a 70s No 1 hit with Kiss You All...",
+            "expected": "Exile",
+            "response": "The Beatles.\n\nA:\n\nThe answer is:\n\nThe Beatles\n\nThe...",
+            "correct": false
+          }
+        ]
+      }
+    },
+    "19": {
+      "description": "Pre-bottleneck compression",
+      "validation": {
+        "accuracy": 0.41,
+        "correct": 41,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The AFC.\n\nA:\n\nThe AFC is the NFL's official footba...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Carolina Panthers",
+            "response": "The New England Patriots.\n\nThe Super Bowl was play...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Santa Clara, California",
+            "response": "The Super Bowl 50 was played on February 7, 2016, ...",
+            "correct": true
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The New England Patriots.\n\nThe Super Bowl was play...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "gold",
+            "response": "The color of the Super Bowl logo was a combination...",
+            "correct": false
+          }
+        ]
+      },
+      "squad": {
+        "accuracy": 0.41,
+        "correct": 41,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The AFC.\n\nA:\n\nThe AFC is the NFL's official footba...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Carolina Panthers",
+            "response": "The New England Patriots.\n\nThe Super Bowl was play...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Santa Clara, California",
+            "response": "The Super Bowl 50 was played on February 7, 2016, ...",
+            "correct": true
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The New England Patriots.\n\nThe Super Bowl was play...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "gold",
+            "response": "The color of the Super Bowl logo was a combination...",
+            "correct": false
+          }
+        ]
+      },
+      "triviaqa": {
+        "accuracy": 0.06,
+        "correct": 6,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Question: Who was the man behind The Chipmunks?\nAn...",
+            "expected": "David Seville",
+            "response": "The Chipmunks\n\nThe Chipmunks\n\nThe Chipmunks\n\nThe C...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: What star sign is Jamie Lee Curtis?\nAnsw...",
+            "expected": "Scorpio",
+            "response": "The star sign is a star that is a symbol of love.\n...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Which Lloyd Webber musical premiered in ...",
+            "expected": "Sunset Boulevard",
+            "response": "The musical was performed in the US on 10th Decemb...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Who was the next British Prime Minister ...",
+            "expected": "Campbell-Bannerman",
+            "response": "The next British Prime Minister was Arthur Balfour...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Who had a 70s No 1 hit with Kiss You All...",
+            "expected": "Exile",
+            "response": "The Beatles.\n\nA:\n\nI think the answer is \"No\".\nThe ...",
+            "correct": false
+          }
+        ]
+      }
+    },
+    "20": {
+      "description": "Information bottleneck (Phase 3)",
+      "validation": {
+        "accuracy": 0.45,
+        "correct": 45,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The AFC.\nQuestion: Which NFL team represented the ...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Carolina Panthers",
+            "response": "The New England Patriots.\n\nThe NFL's Super Bowl 50...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Santa Clara, California",
+            "response": "The Super Bowl 50 was played on February 7, 2016, ...",
+            "correct": true
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The Broncos.\n\nThe Super Bowl was played on Februar...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "gold",
+            "response": "The color of the logo was chosen by the NFL's Comm...",
+            "correct": false
+          }
+        ]
+      },
+      "squad": {
+        "accuracy": 0.45,
+        "correct": 45,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The AFC.\nQuestion: Which NFL team represented the ...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Carolina Panthers",
+            "response": "The New England Patriots.\n\nThe NFL's Super Bowl 50...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Santa Clara, California",
+            "response": "The Super Bowl 50 was played on February 7, 2016, ...",
+            "correct": true
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The Broncos.\n\nThe Super Bowl was played on Februar...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "gold",
+            "response": "The color of the logo was chosen by the NFL's Comm...",
+            "correct": false
+          }
+        ]
+      },
+      "triviaqa": {
+        "accuracy": 0.05,
+        "correct": 5,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Question: Who was the man behind The Chipmunks?\nAn...",
+            "expected": "David Seville",
+            "response": "The Chipmunks.\n\nThe Chipmunks are a group of child...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: What star sign is Jamie Lee Curtis?\nAnsw...",
+            "expected": "Scorpio",
+            "response": "The star sign is a star that is a symbol of love, ...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Which Lloyd Webber musical premiered in ...",
+            "expected": "Sunset Boulevard",
+            "response": "The musical, which was produced by the British Bro...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Who was the next British Prime Minister ...",
+            "expected": "Campbell-Bannerman",
+            "response": "The next Prime Minister was Arthur Balfour, who wa...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Who had a 70s No 1 hit with Kiss You All...",
+            "expected": "Exile",
+            "response": "\"I don't know.\"\n\nA:\n\nI think you're looking for th...",
+            "correct": false
+          }
+        ]
+      }
+    },
+    "21": {
+      "description": "Post-bottleneck (Phase 4)",
+      "validation": {
+        "accuracy": 0.48,
+        "correct": 48,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The AFC.\n\nA:\n\nThe AFC is the NFL's official footba...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Carolina Panthers",
+            "response": "The New York Giants.\n\nThe Super Bowl was played on...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Santa Clara, California",
+            "response": "The Super Bowl 50 was played on February 7, 2016, ...",
+            "correct": true
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The New York Giants.\n\nThe Super Bowl was played on...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "gold",
+            "response": "The color of the logo was a combination of the col...",
+            "correct": false
+          }
+        ]
+      },
+      "squad": {
+        "accuracy": 0.48,
+        "correct": 48,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The AFC.\n\nA:\n\nThe AFC is the NFL's official footba...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Carolina Panthers",
+            "response": "The New York Giants.\n\nThe Super Bowl was played on...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Santa Clara, California",
+            "response": "The Super Bowl 50 was played on February 7, 2016, ...",
+            "correct": true
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The New York Giants.\n\nThe Super Bowl was played on...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "gold",
+            "response": "The color of the logo was a combination of the col...",
+            "correct": false
+          }
+        ]
+      },
+      "triviaqa": {
+        "accuracy": 0.05,
+        "correct": 5,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Question: Who was the man behind The Chipmunks?\nAn...",
+            "expected": "David Seville",
+            "response": "The Chipmunks.\n\nThe Chipmunks are a group of peopl...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: What star sign is Jamie Lee Curtis?\nAnsw...",
+            "expected": "Scorpio",
+            "response": "Star sign\n\nA:\n\nThe star sign is the star that is t...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Which Lloyd Webber musical premiered in ...",
+            "expected": "Sunset Boulevard",
+            "response": "The musical was performed in the US on 10th Decemb...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Who was the next British Prime Minister ...",
+            "expected": "Campbell-Bannerman",
+            "response": "Arthur Balfour\n\nA:\n\nThe answer is Arthur Balfour.\n...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Who had a 70s No 1 hit with Kiss You All...",
+            "expected": "Exile",
+            "response": "The answer is the song.\n\nA:\n\nI think the answer is...",
+            "correct": false
+          }
+        ]
+      }
+    },
+    "22": {
+      "description": "Output projection (Phase 5)",
+      "validation": {
+        "accuracy": 0.45,
+        "correct": 45,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The AFC's Super Bowl team represented the NFC at S...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Carolina Panthers",
+            "response": "The Los Angeles Dodgers.\n\nThe game was played on F...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Santa Clara, California",
+            "response": "The Super Bowl 50 was played on February 7, 2016, ...",
+            "correct": true
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The Los Angeles Rams.\n\nThe game was played on Febr...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "gold",
+            "response": "The color of the jersey was the color of the jerse...",
+            "correct": false
+          }
+        ]
+      },
+      "squad": {
+        "accuracy": 0.45,
+        "correct": 45,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The AFC's Super Bowl team represented the NFC at S...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Carolina Panthers",
+            "response": "The Los Angeles Dodgers.\n\nThe game was played on F...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Santa Clara, California",
+            "response": "The Super Bowl 50 was played on February 7, 2016, ...",
+            "correct": true
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The Los Angeles Rams.\n\nThe game was played on Febr...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "gold",
+            "response": "The color of the jersey was the color of the jerse...",
+            "correct": false
+          }
+        ]
+      },
+      "triviaqa": {
+        "accuracy": 0.05,
+        "correct": 5,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Question: Who was the man behind The Chipmunks?\nAn...",
+            "expected": "David Seville",
+            "response": "The Chipmunks\n\nThe Chipmunks are a group of people...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: What star sign is Jamie Lee Curtis?\nAnsw...",
+            "expected": "Scorpio",
+            "response": "Star sign\n\nA:\n\nThe star sign is a star that is a p...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Which Lloyd Webber musical premiered in ...",
+            "expected": "Sunset Boulevard",
+            "response": "The musical, which was produced by the London Phil...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Who was the next British Prime Minister ...",
+            "expected": "Campbell-Bannerman",
+            "response": "The next Prime Minister was Arthur Balfour.\n\nA:\n\nT...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Who had a 70s No 1 hit with Kiss You All...",
+            "expected": "Exile",
+            "response": "\"The Beatles\"\n\nA:\n\nThe answer is: \"The Beatles\"...",
+            "correct": false
+          }
+        ]
+      }
+    },
+    "best_layer": 21
+  },
+  "strength_selection": {
+    "1.0": {
+      "validation": {
+        "accuracy": 0.45,
+        "correct": 45,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The AFC.\n\nThe AFC is the American Football Confere...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Carolina Panthers",
+            "response": "The New England Patriots.\n\nThe Super Bowl was play...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Santa Clara, California",
+            "response": "The Super Bowl 50 was played on February 7, 2016, ...",
+            "correct": true
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The Broncos.\n\nThe Super Bowl was played on Februar...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "gold",
+            "response": "The color of the logo was chosen by the NFL's Supe...",
+            "correct": false
+          }
+        ]
+      },
+      "squad": {
+        "accuracy": 0.45,
+        "correct": 45,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The AFC.\n\nThe AFC is the American Football Confere...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Carolina Panthers",
+            "response": "The New England Patriots.\n\nThe Super Bowl was play...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Santa Clara, California",
+            "response": "The Super Bowl 50 was played on February 7, 2016, ...",
+            "correct": true
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The Broncos.\n\nThe Super Bowl was played on Februar...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "gold",
+            "response": "The color of the logo was chosen by the NFL's Supe...",
+            "correct": false
+          }
+        ]
+      },
+      "triviaqa": {
+        "accuracy": 0.05,
+        "correct": 5,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Question: Who was the man behind The Chipmunks?\nAn...",
+            "expected": "David Seville",
+            "response": "The Chipmunks\n\nThe Chipmunks are a group of childr...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: What star sign is Jamie Lee Curtis?\nAnsw...",
+            "expected": "Scorpio",
+            "response": "Star sign is a star that is a symbol of love.\n\nA:\n...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Which Lloyd Webber musical premiered in ...",
+            "expected": "Sunset Boulevard",
+            "response": "The musical was performed in the US on 10th Decemb...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Who was the next British Prime Minister ...",
+            "expected": "Campbell-Bannerman",
+            "response": "The British Prime Minister was Arthur Balfour.\n\nA:...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Who had a 70s No 1 hit with Kiss You All...",
+            "expected": "Exile",
+            "response": "The Beatles.\n\nA:\n\nI think the answer is \"No\".\nThe ...",
+            "correct": false
+          }
+        ]
+      }
+    },
+    "1.5": {
+      "validation": {
+        "accuracy": 0.48,
+        "correct": 48,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The AFC.\n\nThe AFC is the American Football Confere...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Carolina Panthers",
+            "response": "The New England Patriots.\n\nThe Super Bowl was play...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Santa Clara, California",
+            "response": "The Super Bowl 50 was played on February 7, 2016, ...",
+            "correct": true
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The New England Patriots.\n\nThe Super Bowl was play...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "gold",
+            "response": "The color of the logo was chosen by the NFL.\n\nThe ...",
+            "correct": false
+          }
+        ]
+      },
+      "squad": {
+        "accuracy": 0.48,
+        "correct": 48,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The AFC.\n\nThe AFC is the American Football Confere...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Carolina Panthers",
+            "response": "The New England Patriots.\n\nThe Super Bowl was play...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Santa Clara, California",
+            "response": "The Super Bowl 50 was played on February 7, 2016, ...",
+            "correct": true
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The New England Patriots.\n\nThe Super Bowl was play...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "gold",
+            "response": "The color of the logo was chosen by the NFL.\n\nThe ...",
+            "correct": false
+          }
+        ]
+      },
+      "triviaqa": {
+        "accuracy": 0.05,
+        "correct": 5,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Question: Who was the man behind The Chipmunks?\nAn...",
+            "expected": "David Seville",
+            "response": "The Chipmunks\n\nThe Chipmunks are a group of childr...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: What star sign is Jamie Lee Curtis?\nAnsw...",
+            "expected": "Scorpio",
+            "response": "Star sign is a star that is a symbol of love.\n\nA:\n...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Which Lloyd Webber musical premiered in ...",
+            "expected": "Sunset Boulevard",
+            "response": "The musical was performed in the US on 10th Decemb...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Who was the next British Prime Minister ...",
+            "expected": "Campbell-Bannerman",
+            "response": "Arthur Balfour\n\nA:\n\nThe answer is Arthur Balfour.\n...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Who had a 70s No 1 hit with Kiss You All...",
+            "expected": "Exile",
+            "response": "The Beatles.\n\nA:\n\nThe answer is:\n\nThe Beatles\n\nThe...",
+            "correct": false
+          }
+        ]
+      }
+    },
+    "2.0": {
+      "validation": {
+        "accuracy": 0.49,
+        "correct": 49,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The AFC.\n\nA:\n\nThe AFC is the NFL's official footba...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Carolina Panthers",
+            "response": "The New England Patriots.\n\nThe Super Bowl was play...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Santa Clara, California",
+            "response": "The Super Bowl 50 was played on February 7, 2016, ...",
+            "correct": true
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The New England Patriots.\n\nThe Super Bowl was play...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "gold",
+            "response": "The color of the logo was chosen by the NFL.\n\nThe ...",
+            "correct": false
+          }
+        ]
+      },
+      "squad": {
+        "accuracy": 0.49,
+        "correct": 49,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The AFC.\n\nA:\n\nThe AFC is the NFL's official footba...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Carolina Panthers",
+            "response": "The New England Patriots.\n\nThe Super Bowl was play...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Santa Clara, California",
+            "response": "The Super Bowl 50 was played on February 7, 2016, ...",
+            "correct": true
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The New England Patriots.\n\nThe Super Bowl was play...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "gold",
+            "response": "The color of the logo was chosen by the NFL.\n\nThe ...",
+            "correct": false
+          }
+        ]
+      },
+      "triviaqa": {
+        "accuracy": 0.05,
+        "correct": 5,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Question: Who was the man behind The Chipmunks?\nAn...",
+            "expected": "David Seville",
+            "response": "The Chipmunks\n\nThe Chipmunks are a group of childr...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: What star sign is Jamie Lee Curtis?\nAnsw...",
+            "expected": "Scorpio",
+            "response": "Star sign\n\nA:\n\nThe star sign is a symbol for the s...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Which Lloyd Webber musical premiered in ...",
+            "expected": "Sunset Boulevard",
+            "response": "The musical was performed in the US on 10th Decemb...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Who was the next British Prime Minister ...",
+            "expected": "Campbell-Bannerman",
+            "response": "Arthur Balfour\n\nA:\n\nThe answer is Arthur Balfour.\n...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Who had a 70s No 1 hit with Kiss You All...",
+            "expected": "Exile",
+            "response": "The Beatles.\n\nA:\n\nI think the answer is \"No\".\nThe ...",
+            "correct": false
+          }
+        ]
+      }
+    },
+    "3.0": {
+      "validation": {
+        "accuracy": 0.5,
+        "correct": 50,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The AFC.\n\nThe AFC is the American Football Confere...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Carolina Panthers",
+            "response": "The New England Patriots.\n\nThe Super Bowl was play...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Santa Clara, California",
+            "response": "The Super Bowl 50 was played on February 7, 2016, ...",
+            "correct": true
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The New England Patriots.\n\nThe Super Bowl was play...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "gold",
+            "response": "The color of the logo was chosen by the NFL.\n\nThe ...",
+            "correct": false
+          }
+        ]
+      },
+      "squad": {
+        "accuracy": 0.5,
+        "correct": 50,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The AFC.\n\nThe AFC is the American Football Confere...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Carolina Panthers",
+            "response": "The New England Patriots.\n\nThe Super Bowl was play...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Santa Clara, California",
+            "response": "The Super Bowl 50 was played on February 7, 2016, ...",
+            "correct": true
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The New England Patriots.\n\nThe Super Bowl was play...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "gold",
+            "response": "The color of the logo was chosen by the NFL.\n\nThe ...",
+            "correct": false
+          }
+        ]
+      },
+      "triviaqa": {
+        "accuracy": 0.05,
+        "correct": 5,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Question: Who was the man behind The Chipmunks?\nAn...",
+            "expected": "David Seville",
+            "response": "The Chipmunks\n\nThe Chipmunks are a group of childr...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: What star sign is Jamie Lee Curtis?\nAnsw...",
+            "expected": "Scorpio",
+            "response": "Star sign\n\nA:\n\nThe star sign is a symbol for the s...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Which Lloyd Webber musical premiered in ...",
+            "expected": "Sunset Boulevard",
+            "response": "The musical was performed in the US on 10th Decemb...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Who was the next British Prime Minister ...",
+            "expected": "Campbell-Bannerman",
+            "response": "Arthur Balfour\n\nA:\n\nThe answer is Arthur Balfour.\n...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Who had a 70s No 1 hit with Kiss You All...",
+            "expected": "Exile",
+            "response": "The Beatles.\n\nA:\n\nThe answer is:\n\nThe Beatles\n\nThe...",
+            "correct": false
+          }
+        ]
+      }
+    },
+    "4.0": {
+      "validation": {
+        "accuracy": 0.47,
+        "correct": 47,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The AFC.\nQuestion: Which NFL team represented the ...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Carolina Panthers",
+            "response": "The New York Giants.\n\nThe Super Bowl was played on...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Santa Clara, California",
+            "response": "The Super Bowl 50 was played on February 7, 2016, ...",
+            "correct": true
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The New York Giants.\n\nThe Super Bowl was played on...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "gold",
+            "response": "The color of the logo was a combination of the col...",
+            "correct": false
+          }
+        ]
+      },
+      "squad": {
+        "accuracy": 0.47,
+        "correct": 47,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The AFC.\nQuestion: Which NFL team represented the ...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Carolina Panthers",
+            "response": "The New York Giants.\n\nThe Super Bowl was played on...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Santa Clara, California",
+            "response": "The Super Bowl 50 was played on February 7, 2016, ...",
+            "correct": true
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The New York Giants.\n\nThe Super Bowl was played on...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "gold",
+            "response": "The color of the logo was a combination of the col...",
+            "correct": false
+          }
+        ]
+      },
+      "triviaqa": {
+        "accuracy": 0.05,
+        "correct": 5,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Question: Who was the man behind The Chipmunks?\nAn...",
+            "expected": "David Seville",
+            "response": "The Chipmunks.\n\nThe Chipmunks are a group of child...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: What star sign is Jamie Lee Curtis?\nAnsw...",
+            "expected": "Scorpio",
+            "response": "Star sign\n\nA:\n\nThe star sign is a symbol for the s...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Which Lloyd Webber musical premiered in ...",
+            "expected": "Sunset Boulevard",
+            "response": "The musical was performed in the US on 10th Decemb...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Who was the next British Prime Minister ...",
+            "expected": "Campbell-Bannerman",
+            "response": "Arthur Balfour\n\nA:\n\nThe answer is Arthur Balfour.\n...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Who had a 70s No 1 hit with Kiss You All...",
+            "expected": "Exile",
+            "response": "The Beatles.\n\nA:\n\nThe answer is:\n\nThe Beatles\n\nThe...",
+            "correct": false
+          }
+        ]
+      }
+    },
+    "5.0": {
+      "validation": {
+        "accuracy": 0.48,
+        "correct": 48,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The AFC.\n\nA:\n\nThe AFC is the NFL's official footba...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Carolina Panthers",
+            "response": "The New York Giants.\n\nThe Super Bowl was played on...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Santa Clara, California",
+            "response": "The Super Bowl 50 was played on February 7, 2016, ...",
+            "correct": true
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The New York Giants.\n\nThe Super Bowl was played on...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "gold",
+            "response": "The color of the logo was a combination of the col...",
+            "correct": false
+          }
+        ]
+      },
+      "squad": {
+        "accuracy": 0.48,
+        "correct": 48,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The AFC.\n\nA:\n\nThe AFC is the NFL's official footba...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Carolina Panthers",
+            "response": "The New York Giants.\n\nThe Super Bowl was played on...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Santa Clara, California",
+            "response": "The Super Bowl 50 was played on February 7, 2016, ...",
+            "correct": true
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The New York Giants.\n\nThe Super Bowl was played on...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "gold",
+            "response": "The color of the logo was a combination of the col...",
+            "correct": false
+          }
+        ]
+      },
+      "triviaqa": {
+        "accuracy": 0.05,
+        "correct": 5,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Question: Who was the man behind The Chipmunks?\nAn...",
+            "expected": "David Seville",
+            "response": "The Chipmunks.\n\nThe Chipmunks are a group of peopl...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: What star sign is Jamie Lee Curtis?\nAnsw...",
+            "expected": "Scorpio",
+            "response": "Star sign\n\nA:\n\nThe star sign is the star that is t...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Which Lloyd Webber musical premiered in ...",
+            "expected": "Sunset Boulevard",
+            "response": "The musical was performed in the US on 10th Decemb...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Who was the next British Prime Minister ...",
+            "expected": "Campbell-Bannerman",
+            "response": "Arthur Balfour\n\nA:\n\nThe answer is Arthur Balfour.\n...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Who had a 70s No 1 hit with Kiss You All...",
+            "expected": "Exile",
+            "response": "The answer is the song.\n\nA:\n\nI think the answer is...",
+            "correct": false
+          }
+        ]
+      }
+    },
+    "7.0": {
+      "validation": {
+        "accuracy": 0.41,
+        "correct": 41,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The AFC.\n\nA:\n\nThe AFC is the NFL's official footba...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Carolina Panthers",
+            "response": "The New York Giants.\n\nThe Super Bowl was played on...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Santa Clara, California",
+            "response": "The Super Bowl was played at Levi's Stadium in the...",
+            "correct": true
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The New York Giants.\n\nThe Super Bowl was played on...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "gold",
+            "response": "The color of the logo was a combination of the col...",
+            "correct": false
+          }
+        ]
+      },
+      "squad": {
+        "accuracy": 0.41,
+        "correct": 41,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The AFC.\n\nA:\n\nThe AFC is the NFL's official footba...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Carolina Panthers",
+            "response": "The New York Giants.\n\nThe Super Bowl was played on...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Santa Clara, California",
+            "response": "The Super Bowl was played at Levi's Stadium in the...",
+            "correct": true
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The New York Giants.\n\nThe Super Bowl was played on...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "gold",
+            "response": "The color of the logo was a combination of the col...",
+            "correct": false
+          }
+        ]
+      },
+      "triviaqa": {
+        "accuracy": 0.06,
+        "correct": 6,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Question: Who was the man behind The Chipmunks?\nAn...",
+            "expected": "David Seville",
+            "response": "The Chipmunks.\n\nThe Chipmunks are a group of peopl...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: What star sign is Jamie Lee Curtis?\nAnsw...",
+            "expected": "Scorpio",
+            "response": "Star sign\n\nA:\n\nThe star sign is the sign of the st...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Which Lloyd Webber musical premiered in ...",
+            "expected": "Sunset Boulevard",
+            "response": "The Lloyd Webber Show.\n\nA:\n\nThe Lloyd Webber Show ...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Who was the next British Prime Minister ...",
+            "expected": "Campbell-Bannerman",
+            "response": "Arthur Balfour\n\nA:\n\nThe answer is Arthur Balfour.\n...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Who had a 70s No 1 hit with Kiss You All...",
+            "expected": "Exile",
+            "response": "The answer is the song that was released in the ea...",
+            "correct": false
+          }
+        ]
+      }
+    },
+    "10.0": {
+      "validation": {
+        "accuracy": 0.36,
+        "correct": 36,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The AFC.\n\nA:\n\nThe AFC is the NFL's Super Bowl cham...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Carolina Panthers",
+            "response": "The New York Giants.\n\nThe Super Bowl was played on...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Santa Clara, California",
+            "response": "The Super Bowl was played at Levi's Stadium in the...",
+            "correct": true
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The New York Giants.\n\nThe Super Bowl was played on...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "gold",
+            "response": "The Super Bowl logo is a combination of a red and ...",
+            "correct": false
+          }
+        ]
+      },
+      "squad": {
+        "accuracy": 0.36,
+        "correct": 36,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The AFC.\n\nA:\n\nThe AFC is the NFL's Super Bowl cham...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Carolina Panthers",
+            "response": "The New York Giants.\n\nThe Super Bowl was played on...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Santa Clara, California",
+            "response": "The Super Bowl was played at Levi's Stadium in the...",
+            "correct": true
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "Denver Broncos",
+            "response": "The New York Giants.\n\nThe Super Bowl was played on...",
+            "correct": false
+          },
+          {
+            "prompt": "Context: Super Bowl 50 was an American football ga...",
+            "expected": "gold",
+            "response": "The Super Bowl logo is a combination of a red and ...",
+            "correct": false
+          }
+        ]
+      },
+      "triviaqa": {
+        "accuracy": 0.06,
+        "correct": 6,
+        "total": 100,
+        "details": [
+          {
+            "prompt": "Question: Who was the man behind The Chipmunks?\nAn...",
+            "expected": "David Seville",
+            "response": "The Chipmunks.\n\nThe Chipmunks are a group of peopl...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: What star sign is Jamie Lee Curtis?\nAnsw...",
+            "expected": "Scorpio",
+            "response": "Star sign\n\nA:\n\nThe star sign is the same as the st...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Which Lloyd Webber musical premiered in ...",
+            "expected": "Sunset Boulevard",
+            "response": "The Lloyd Webber Show.\n\nA:\n\nThe Lloyd Webber Show ...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Who was the next British Prime Minister ...",
+            "expected": "Campbell-Bannerman",
+            "response": "Arthur Balfour\n\nA:\n\nThe answer is Arthur Balfour.\n...",
+            "correct": false
+          },
+          {
+            "prompt": "Question: Who had a 70s No 1 hit with Kiss You All...",
+            "expected": "Exile",
+            "response": "The answer is the song that was released in the la...",
+            "correct": false
+          }
+        ]
+      }
+    },
+    "best_strength": 3.0
+  },
+  "summary": {
+    "best_config": {
+      "method": "random",
+      "neurons": [
+        692,
+        504,
+        544,
+        361,
+        418,
+        761,
+        474,
+        130,
+        316,
+        129,
+        567,
+        583,
+        71,
+        226,
+        417,
+        391
+      ],
+      "layer": 21,
+      "strength": 3.0
+    },
+    "improvements": {
+      "validation": 5.0,
+      "squad": 5.0,
+      "triviaqa": 0.0,
+      "average_test": 2.5
+    },
+    "transfer_ratio": 0.5
+  }
+}

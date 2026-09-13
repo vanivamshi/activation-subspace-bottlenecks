@@ -1,0 +1,298 @@
+{
+  "hyena": {
+    "benchmarking": {
+      "error": "[Errno 2] No such file or directory: '/home/HDD/ATAF/LLM_paper/longbench_benchmark_needle_lra_all_models/benchmark_optimized_weights_working.py'",
+      "skipped": true
+    },
+    "interpretability": {
+      "variant": "hyena",
+      "num_layers": 18,
+      "bottleneck_layer": 9,
+      "bottleneck_pct": 50.0,
+      "critical_layer": 9,
+      "critical_layer_pct": 50.0,
+      "cluster_neurons": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "cluster_9_overlap": 0,
+      "error": "Must collect activations first"
+    },
+    "bottleneck_steering": {
+      "baseline_accuracy": 0.0,
+      "steered_accuracy": 0.0,
+      "improvement": 0.0,
+      "baseline_correct": 0,
+      "steered_correct": 0,
+      "total": 3
+    },
+    "steering_identified": {
+      "variant": "hyena",
+      "baseline_score": 0.0,
+      "steered_score": 0.0,
+      "improvement": 0.0,
+      "baseline_correct": 0,
+      "steered_correct": 0,
+      "total_tests": 3
+    },
+    "steering_cluster9": {
+      "variant": "hyena",
+      "baseline_score": 0.0,
+      "steered_score": 0.0,
+      "improvement": 0.0,
+      "baseline_correct": 0,
+      "steered_correct": 0,
+      "total_tests": 3
+    },
+    "progressive_levels": {
+      "variant": "hyena",
+      "total_cases": 600,
+      "level_results": {
+        "level1_simple_recall": {
+          "level_name": "Simple Recall",
+          "total_cases": 100,
+          "baseline_correct": 100,
+          "baseline_processed": 100,
+          "baseline_accuracy": 1.0,
+          "steered_correct": 100,
+          "steered_processed": 100,
+          "steered_accuracy": 1.0,
+          "improvement": 0.0,
+          "verified_steering": true
+        },
+        "level2_two_hop": {
+          "level_name": "Two-Hop Reasoning",
+          "total_cases": 100,
+          "baseline_correct": 65,
+          "baseline_processed": 100,
+          "baseline_accuracy": 0.65,
+          "steered_correct": 65,
+          "steered_processed": 100,
+          "steered_accuracy": 0.65,
+          "improvement": 0.0,
+          "verified_steering": true
+        },
+        "level3_three_hop": {
+          "level_name": "Three-Hop Reasoning",
+          "total_cases": 100,
+          "baseline_correct": 59,
+          "baseline_processed": 100,
+          "baseline_accuracy": 0.59,
+          "steered_correct": 59,
+          "steered_processed": 100,
+          "steered_accuracy": 0.59,
+          "improvement": 0.0,
+          "verified_steering": true
+        },
+        "level4_long_context": {
+          "level_name": "Long Context (5-7 facts)",
+          "total_cases": 100,
+          "baseline_correct": 100,
+          "baseline_processed": 100,
+          "baseline_accuracy": 1.0,
+          "steered_correct": 100,
+          "steered_processed": 100,
+          "steered_accuracy": 1.0,
+          "improvement": 0.0,
+          "verified_steering": true
+        },
+        "level5_combined": {
+          "level_name": "Combined Reasoning + Memory",
+          "total_cases": 100,
+          "baseline_correct": 44,
+          "baseline_processed": 100,
+          "baseline_accuracy": 0.44,
+          "steered_correct": 44,
+          "steered_processed": 100,
+          "steered_accuracy": 0.44,
+          "improvement": 0.0,
+          "verified_steering": true
+        },
+        "level6_stress_test": {
+          "level_name": "Stress Test (10+ facts)",
+          "total_cases": 100,
+          "baseline_correct": 100,
+          "baseline_processed": 100,
+          "baseline_accuracy": 1.0,
+          "steered_correct": 100,
+          "steered_processed": 100,
+          "steered_accuracy": 1.0,
+          "improvement": 0.0,
+          "verified_steering": true
+        }
+      },
+      "steering_verified": true,
+      "overall_baseline_accuracy": 0.78,
+      "overall_steered_accuracy": 0.78,
+      "overall_improvement": 0.0
+    }
+  },
+  "hyena-150m": {
+    "benchmarking": {
+      "error": "[Errno 2] No such file or directory: '/home/HDD/ATAF/LLM_paper/longbench_benchmark_needle_lra_all_models/benchmark_optimized_weights_working.py'",
+      "skipped": true
+    },
+    "interpretability": {
+      "variant": "hyena-150m",
+      "num_layers": 18,
+      "bottleneck_layer": 9,
+      "bottleneck_pct": 50.0,
+      "critical_layer": 9,
+      "critical_layer_pct": 50.0,
+      "cluster_neurons": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "cluster_9_overlap": 0,
+      "error": "Must collect activations first"
+    },
+    "bottleneck_steering": {
+      "baseline_accuracy": 0.0,
+      "steered_accuracy": 0.0,
+      "improvement": 0.0,
+      "baseline_correct": 0,
+      "steered_correct": 0,
+      "total": 3
+    },
+    "steering_identified": {
+      "variant": "hyena-150m",
+      "baseline_score": 0.0,
+      "steered_score": 0.0,
+      "improvement": 0.0,
+      "baseline_correct": 0,
+      "steered_correct": 0,
+      "total_tests": 3
+    },
+    "steering_cluster9": {
+      "variant": "hyena-150m",
+      "baseline_score": 0.0,
+      "steered_score": 0.0,
+      "improvement": 0.0,
+      "baseline_correct": 0,
+      "steered_correct": 0,
+      "total_tests": 3
+    },
+    "progressive_levels": {
+      "variant": "hyena-150m",
+      "total_cases": 600,
+      "level_results": {
+        "level1_simple_recall": {
+          "level_name": "Simple Recall",
+          "total_cases": 100,
+          "baseline_correct": 100,
+          "baseline_processed": 100,
+          "baseline_accuracy": 1.0,
+          "steered_correct": 100,
+          "steered_processed": 100,
+          "steered_accuracy": 1.0,
+          "improvement": 0.0,
+          "verified_steering": true
+        },
+        "level2_two_hop": {
+          "level_name": "Two-Hop Reasoning",
+          "total_cases": 100,
+          "baseline_correct": 64,
+          "baseline_processed": 100,
+          "baseline_accuracy": 0.64,
+          "steered_correct": 64,
+          "steered_processed": 100,
+          "steered_accuracy": 0.64,
+          "improvement": 0.0,
+          "verified_steering": true
+        },
+        "level3_three_hop": {
+          "level_name": "Three-Hop Reasoning",
+          "total_cases": 100,
+          "baseline_correct": 59,
+          "baseline_processed": 100,
+          "baseline_accuracy": 0.59,
+          "steered_correct": 59,
+          "steered_processed": 100,
+          "steered_accuracy": 0.59,
+          "improvement": 0.0,
+          "verified_steering": true
+        },
+        "level4_long_context": {
+          "level_name": "Long Context (5-7 facts)",
+          "total_cases": 100,
+          "baseline_correct": 100,
+          "baseline_processed": 100,
+          "baseline_accuracy": 1.0,
+          "steered_correct": 100,
+          "steered_processed": 100,
+          "steered_accuracy": 1.0,
+          "improvement": 0.0,
+          "verified_steering": true
+        },
+        "level5_combined": {
+          "level_name": "Combined Reasoning + Memory",
+          "total_cases": 100,
+          "baseline_correct": 47,
+          "baseline_processed": 100,
+          "baseline_accuracy": 0.47,
+          "steered_correct": 47,
+          "steered_processed": 100,
+          "steered_accuracy": 0.47,
+          "improvement": 0.0,
+          "verified_steering": true
+        },
+        "level6_stress_test": {
+          "level_name": "Stress Test (10+ facts)",
+          "total_cases": 100,
+          "baseline_correct": 100,
+          "baseline_processed": 100,
+          "baseline_accuracy": 1.0,
+          "steered_correct": 100,
+          "steered_processed": 100,
+          "steered_accuracy": 1.0,
+          "improvement": 0.0,
+          "verified_steering": true
+        }
+      },
+      "steering_verified": true,
+      "overall_baseline_accuracy": 0.7833333333333333,
+      "overall_steered_accuracy": 0.7833333333333333,
+      "overall_improvement": 0.0
+    }
+  },
+  "h3": {
+    "error": "Model or tokenizer loading returned None",
+    "skipped": true
+  }
+}

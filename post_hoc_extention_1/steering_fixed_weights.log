@@ -1,0 +1,1063 @@
+2025-12-24 16:00:54.419210: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-12-24 16:00:54.467822: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-12-24 16:00:55.467488: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+INFO:__main__:
+================================================================================
+INFO:__main__:🚀 COMPREHENSIVE MAMBA VARIANT ANALYSIS
+INFO:__main__:================================================================================
+INFO:__main__:Using device: cuda
+INFO:__main__:
+================================================================================
+INFO:__main__:Testing: HYENA
+INFO:__main__:================================================================================
+INFO:__main__:🔧 Attempting to load hyena...
+INFO:__main__:📦 Loading Hyena model...
+/home/vamshi/new-env/lib/python3.12/site-packages/lightning_lite/__init__.py:29: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  __import__("pkg_resources").declare_namespace(__name__)
+INFO:__main__:   ✅ Found Safari model classes
+INFO:__main__:   Creating Hyena model:
+INFO:__main__:   - Model size: 150M
+INFO:__main__:   - Hidden dim: 768, Layers: 12
+INFO:__main__:   - Vocab size: 50257
+INFO:__main__:  Attempting to load checkpoint from HuggingFace: Zymrael/hyena-small-150b-tok
+INFO:__main__:  ✓ Loaded checkpoint from HuggingFace: /home/vamshi/.cache/huggingface/hub/models--Zymrael--hyena-small-150b-tok/snapshots/d4c6ed1b162a5046a2815576b3caa3f890d3eef5/hyena_small_150b_tok.ckpt
+INFO:__main__:   ✅ Found checkpoint: /home/vamshi/.cache/huggingface/hub/models--Zymrael--hyena-small-150b-tok/snapshots/d4c6ed1b162a5046a2815576b3caa3f890d3eef5/hyena_small_150b_tok.ckpt
+INFO:__main__:   Loading from checkpoint: /home/vamshi/.cache/huggingface/hub/models--Zymrael--hyena-small-150b-tok/snapshots/d4c6ed1b162a5046a2815576b3caa3f890d3eef5/hyena_small_150b_tok.ckpt
+INFO:__main__:    Calculated order from in_proj: 2 (in_proj shape: torch.Size([2592, 864]))
+INFO:__main__:    Filter order (from pos_emb.z): 33
+INFO:__main__:  Extracted config from checkpoint:
+INFO:__main__:    Vocab size: 50264 (was 50257)
+INFO:__main__:    Hidden dim: 864 (was 768)
+INFO:__main__:    Num layers: 18 (was 12)
+INFO:__main__:    MLP expansion: 1728 (was 3072)
+INFO:__main__:    Order: 2 (was 2)
+INFO:__main__:    Filter order: 33 (was 64)
+INFO:__main__:  Creating model architecture...
+WARNING:__main__:  ⚠️  Error during load_state_dict: Error(s) in loading state_dict for SimpleLMHeadModel:
+	size mismatch for backbone.layers.0.mixer.filter_fn.pos_emb.z: copying a param with shape torch.Size([1, 2048, 33]) from checkpoint, the shape in current model is torch.Size([1, 2048, 3]).
+	size mismatch for backbone.layers.0.mixer.filter_fn.implicit_filter.0.weight: copying a param with shape torch.Size([64, 33]) from checkpoint, the shape in current model is torch.Size([33, 3]).
+	size mismatch for backbone.layers.0.mixer.filter_fn.implicit_filter.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.0.mixer.filter_fn.implicit_filter.1.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.0.mixer.filter_fn.implicit_filter.2.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.0.mixer.filter_fn.implicit_filter.2.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.0.mixer.filter_fn.implicit_filter.3.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.0.mixer.filter_fn.implicit_filter.4.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.0.mixer.filter_fn.implicit_filter.4.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.0.mixer.filter_fn.implicit_filter.5.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.0.mixer.filter_fn.implicit_filter.6.weight: copying a param with shape torch.Size([864, 64]) from checkpoint, the shape in current model is torch.Size([864, 33]).
+	size mismatch for backbone.layers.1.mixer.filter_fn.pos_emb.z: copying a param with shape torch.Size([1, 2048, 33]) from checkpoint, the shape in current model is torch.Size([1, 2048, 3]).
+	size mismatch for backbone.layers.1.mixer.filter_fn.implicit_filter.0.weight: copying a param with shape torch.Size([64, 33]) from checkpoint, the shape in current model is torch.Size([33, 3]).
+	size mismatch for backbone.layers.1.mixer.filter_fn.implicit_filter.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.1.mixer.filter_fn.implicit_filter.1.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.1.mixer.filter_fn.implicit_filter.2.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.1.mixer.filter_fn.implicit_filter.2.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.1.mixer.filter_fn.implicit_filter.3.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.1.mixer.filter_fn.implicit_filter.4.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.1.mixer.filter_fn.implicit_filter.4.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.1.mixer.filter_fn.implicit_filter.5.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.1.mixer.filter_fn.implicit_filter.6.weight: copying a param with shape torch.Size([864, 64]) from checkpoint, the shape in current model is torch.Size([864, 33]).
+	size mismatch for backbone.layers.2.mixer.filter_fn.pos_emb.z: copying a param with shape torch.Size([1, 2048, 33]) from checkpoint, the shape in current model is torch.Size([1, 2048, 3]).
+	size mismatch for backbone.layers.2.mixer.filter_fn.implicit_filter.0.weight: copying a param with shape torch.Size([64, 33]) from checkpoint, the shape in current model is torch.Size([33, 3]).
+	size mismatch for backbone.layers.2.mixer.filter_fn.implicit_filter.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.2.mixer.filter_fn.implicit_filter.1.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.2.mixer.filter_fn.implicit_filter.2.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.2.mixer.filter_fn.implicit_filter.2.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.2.mixer.filter_fn.implicit_filter.3.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.2.mixer.filter_fn.implicit_filter.4.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.2.mixer.filter_fn.implicit_filter.4.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.2.mixer.filter_fn.implicit_filter.5.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.2.mixer.filter_fn.implicit_filter.6.weight: copying a param with shape torch.Size([864, 64]) from checkpoint, the shape in current model is torch.Size([864, 33]).
+	size mismatch for backbone.layers.3.mixer.filter_fn.pos_emb.z: copying a param with shape torch.Size([1, 2048, 33]) from checkpoint, the shape in current model is torch.Size([1, 2048, 3]).
+	size mismatch for backbone.layers.3.mixer.filter_fn.implicit_filter.0.weight: copying a param with shape torch.Size([64, 33]) from checkpoint, the shape in current model is torch.Size([33, 3]).
+	size mismatch for backbone.layers.3.mixer.filter_fn.implicit_filter.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.3.mixer.filter_fn.implicit_filter.1.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.3.mixer.filter_fn.implicit_filter.2.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.3.mixer.filter_fn.implicit_filter.2.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.3.mixer.filter_fn.implicit_filter.3.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.3.mixer.filter_fn.implicit_filter.4.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.3.mixer.filter_fn.implicit_filter.4.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.3.mixer.filter_fn.implicit_filter.5.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.3.mixer.filter_fn.implicit_filter.6.weight: copying a param with shape torch.Size([864, 64]) from checkpoint, the shape in current model is torch.Size([864, 33]).
+	size mismatch for backbone.layers.4.mixer.filter_fn.pos_emb.z: copying a param with shape torch.Size([1, 2048, 33]) from checkpoint, the shape in current model is torch.Size([1, 2048, 3]).
+	size mismatch for backbone.layers.4.mixer.filter_fn.implicit_filter.0.weight: copying a param with shape torch.Size([64, 33]) from checkpoint, the shape in current model is torch.Size([33, 3]).
+	size mismatch for backbone.layers.4.mixer.filter_fn.implicit_filter.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.4.mixer.filter_fn.implicit_filter.1.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.4.mixer.filter_fn.implicit_filter.2.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.4.mixer.filter_fn.implicit_filter.2.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.4.mixer.filter_fn.implicit_filter.3.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.4.mixer.filter_fn.implicit_filter.4.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.4.mixer.filter_fn.implicit_filter.4.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.4.mixer.filter_fn.implicit_filter.5.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.4.mixer.filter_fn.implicit_filter.6.weight: copying a param with shape torch.Size([864, 64]) from checkpoint, the shape in current model is torch.Size([864, 33]).
+	size mismatch for backbone.layers.5.mixer.filter_fn.pos_emb.z: copying a param with shape torch.Size([1, 2048, 33]) from checkpoint, the shape in current model is torch.Size([1, 2048, 3]).
+	size mismatch for backbone.layers.5.mixer.filter_fn.implicit_filter.0.weight: copying a param with shape torch.Size([64, 33]) from checkpoint, the shape in current model is torch.Size([33, 3]).
+	size mismatch for backbone.layers.5.mixer.filter_fn.implicit_filter.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.5.mixer.filter_fn.implicit_filter.1.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.5.mixer.filter_fn.implicit_filter.2.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.5.mixer.filter_fn.implicit_filter.2.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.5.mixer.filter_fn.implicit_filter.3.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.5.mixer.filter_fn.implicit_filter.4.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.5.mixer.filter_fn.implicit_filter.4.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.5.mixer.filter_fn.implicit_filter.5.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.5.mixer.filter_fn.implicit_filter.6.weight: copying a param with shape torch.Size([864, 64]) from checkpoint, the shape in current model is torch.Size([864, 33]).
+	size mismatch for backbone.layers.6.mixer.filter_fn.pos_emb.z: copying a param with shape torch.Size([1, 2048, 33]) from checkpoint, the shape in current model is torch.Size([1, 2048, 3]).
+	size mismatch for backbone.layers.6.mixer.filter_fn.implicit_filter.0.weight: copying a param with shape torch.Size([64, 33]) from checkpoint, the shape in current model is torch.Size([33, 3]).
+	size mismatch for backbone.layers.6.mixer.filter_fn.implicit_filter.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.6.mixer.filter_fn.implicit_filter.1.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.6.mixer.filter_fn.implicit_filter.2.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.6.mixer.filter_fn.implicit_filter.2.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.6.mixer.filter_fn.implicit_filter.3.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.6.mixer.filter_fn.implicit_filter.4.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.6.mixer.filter_fn.implicit_filter.4.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.6.mixer.filter_fn.implicit_filter.5.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.6.mixer.filter_fn.implicit_filter.6.weight: copying a param with shape torch.Size([864, 64]) from checkpoint, the shape in current model is torch.Size([864, 33]).
+	size mismatch for backbone.layers.7.mixer.filter_fn.pos_emb.z: copying a param with shape torch.Size([1, 2048, 33]) from checkpoint, the shape in current model is torch.Size([1, 2048, 3]).
+	size mismatch for backbone.layers.7.mixer.filter_fn.implicit_filter.0.weight: copying a param with shape torch.Size([64, 33]) from checkpoint, the shape in current model is torch.Size([33, 3]).
+	size mismatch for backbone.layers.7.mixer.filter_fn.implicit_filter.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.7.mixer.filter_fn.implicit_filter.1.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.7.mixer.filter_fn.implicit_filter.2.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.7.mixer.filter_fn.implicit_filter.2.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.7.mixer.filter_fn.implicit_filter.3.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.7.mixer.filter_fn.implicit_filter.4.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.7.mixer.filter_fn.implicit_filter.4.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.7.mixer.filter_fn.implicit_filter.5.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.7.mixer.filter_fn.implicit_filter.6.weight: copying a param with shape torch.Size([864, 64]) from checkpoint, the shape in current model is torch.Size([864, 33]).
+	size mismatch for backbone.layers.8.mixer.filter_fn.pos_emb.z: copying a param with shape torch.Size([1, 2048, 33]) from checkpoint, the shape in current model is torch.Size([1, 2048, 3]).
+	size mismatch for backbone.layers.8.mixer.filter_fn.implicit_filter.0.weight: copying a param with shape torch.Size([64, 33]) from checkpoint, the shape in current model is torch.Size([33, 3]).
+	size mismatch for backbone.layers.8.mixer.filter_fn.implicit_filter.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.8.mixer.filter_fn.implicit_filter.1.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.8.mixer.filter_fn.implicit_filter.2.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.8.mixer.filter_fn.implicit_filter.2.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.8.mixer.filter_fn.implicit_filter.3.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.8.mixer.filter_fn.implicit_filter.4.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.8.mixer.filter_fn.implicit_filter.4.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.8.mixer.filter_fn.implicit_filter.5.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.8.mixer.filter_fn.implicit_filter.6.weight: copying a param with shape torch.Size([864, 64]) from checkpoint, the shape in current model is torch.Size([864, 33]).
+	size mismatch for backbone.layers.9.mixer.filter_fn.pos_emb.z: copying a param with shape torch.Size([1, 2048, 33]) from checkpoint, the shape in current model is torch.Size([1, 2048, 3]).
+	size mismatch for backbone.layers.9.mixer.filter_fn.implicit_filter.0.weight: copying a param with shape torch.Size([64, 33]) from checkpoint, the shape in current model is torch.Size([33, 3]).
+	size mismatch for backbone.layers.9.mixer.filter_fn.implicit_filter.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.9.mixer.filter_fn.implicit_filter.1.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.9.mixer.filter_fn.implicit_filter.2.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.9.mixer.filter_fn.implicit_filter.2.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.9.mixer.filter_fn.implicit_filter.3.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.9.mixer.filter_fn.implicit_filter.4.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.9.mixer.filter_fn.implicit_filter.4.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.9.mixer.filter_fn.implicit_filter.5.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.9.mixer.filter_fn.implicit_filter.6.weight: copying a param with shape torch.Size([864, 64]) from checkpoint, the shape in current model is torch.Size([864, 33]).
+	size mismatch for backbone.layers.10.mixer.filter_fn.pos_emb.z: copying a param with shape torch.Size([1, 2048, 33]) from checkpoint, the shape in current model is torch.Size([1, 2048, 3]).
+	size mismatch for backbone.layers.10.mixer.filter_fn.implicit_filter.0.weight: copying a param with shape torch.Size([64, 33]) from checkpoint, the shape in current model is torch.Size([33, 3]).
+	size mismatch for backbone.layers.10.mixer.filter_fn.implicit_filter.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.10.mixer.filter_fn.implicit_filter.1.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.10.mixer.filter_fn.implicit_filter.2.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.10.mixer.filter_fn.implicit_filter.2.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.10.mixer.filter_fn.implicit_filter.3.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.10.mixer.filter_fn.implicit_filter.4.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.10.mixer.filter_fn.implicit_filter.4.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.10.mixer.filter_fn.implicit_filter.5.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.10.mixer.filter_fn.implicit_filter.6.weight: copying a param with shape torch.Size([864, 64]) from checkpoint, the shape in current model is torch.Size([864, 33]).
+	size mismatch for backbone.layers.11.mixer.filter_fn.pos_emb.z: copying a param with shape torch.Size([1, 2048, 33]) from checkpoint, the shape in current model is torch.Size([1, 2048, 3]).
+	size mismatch for backbone.layers.11.mixer.filter_fn.implicit_filter.0.weight: copying a param with shape torch.Size([64, 33]) from checkpoint, the shape in current model is torch.Size([33, 3]).
+	size mismatch for backbone.layers.11.mixer.filter_fn.implicit_filter.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.11.mixer.filter_fn.implicit_filter.1.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.11.mixer.filter_fn.implicit_filter.2.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.11.mixer.filter_fn.implicit_filter.2.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.11.mixer.filter_fn.implicit_filter.3.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.11.mixer.filter_fn.implicit_filter.4.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.11.mixer.filter_fn.implicit_filter.4.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.11.mixer.filter_fn.implicit_filter.5.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.11.mixer.filter_fn.implicit_filter.6.weight: copying a param with shape torch.Size([864, 64]) from checkpoint, the shape in current model is torch.Size([864, 33]).
+	size mismatch for backbone.layers.12.mixer.filter_fn.pos_emb.z: copying a param with shape torch.Size([1, 2048, 33]) from checkpoint, the shape in current model is torch.Size([1, 2048, 3]).
+	size mismatch for backbone.layers.12.mixer.filter_fn.implicit_filter.0.weight: copying a param with shape torch.Size([64, 33]) from checkpoint, the shape in current model is torch.Size([33, 3]).
+	size mismatch for backbone.layers.12.mixer.filter_fn.implicit_filter.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.12.mixer.filter_fn.implicit_filter.1.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.12.mixer.filter_fn.implicit_filter.2.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.12.mixer.filter_fn.implicit_filter.2.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.12.mixer.filter_fn.implicit_filter.3.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.12.mixer.filter_fn.implicit_filter.4.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.12.mixer.filter_fn.implicit_filter.4.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.12.mixer.filter_fn.implicit_filter.5.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.12.mixer.filter_fn.implicit_filter.6.weight: copying a param with shape torch.Size([864, 64]) from checkpoint, the shape in current model is torch.Size([864, 33]).
+	size mismatch for backbone.layers.13.mixer.filter_fn.pos_emb.z: copying a param with shape torch.Size([1, 2048, 33]) from checkpoint, the shape in current model is torch.Size([1, 2048, 3]).
+	size mismatch for backbone.layers.13.mixer.filter_fn.implicit_filter.0.weight: copying a param with shape torch.Size([64, 33]) from checkpoint, the shape in current model is torch.Size([33, 3]).
+	size mismatch for backbone.layers.13.mixer.filter_fn.implicit_filter.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.13.mixer.filter_fn.implicit_filter.1.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.13.mixer.filter_fn.implicit_filter.2.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.13.mixer.filter_fn.implicit_filter.2.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.13.mixer.filter_fn.implicit_filter.3.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.13.mixer.filter_fn.implicit_filter.4.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.13.mixer.filter_fn.implicit_filter.4.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.13.mixer.filter_fn.implicit_filter.5.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.13.mixer.filter_fn.implicit_filter.6.weight: copying a param with shape torch.Size([864, 64]) from checkpoint, the shape in current model is torch.Size([864, 33]).
+	size mismatch for backbone.layers.14.mixer.filter_fn.pos_emb.z: copying a param with shape torch.Size([1, 2048, 33]) from checkpoint, the shape in current model is torch.Size([1, 2048, 3]).
+	size mismatch for backbone.layers.14.mixer.filter_fn.implicit_filter.0.weight: copying a param with shape torch.Size([64, 33]) from checkpoint, the shape in current model is torch.Size([33, 3]).
+	size mismatch for backbone.layers.14.mixer.filter_fn.implicit_filter.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.14.mixer.filter_fn.implicit_filter.1.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.14.mixer.filter_fn.implicit_filter.2.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.14.mixer.filter_fn.implicit_filter.2.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.14.mixer.filter_fn.implicit_filter.3.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.14.mixer.filter_fn.implicit_filter.4.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.14.mixer.filter_fn.implicit_filter.4.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.14.mixer.filter_fn.implicit_filter.5.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.14.mixer.filter_fn.implicit_filter.6.weight: copying a param with shape torch.Size([864, 64]) from checkpoint, the shape in current model is torch.Size([864, 33]).
+	size mismatch for backbone.layers.15.mixer.filter_fn.pos_emb.z: copying a param with shape torch.Size([1, 2048, 33]) from checkpoint, the shape in current model is torch.Size([1, 2048, 3]).
+	size mismatch for backbone.layers.15.mixer.filter_fn.implicit_filter.0.weight: copying a param with shape torch.Size([64, 33]) from checkpoint, the shape in current model is torch.Size([33, 3]).
+	size mismatch for backbone.layers.15.mixer.filter_fn.implicit_filter.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.15.mixer.filter_fn.implicit_filter.1.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.15.mixer.filter_fn.implicit_filter.2.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.15.mixer.filter_fn.implicit_filter.2.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.15.mixer.filter_fn.implicit_filter.3.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.15.mixer.filter_fn.implicit_filter.4.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.15.mixer.filter_fn.implicit_filter.4.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.15.mixer.filter_fn.implicit_filter.5.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.15.mixer.filter_fn.implicit_filter.6.weight: copying a param with shape torch.Size([864, 64]) from checkpoint, the shape in current model is torch.Size([864, 33]).
+	size mismatch for backbone.layers.16.mixer.filter_fn.pos_emb.z: copying a param with shape torch.Size([1, 2048, 33]) from checkpoint, the shape in current model is torch.Size([1, 2048, 3]).
+	size mismatch for backbone.layers.16.mixer.filter_fn.implicit_filter.0.weight: copying a param with shape torch.Size([64, 33]) from checkpoint, the shape in current model is torch.Size([33, 3]).
+	size mismatch for backbone.layers.16.mixer.filter_fn.implicit_filter.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.16.mixer.filter_fn.implicit_filter.1.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.16.mixer.filter_fn.implicit_filter.2.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.16.mixer.filter_fn.implicit_filter.2.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.16.mixer.filter_fn.implicit_filter.3.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.16.mixer.filter_fn.implicit_filter.4.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.16.mixer.filter_fn.implicit_filter.4.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.16.mixer.filter_fn.implicit_filter.5.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.16.mixer.filter_fn.implicit_filter.6.weight: copying a param with shape torch.Size([864, 64]) from checkpoint, the shape in current model is torch.Size([864, 33]).
+	size mismatch for backbone.layers.17.mixer.filter_fn.pos_emb.z: copying a param with shape torch.Size([1, 2048, 33]) from checkpoint, the shape in current model is torch.Size([1, 2048, 3]).
+	size mismatch for backbone.layers.17.mixer.filter_fn.implicit_filter.0.weight: copying a param with shape torch.Size([64, 33]) from checkpoint, the shape in current model is torch.Size([33, 3]).
+	size mismatch for backbone.layers.17.mixer.filter_fn.implicit_filter.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.17.mixer.filter_fn.implicit_filter.1.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.17.mixer.filter_fn.implicit_filter.2.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.17.mixer.filter_fn.implicit_filter.2.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.17.mixer.filter_fn.implicit_filter.3.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.17.mixer.filter_fn.implicit_filter.4.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.17.mixer.filter_fn.implicit_filter.4.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.17.mixer.filter_fn.implicit_filter.5.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.17.mixer.filter_fn.implicit_filter.6.weight: copying a param with shape torch.Size([864, 64]) from checkpoint, the shape in current model is torch.Size([864, 33]).
+WARNING:__main__:  ⚠️  Could not load checkpoint weights - using random weights
+INFO:__main__:   ✅ Successfully loaded Hyena model
+INFO:__main__:   Model architecture: 18 layers, 864 dim
+INFO:__main__:   ✅ Loaded pretrained weights from checkpoint
+INFO:__main__:
+   🔍 Inspecting Hyena model structure:
+INFO:__main__:      Model type: SimpleLMHeadModel
+INFO:__main__:      Has 'backbone': True
+INFO:__main__:      Backbone type: LMBackbone
+INFO:__main__:      Has 'layers': True
+INFO:__main__:      Number of layers: 18
+INFO:__main__:      First layer type: Block
+INFO:__main__:      First layer has 'mixer': True
+INFO:__main__:      Mixer type: HyenaOperator
+INFO:__main__:✅ Successfully loaded hyena
+INFO:__main__:
+================================================================================
+INFO:__main__:📊 STEP 1: BENCHMARKING (BEFORE STEERING)
+INFO:__main__:================================================================================
+INFO:__main__:
+================================================================================
+INFO:__main__:📊 RUNNING BENCHMARKING TESTS (BEFORE STEERING)
+INFO:__main__:================================================================================
+INFO:__main__:
+🔬 Running RULER benchmark for hyena...
+INFO:__main__:   Testing NIAH @ 100 tokens...
+/home/vamshi/safari/src/models/sequence/hyena.py:31: UserWarning: ComplexHalf support is experimental and many operators don't support it yet. (Triggered internally at /pytorch/aten/src/ATen/EmptyTensor.cpp:55.)
+  k_f = torch.fft.rfft(k, n=fft_size) / fft_size
+INFO:__main__:   ✅ NIAH: 100.0%
+INFO:__main__:   Testing Aggregation @ 100 tokens...
+INFO:__main__:   ✅ Aggregation: 0.0%
+INFO:__main__:   Testing QA @ 100 tokens...
+INFO:__main__:   ✅ QA: 0.0%
+INFO:__main__:
+🔬 Running LRA benchmark for hyena...
+INFO:__main__:   Testing ListOps @ 100 tokens...
+INFO:__main__:   ✅ ListOps: 0.0%
+INFO:__main__:   Testing TextClassification @ 100 tokens...
+INFO:__main__:   ✅ TextClassification: 0.0%
+INFO:__main__:   Testing Retrieval @ 100 tokens...
+INFO:__main__:   ✅ Retrieval: 0.0%
+INFO:__main__:   Testing Image @ 100 tokens...
+INFO:__main__:   ✅ Image: 0.0%
+INFO:__main__:   Testing Pathfinder @ 100 tokens...
+INFO:__main__:   ✅ Pathfinder: 0.0%
+INFO:__main__:
+📊 BENCHMARK SUMMARY for hyena:
+INFO:__main__:   RULER:
+INFO:__main__:      NIAH: 100.0%
+INFO:__main__:      Aggregation: 0.0%
+INFO:__main__:      QA: 0.0%
+INFO:__main__:   LRA:
+INFO:__main__:      ListOps: 0.0%
+INFO:__main__:      TextClassification: 0.0%
+INFO:__main__:      Retrieval: 0.0%
+INFO:__main__:      Image: 0.0%
+INFO:__main__:      Pathfinder: 0.0%
+INFO:__main__:================================================================================
+INFO:__main__:
+📂 Checking for interpretability results: experiment_logs/interpretability_results.json
+INFO:__main__:   ✅ File exists, attempting to load...
+INFO:__main__:   ✅ JSON loaded successfully, checking for hyena...
+WARNING:__main__:⚠️  No interpretability results for hyena in file, re-running...
+INFO:__main__:   Available variants in file: ['moe-mamba']
+INFO:__main__:🔬 Running interpretability analysis for hyena...
+INFO:__main__:
+================================================================================
+INFO:__main__:🔬 INTERPRETABILITY ANALYSIS: HYENA
+INFO:__main__:================================================================================
+INFO:__main__:✅ Found layers at path: backbone.layers (18 layers)
+INFO:__main__:📊 Collecting activations from layers: [0, 6, 9, 13, 14, 17]
+WARNING:__main__:⚠️  Error running SimpleLMHeadModel forward: SimpleLMHeadModel.forward() got an unexpected keyword argument 'attention_mask'
+WARNING:__main__:⚠️  Error running SimpleLMHeadModel forward: SimpleLMHeadModel.forward() got an unexpected keyword argument 'attention_mask'
+WARNING:__main__:⚠️  Error running SimpleLMHeadModel forward: SimpleLMHeadModel.forward() got an unexpected keyword argument 'attention_mask'
+INFO:__main__:✅ Collected activations from 6 layers
+ERROR:__main__:❌ Interpretability analysis failed for hyena: Must collect activations first
+ERROR:__main__:Traceback (most recent call last):
+  File "/home/HDD/ATAF/LLM_paper/post_hoc_extention_1/steering_s6_types_hyena.py", line 2653, in run_comprehensive_analysis
+    interpretability_results = run_interpretability_analysis(model, tokenizer, variant_name)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/HDD/ATAF/LLM_paper/post_hoc_extention_1/steering_s6_types_hyena.py", line 2135, in run_interpretability_analysis
+    layer_scores = analyzer.analyze_layer_importance()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/HDD/ATAF/LLM_paper/post_hoc_extention_1/steering_s6_types_hyena.py", line 332, in analyze_layer_importance
+    raise ValueError("Must collect activations first")
+ValueError: Must collect activations first
+
+INFO:__main__:✅ Found layers at path: backbone.layers (18 layers)
+INFO:__main__:
+================================================================================
+INFO:__main__:🧪 BOTTLENECK STEERING TEST: HYENA
+INFO:__main__:================================================================================
+INFO:__main__:
+📊 Baseline (No Steering)
+WARNING:__main__:⚠️  Bottleneck steering test failed: 
+INFO:__main__:
+================================================================================
+INFO:__main__:🧪 STEERING TEST: HYENA
+INFO:__main__:================================================================================
+INFO:__main__:
+📊 Baseline (No Steering)
+WARNING:__main__:⚠️  Steering universality test failed: 
+INFO:__main__:
+================================================================================
+INFO:__main__:🧪 STEERING TEST: HYENA
+INFO:__main__:================================================================================
+INFO:__main__:
+📊 Baseline (No Steering)
+WARNING:__main__:⚠️  Cluster 9 steering test failed: 
+INFO:__main__:
+================================================================================
+INFO:__main__:🧪 TESTING ALL PROGRESSIVE LEVELS WITH STEERING
+INFO:__main__:================================================================================
+INFO:__main__:
+================================================================================
+INFO:__main__:🧪 COMPREHENSIVE PROGRESSIVE TEST WITH STEERING: HYENA
+INFO:__main__:================================================================================
+INFO:__main__:
+================================================================================
+INFO:__main__:🔬 TESTING MULTIPLE STEERING STRATEGIES
+INFO:__main__:================================================================================
+INFO:__main__:🔍 Detected Hyena/H3 (Safari), inspecting structure...
+INFO:__main__:✅ Found layers in SimpleLMHeadModel: backbone.layers (18 layers)
+INFO:__main__:Testing 7 strategies on sample cases...
+INFO:__main__:🔍 Detected Hyena/H3 (Safari), inspecting structure...
+INFO:__main__:✅ Found layers in SimpleLMHeadModel: backbone.layers (18 layers)
+INFO:__main__:🎯 Applying bottleneck steering:
+INFO:__main__:   Model type: hyena
+INFO:__main__:   Layer: 9/18
+INFO:__main__:   Target: dt_proj.bias (temporal gate)
+INFO:__main__:   Strength: 1.5x (increases temporal resolution)
+WARNING:__main__:   ⚠️ dt_proj/conv not found, hooking entire layer
+WARNING:__main__:⚠️  Strategy 'Bottleneck Steering (dt_proj.bias)' failed: 
+INFO:__main__:✅ Steering removed
+INFO:__main__:🔍 Detected Hyena/H3 (Safari), inspecting structure...
+INFO:__main__:✅ Found layers in SimpleLMHeadModel: backbone.layers (18 layers)
+INFO:__main__:🎯 Applying steering:
+INFO:__main__:   Model type: hyena
+INFO:__main__:   Layer: 9/18
+INFO:__main__:   Neurons: 16 neurons
+INFO:__main__:   Strength: 1.5x
+INFO:__main__:✅ Steering applied successfully!
+WARNING:__main__:⚠️  Strategy 'Neuron Steering (strength 1.5x)' failed: 
+INFO:__main__:✅ Steering removed
+INFO:__main__:🔍 Detected Hyena/H3 (Safari), inspecting structure...
+INFO:__main__:✅ Found layers in SimpleLMHeadModel: backbone.layers (18 layers)
+INFO:__main__:🎯 Applying steering:
+INFO:__main__:   Model type: hyena
+INFO:__main__:   Layer: 9/18
+INFO:__main__:   Neurons: 16 neurons
+INFO:__main__:   Strength: 2.0x
+INFO:__main__:✅ Steering applied successfully!
+WARNING:__main__:⚠️  Strategy 'Neuron Steering (strength 2.0x)' failed: 
+INFO:__main__:✅ Steering removed
+INFO:__main__:🔍 Detected Hyena/H3 (Safari), inspecting structure...
+INFO:__main__:✅ Found layers in SimpleLMHeadModel: backbone.layers (18 layers)
+INFO:__main__:🎯 Applying steering:
+INFO:__main__:   Model type: hyena
+INFO:__main__:   Layer: 9/18
+INFO:__main__:   Neurons: 16 neurons
+INFO:__main__:   Strength: 3.0x
+INFO:__main__:✅ Steering applied successfully!
+WARNING:__main__:⚠️  Strategy 'Neuron Steering (strength 3.0x)' failed: 
+INFO:__main__:✅ Steering removed
+INFO:__main__:🔍 Detected Hyena/H3 (Safari), inspecting structure...
+INFO:__main__:✅ Found layers in SimpleLMHeadModel: backbone.layers (18 layers)
+INFO:__main__:🎯 Applying steering:
+INFO:__main__:   Model type: hyena
+INFO:__main__:   Layer: 9/18
+INFO:__main__:   Neurons: 16 neurons
+INFO:__main__:   Strength: 5.0x
+INFO:__main__:✅ Steering applied successfully!
+WARNING:__main__:⚠️  Strategy 'Neuron Steering (strength 5.0x)' failed: 
+INFO:__main__:✅ Steering removed
+INFO:__main__:🔍 Detected Hyena/H3 (Safari), inspecting structure...
+INFO:__main__:✅ Found layers in SimpleLMHeadModel: backbone.layers (18 layers)
+INFO:__main__:🎯 Applying steering:
+INFO:__main__:   Model type: hyena
+INFO:__main__:   Layer: 4/18
+INFO:__main__:   Neurons: 16 neurons
+INFO:__main__:   Strength: 2.0x
+INFO:__main__:✅ Steering applied successfully!
+WARNING:__main__:⚠️  Strategy 'Neuron Steering (Layer 4, strength 2.0x)' failed: 
+INFO:__main__:✅ Steering removed
+INFO:__main__:🔍 Detected Hyena/H3 (Safari), inspecting structure...
+INFO:__main__:✅ Found layers in SimpleLMHeadModel: backbone.layers (18 layers)
+INFO:__main__:🎯 Applying steering:
+INFO:__main__:   Model type: hyena
+INFO:__main__:   Layer: 14/18
+INFO:__main__:   Neurons: 16 neurons
+INFO:__main__:   Strength: 2.0x
+INFO:__main__:✅ Steering applied successfully!
+WARNING:__main__:⚠️  Strategy 'Neuron Steering (Layer 14, strength 2.0x)' failed: 
+INFO:__main__:✅ Steering removed
+WARNING:__main__:⚠️  All strategies failed, using default
+INFO:__main__:🔍 Detected Hyena/H3 (Safari), inspecting structure...
+INFO:__main__:✅ Found layers in SimpleLMHeadModel: backbone.layers (18 layers)
+INFO:__main__:🎯 Applying steering:
+INFO:__main__:   Model type: hyena
+INFO:__main__:   Layer: 9/18
+INFO:__main__:   Neurons: 16 neurons
+INFO:__main__:   Strength: 2.0x
+INFO:__main__:✅ Steering applied successfully!
+INFO:__main__:✅ Steering verified ACTIVE: 1 hook(s) registered
+INFO:__main__:
+================================================================================
+INFO:__main__:📊 BASELINE TEST (No Steering)
+INFO:__main__:================================================================================
+WARNING:__main__:⚠️  Progressive tests failed: 
+INFO:__main__:
+================================================================================
+INFO:__main__:✅ STEERING VERIFICATION SUMMARY: HYENA
+INFO:__main__:================================================================================
+INFO:__main__:   ✅ All test cases were run with steering ACTIVE
+INFO:__main__:   ✅ Steering was verified before, during, and after evaluation
+INFO:__main__:   ✅ Bottleneck steering: 0 test cases
+INFO:__main__:   ✅ Neuron steering (identified): 0 test cases
+INFO:__main__:   ✅ Neuron steering (Cluster 9): 0 test cases
+INFO:__main__:================================================================================
+INFO:__main__:
+================================================================================
+INFO:__main__:Testing: HYENA-150M
+INFO:__main__:================================================================================
+INFO:__main__:🔧 Attempting to load hyena-150m...
+INFO:__main__:📦 Loading Hyena model...
+INFO:__main__:   ✅ Found Safari model classes
+INFO:__main__:   Creating Hyena model:
+INFO:__main__:   - Model size: 150M
+INFO:__main__:   - Hidden dim: 768, Layers: 12
+INFO:__main__:   - Vocab size: 50257
+INFO:__main__:  Attempting to load checkpoint from HuggingFace: Zymrael/hyena-small-150b-tok
+INFO:__main__:  ✓ Loaded checkpoint from HuggingFace: /home/vamshi/.cache/huggingface/hub/models--Zymrael--hyena-small-150b-tok/snapshots/d4c6ed1b162a5046a2815576b3caa3f890d3eef5/hyena_small_150b_tok.ckpt
+INFO:__main__:   ✅ Found checkpoint: /home/vamshi/.cache/huggingface/hub/models--Zymrael--hyena-small-150b-tok/snapshots/d4c6ed1b162a5046a2815576b3caa3f890d3eef5/hyena_small_150b_tok.ckpt
+INFO:__main__:   Loading from checkpoint: /home/vamshi/.cache/huggingface/hub/models--Zymrael--hyena-small-150b-tok/snapshots/d4c6ed1b162a5046a2815576b3caa3f890d3eef5/hyena_small_150b_tok.ckpt
+INFO:__main__:    Calculated order from in_proj: 2 (in_proj shape: torch.Size([2592, 864]))
+INFO:__main__:    Filter order (from pos_emb.z): 33
+INFO:__main__:  Extracted config from checkpoint:
+INFO:__main__:    Vocab size: 50264 (was 50257)
+INFO:__main__:    Hidden dim: 864 (was 768)
+INFO:__main__:    Num layers: 18 (was 12)
+INFO:__main__:    MLP expansion: 1728 (was 3072)
+INFO:__main__:    Order: 2 (was 2)
+INFO:__main__:    Filter order: 33 (was 64)
+INFO:__main__:  Creating model architecture...
+WARNING:__main__:  ⚠️  Error during load_state_dict: Error(s) in loading state_dict for SimpleLMHeadModel:
+	size mismatch for backbone.layers.0.mixer.filter_fn.pos_emb.z: copying a param with shape torch.Size([1, 2048, 33]) from checkpoint, the shape in current model is torch.Size([1, 2048, 3]).
+	size mismatch for backbone.layers.0.mixer.filter_fn.implicit_filter.0.weight: copying a param with shape torch.Size([64, 33]) from checkpoint, the shape in current model is torch.Size([33, 3]).
+	size mismatch for backbone.layers.0.mixer.filter_fn.implicit_filter.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.0.mixer.filter_fn.implicit_filter.1.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.0.mixer.filter_fn.implicit_filter.2.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.0.mixer.filter_fn.implicit_filter.2.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.0.mixer.filter_fn.implicit_filter.3.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.0.mixer.filter_fn.implicit_filter.4.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.0.mixer.filter_fn.implicit_filter.4.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.0.mixer.filter_fn.implicit_filter.5.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.0.mixer.filter_fn.implicit_filter.6.weight: copying a param with shape torch.Size([864, 64]) from checkpoint, the shape in current model is torch.Size([864, 33]).
+	size mismatch for backbone.layers.1.mixer.filter_fn.pos_emb.z: copying a param with shape torch.Size([1, 2048, 33]) from checkpoint, the shape in current model is torch.Size([1, 2048, 3]).
+	size mismatch for backbone.layers.1.mixer.filter_fn.implicit_filter.0.weight: copying a param with shape torch.Size([64, 33]) from checkpoint, the shape in current model is torch.Size([33, 3]).
+	size mismatch for backbone.layers.1.mixer.filter_fn.implicit_filter.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.1.mixer.filter_fn.implicit_filter.1.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.1.mixer.filter_fn.implicit_filter.2.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.1.mixer.filter_fn.implicit_filter.2.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.1.mixer.filter_fn.implicit_filter.3.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.1.mixer.filter_fn.implicit_filter.4.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.1.mixer.filter_fn.implicit_filter.4.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.1.mixer.filter_fn.implicit_filter.5.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.1.mixer.filter_fn.implicit_filter.6.weight: copying a param with shape torch.Size([864, 64]) from checkpoint, the shape in current model is torch.Size([864, 33]).
+	size mismatch for backbone.layers.2.mixer.filter_fn.pos_emb.z: copying a param with shape torch.Size([1, 2048, 33]) from checkpoint, the shape in current model is torch.Size([1, 2048, 3]).
+	size mismatch for backbone.layers.2.mixer.filter_fn.implicit_filter.0.weight: copying a param with shape torch.Size([64, 33]) from checkpoint, the shape in current model is torch.Size([33, 3]).
+	size mismatch for backbone.layers.2.mixer.filter_fn.implicit_filter.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.2.mixer.filter_fn.implicit_filter.1.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.2.mixer.filter_fn.implicit_filter.2.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.2.mixer.filter_fn.implicit_filter.2.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.2.mixer.filter_fn.implicit_filter.3.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.2.mixer.filter_fn.implicit_filter.4.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.2.mixer.filter_fn.implicit_filter.4.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.2.mixer.filter_fn.implicit_filter.5.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.2.mixer.filter_fn.implicit_filter.6.weight: copying a param with shape torch.Size([864, 64]) from checkpoint, the shape in current model is torch.Size([864, 33]).
+	size mismatch for backbone.layers.3.mixer.filter_fn.pos_emb.z: copying a param with shape torch.Size([1, 2048, 33]) from checkpoint, the shape in current model is torch.Size([1, 2048, 3]).
+	size mismatch for backbone.layers.3.mixer.filter_fn.implicit_filter.0.weight: copying a param with shape torch.Size([64, 33]) from checkpoint, the shape in current model is torch.Size([33, 3]).
+	size mismatch for backbone.layers.3.mixer.filter_fn.implicit_filter.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.3.mixer.filter_fn.implicit_filter.1.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.3.mixer.filter_fn.implicit_filter.2.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.3.mixer.filter_fn.implicit_filter.2.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.3.mixer.filter_fn.implicit_filter.3.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.3.mixer.filter_fn.implicit_filter.4.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.3.mixer.filter_fn.implicit_filter.4.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.3.mixer.filter_fn.implicit_filter.5.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.3.mixer.filter_fn.implicit_filter.6.weight: copying a param with shape torch.Size([864, 64]) from checkpoint, the shape in current model is torch.Size([864, 33]).
+	size mismatch for backbone.layers.4.mixer.filter_fn.pos_emb.z: copying a param with shape torch.Size([1, 2048, 33]) from checkpoint, the shape in current model is torch.Size([1, 2048, 3]).
+	size mismatch for backbone.layers.4.mixer.filter_fn.implicit_filter.0.weight: copying a param with shape torch.Size([64, 33]) from checkpoint, the shape in current model is torch.Size([33, 3]).
+	size mismatch for backbone.layers.4.mixer.filter_fn.implicit_filter.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.4.mixer.filter_fn.implicit_filter.1.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.4.mixer.filter_fn.implicit_filter.2.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.4.mixer.filter_fn.implicit_filter.2.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.4.mixer.filter_fn.implicit_filter.3.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.4.mixer.filter_fn.implicit_filter.4.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.4.mixer.filter_fn.implicit_filter.4.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.4.mixer.filter_fn.implicit_filter.5.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.4.mixer.filter_fn.implicit_filter.6.weight: copying a param with shape torch.Size([864, 64]) from checkpoint, the shape in current model is torch.Size([864, 33]).
+	size mismatch for backbone.layers.5.mixer.filter_fn.pos_emb.z: copying a param with shape torch.Size([1, 2048, 33]) from checkpoint, the shape in current model is torch.Size([1, 2048, 3]).
+	size mismatch for backbone.layers.5.mixer.filter_fn.implicit_filter.0.weight: copying a param with shape torch.Size([64, 33]) from checkpoint, the shape in current model is torch.Size([33, 3]).
+	size mismatch for backbone.layers.5.mixer.filter_fn.implicit_filter.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.5.mixer.filter_fn.implicit_filter.1.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.5.mixer.filter_fn.implicit_filter.2.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.5.mixer.filter_fn.implicit_filter.2.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.5.mixer.filter_fn.implicit_filter.3.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.5.mixer.filter_fn.implicit_filter.4.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.5.mixer.filter_fn.implicit_filter.4.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.5.mixer.filter_fn.implicit_filter.5.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.5.mixer.filter_fn.implicit_filter.6.weight: copying a param with shape torch.Size([864, 64]) from checkpoint, the shape in current model is torch.Size([864, 33]).
+	size mismatch for backbone.layers.6.mixer.filter_fn.pos_emb.z: copying a param with shape torch.Size([1, 2048, 33]) from checkpoint, the shape in current model is torch.Size([1, 2048, 3]).
+	size mismatch for backbone.layers.6.mixer.filter_fn.implicit_filter.0.weight: copying a param with shape torch.Size([64, 33]) from checkpoint, the shape in current model is torch.Size([33, 3]).
+	size mismatch for backbone.layers.6.mixer.filter_fn.implicit_filter.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.6.mixer.filter_fn.implicit_filter.1.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.6.mixer.filter_fn.implicit_filter.2.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.6.mixer.filter_fn.implicit_filter.2.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.6.mixer.filter_fn.implicit_filter.3.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.6.mixer.filter_fn.implicit_filter.4.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.6.mixer.filter_fn.implicit_filter.4.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.6.mixer.filter_fn.implicit_filter.5.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.6.mixer.filter_fn.implicit_filter.6.weight: copying a param with shape torch.Size([864, 64]) from checkpoint, the shape in current model is torch.Size([864, 33]).
+	size mismatch for backbone.layers.7.mixer.filter_fn.pos_emb.z: copying a param with shape torch.Size([1, 2048, 33]) from checkpoint, the shape in current model is torch.Size([1, 2048, 3]).
+	size mismatch for backbone.layers.7.mixer.filter_fn.implicit_filter.0.weight: copying a param with shape torch.Size([64, 33]) from checkpoint, the shape in current model is torch.Size([33, 3]).
+	size mismatch for backbone.layers.7.mixer.filter_fn.implicit_filter.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.7.mixer.filter_fn.implicit_filter.1.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.7.mixer.filter_fn.implicit_filter.2.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.7.mixer.filter_fn.implicit_filter.2.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.7.mixer.filter_fn.implicit_filter.3.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.7.mixer.filter_fn.implicit_filter.4.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.7.mixer.filter_fn.implicit_filter.4.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.7.mixer.filter_fn.implicit_filter.5.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.7.mixer.filter_fn.implicit_filter.6.weight: copying a param with shape torch.Size([864, 64]) from checkpoint, the shape in current model is torch.Size([864, 33]).
+	size mismatch for backbone.layers.8.mixer.filter_fn.pos_emb.z: copying a param with shape torch.Size([1, 2048, 33]) from checkpoint, the shape in current model is torch.Size([1, 2048, 3]).
+	size mismatch for backbone.layers.8.mixer.filter_fn.implicit_filter.0.weight: copying a param with shape torch.Size([64, 33]) from checkpoint, the shape in current model is torch.Size([33, 3]).
+	size mismatch for backbone.layers.8.mixer.filter_fn.implicit_filter.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.8.mixer.filter_fn.implicit_filter.1.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.8.mixer.filter_fn.implicit_filter.2.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.8.mixer.filter_fn.implicit_filter.2.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.8.mixer.filter_fn.implicit_filter.3.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.8.mixer.filter_fn.implicit_filter.4.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.8.mixer.filter_fn.implicit_filter.4.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.8.mixer.filter_fn.implicit_filter.5.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.8.mixer.filter_fn.implicit_filter.6.weight: copying a param with shape torch.Size([864, 64]) from checkpoint, the shape in current model is torch.Size([864, 33]).
+	size mismatch for backbone.layers.9.mixer.filter_fn.pos_emb.z: copying a param with shape torch.Size([1, 2048, 33]) from checkpoint, the shape in current model is torch.Size([1, 2048, 3]).
+	size mismatch for backbone.layers.9.mixer.filter_fn.implicit_filter.0.weight: copying a param with shape torch.Size([64, 33]) from checkpoint, the shape in current model is torch.Size([33, 3]).
+	size mismatch for backbone.layers.9.mixer.filter_fn.implicit_filter.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.9.mixer.filter_fn.implicit_filter.1.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.9.mixer.filter_fn.implicit_filter.2.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.9.mixer.filter_fn.implicit_filter.2.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.9.mixer.filter_fn.implicit_filter.3.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.9.mixer.filter_fn.implicit_filter.4.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.9.mixer.filter_fn.implicit_filter.4.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.9.mixer.filter_fn.implicit_filter.5.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.9.mixer.filter_fn.implicit_filter.6.weight: copying a param with shape torch.Size([864, 64]) from checkpoint, the shape in current model is torch.Size([864, 33]).
+	size mismatch for backbone.layers.10.mixer.filter_fn.pos_emb.z: copying a param with shape torch.Size([1, 2048, 33]) from checkpoint, the shape in current model is torch.Size([1, 2048, 3]).
+	size mismatch for backbone.layers.10.mixer.filter_fn.implicit_filter.0.weight: copying a param with shape torch.Size([64, 33]) from checkpoint, the shape in current model is torch.Size([33, 3]).
+	size mismatch for backbone.layers.10.mixer.filter_fn.implicit_filter.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.10.mixer.filter_fn.implicit_filter.1.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.10.mixer.filter_fn.implicit_filter.2.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.10.mixer.filter_fn.implicit_filter.2.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.10.mixer.filter_fn.implicit_filter.3.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.10.mixer.filter_fn.implicit_filter.4.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.10.mixer.filter_fn.implicit_filter.4.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.10.mixer.filter_fn.implicit_filter.5.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.10.mixer.filter_fn.implicit_filter.6.weight: copying a param with shape torch.Size([864, 64]) from checkpoint, the shape in current model is torch.Size([864, 33]).
+	size mismatch for backbone.layers.11.mixer.filter_fn.pos_emb.z: copying a param with shape torch.Size([1, 2048, 33]) from checkpoint, the shape in current model is torch.Size([1, 2048, 3]).
+	size mismatch for backbone.layers.11.mixer.filter_fn.implicit_filter.0.weight: copying a param with shape torch.Size([64, 33]) from checkpoint, the shape in current model is torch.Size([33, 3]).
+	size mismatch for backbone.layers.11.mixer.filter_fn.implicit_filter.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.11.mixer.filter_fn.implicit_filter.1.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.11.mixer.filter_fn.implicit_filter.2.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.11.mixer.filter_fn.implicit_filter.2.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.11.mixer.filter_fn.implicit_filter.3.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.11.mixer.filter_fn.implicit_filter.4.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.11.mixer.filter_fn.implicit_filter.4.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.11.mixer.filter_fn.implicit_filter.5.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.11.mixer.filter_fn.implicit_filter.6.weight: copying a param with shape torch.Size([864, 64]) from checkpoint, the shape in current model is torch.Size([864, 33]).
+	size mismatch for backbone.layers.12.mixer.filter_fn.pos_emb.z: copying a param with shape torch.Size([1, 2048, 33]) from checkpoint, the shape in current model is torch.Size([1, 2048, 3]).
+	size mismatch for backbone.layers.12.mixer.filter_fn.implicit_filter.0.weight: copying a param with shape torch.Size([64, 33]) from checkpoint, the shape in current model is torch.Size([33, 3]).
+	size mismatch for backbone.layers.12.mixer.filter_fn.implicit_filter.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.12.mixer.filter_fn.implicit_filter.1.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.12.mixer.filter_fn.implicit_filter.2.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.12.mixer.filter_fn.implicit_filter.2.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.12.mixer.filter_fn.implicit_filter.3.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.12.mixer.filter_fn.implicit_filter.4.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.12.mixer.filter_fn.implicit_filter.4.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.12.mixer.filter_fn.implicit_filter.5.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.12.mixer.filter_fn.implicit_filter.6.weight: copying a param with shape torch.Size([864, 64]) from checkpoint, the shape in current model is torch.Size([864, 33]).
+	size mismatch for backbone.layers.13.mixer.filter_fn.pos_emb.z: copying a param with shape torch.Size([1, 2048, 33]) from checkpoint, the shape in current model is torch.Size([1, 2048, 3]).
+	size mismatch for backbone.layers.13.mixer.filter_fn.implicit_filter.0.weight: copying a param with shape torch.Size([64, 33]) from checkpoint, the shape in current model is torch.Size([33, 3]).
+	size mismatch for backbone.layers.13.mixer.filter_fn.implicit_filter.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.13.mixer.filter_fn.implicit_filter.1.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.13.mixer.filter_fn.implicit_filter.2.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.13.mixer.filter_fn.implicit_filter.2.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.13.mixer.filter_fn.implicit_filter.3.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.13.mixer.filter_fn.implicit_filter.4.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.13.mixer.filter_fn.implicit_filter.4.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.13.mixer.filter_fn.implicit_filter.5.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.13.mixer.filter_fn.implicit_filter.6.weight: copying a param with shape torch.Size([864, 64]) from checkpoint, the shape in current model is torch.Size([864, 33]).
+	size mismatch for backbone.layers.14.mixer.filter_fn.pos_emb.z: copying a param with shape torch.Size([1, 2048, 33]) from checkpoint, the shape in current model is torch.Size([1, 2048, 3]).
+	size mismatch for backbone.layers.14.mixer.filter_fn.implicit_filter.0.weight: copying a param with shape torch.Size([64, 33]) from checkpoint, the shape in current model is torch.Size([33, 3]).
+	size mismatch for backbone.layers.14.mixer.filter_fn.implicit_filter.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.14.mixer.filter_fn.implicit_filter.1.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.14.mixer.filter_fn.implicit_filter.2.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.14.mixer.filter_fn.implicit_filter.2.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.14.mixer.filter_fn.implicit_filter.3.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.14.mixer.filter_fn.implicit_filter.4.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.14.mixer.filter_fn.implicit_filter.4.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.14.mixer.filter_fn.implicit_filter.5.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.14.mixer.filter_fn.implicit_filter.6.weight: copying a param with shape torch.Size([864, 64]) from checkpoint, the shape in current model is torch.Size([864, 33]).
+	size mismatch for backbone.layers.15.mixer.filter_fn.pos_emb.z: copying a param with shape torch.Size([1, 2048, 33]) from checkpoint, the shape in current model is torch.Size([1, 2048, 3]).
+	size mismatch for backbone.layers.15.mixer.filter_fn.implicit_filter.0.weight: copying a param with shape torch.Size([64, 33]) from checkpoint, the shape in current model is torch.Size([33, 3]).
+	size mismatch for backbone.layers.15.mixer.filter_fn.implicit_filter.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.15.mixer.filter_fn.implicit_filter.1.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.15.mixer.filter_fn.implicit_filter.2.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.15.mixer.filter_fn.implicit_filter.2.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.15.mixer.filter_fn.implicit_filter.3.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.15.mixer.filter_fn.implicit_filter.4.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.15.mixer.filter_fn.implicit_filter.4.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.15.mixer.filter_fn.implicit_filter.5.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.15.mixer.filter_fn.implicit_filter.6.weight: copying a param with shape torch.Size([864, 64]) from checkpoint, the shape in current model is torch.Size([864, 33]).
+	size mismatch for backbone.layers.16.mixer.filter_fn.pos_emb.z: copying a param with shape torch.Size([1, 2048, 33]) from checkpoint, the shape in current model is torch.Size([1, 2048, 3]).
+	size mismatch for backbone.layers.16.mixer.filter_fn.implicit_filter.0.weight: copying a param with shape torch.Size([64, 33]) from checkpoint, the shape in current model is torch.Size([33, 3]).
+	size mismatch for backbone.layers.16.mixer.filter_fn.implicit_filter.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.16.mixer.filter_fn.implicit_filter.1.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.16.mixer.filter_fn.implicit_filter.2.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.16.mixer.filter_fn.implicit_filter.2.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.16.mixer.filter_fn.implicit_filter.3.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.16.mixer.filter_fn.implicit_filter.4.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.16.mixer.filter_fn.implicit_filter.4.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.16.mixer.filter_fn.implicit_filter.5.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.16.mixer.filter_fn.implicit_filter.6.weight: copying a param with shape torch.Size([864, 64]) from checkpoint, the shape in current model is torch.Size([864, 33]).
+	size mismatch for backbone.layers.17.mixer.filter_fn.pos_emb.z: copying a param with shape torch.Size([1, 2048, 33]) from checkpoint, the shape in current model is torch.Size([1, 2048, 3]).
+	size mismatch for backbone.layers.17.mixer.filter_fn.implicit_filter.0.weight: copying a param with shape torch.Size([64, 33]) from checkpoint, the shape in current model is torch.Size([33, 3]).
+	size mismatch for backbone.layers.17.mixer.filter_fn.implicit_filter.0.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.17.mixer.filter_fn.implicit_filter.1.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.17.mixer.filter_fn.implicit_filter.2.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.17.mixer.filter_fn.implicit_filter.2.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.17.mixer.filter_fn.implicit_filter.3.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.17.mixer.filter_fn.implicit_filter.4.weight: copying a param with shape torch.Size([64, 64]) from checkpoint, the shape in current model is torch.Size([33, 33]).
+	size mismatch for backbone.layers.17.mixer.filter_fn.implicit_filter.4.bias: copying a param with shape torch.Size([64]) from checkpoint, the shape in current model is torch.Size([33]).
+	size mismatch for backbone.layers.17.mixer.filter_fn.implicit_filter.5.freq: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 33]).
+	size mismatch for backbone.layers.17.mixer.filter_fn.implicit_filter.6.weight: copying a param with shape torch.Size([864, 64]) from checkpoint, the shape in current model is torch.Size([864, 33]).
+WARNING:__main__:  ⚠️  Could not load checkpoint weights - using random weights
+INFO:__main__:   ✅ Successfully loaded Hyena model
+INFO:__main__:   Model architecture: 18 layers, 864 dim
+INFO:__main__:   ✅ Loaded pretrained weights from checkpoint
+INFO:__main__:
+   🔍 Inspecting Hyena model structure:
+INFO:__main__:      Model type: SimpleLMHeadModel
+INFO:__main__:      Has 'backbone': True
+INFO:__main__:      Backbone type: LMBackbone
+INFO:__main__:      Has 'layers': True
+INFO:__main__:      Number of layers: 18
+INFO:__main__:      First layer type: Block
+INFO:__main__:      First layer has 'mixer': True
+INFO:__main__:      Mixer type: HyenaOperator
+INFO:__main__:✅ Successfully loaded hyena-150m
+INFO:__main__:
+================================================================================
+INFO:__main__:📊 STEP 1: BENCHMARKING (BEFORE STEERING)
+INFO:__main__:================================================================================
+INFO:__main__:
+================================================================================
+INFO:__main__:📊 RUNNING BENCHMARKING TESTS (BEFORE STEERING)
+INFO:__main__:================================================================================
+INFO:__main__:
+🔬 Running RULER benchmark for hyena-150m...
+INFO:__main__:   Testing NIAH @ 100 tokens...
+INFO:__main__:   ✅ NIAH: 100.0%
+INFO:__main__:   Testing Aggregation @ 100 tokens...
+INFO:__main__:   ✅ Aggregation: 0.0%
+INFO:__main__:   Testing QA @ 100 tokens...
+INFO:__main__:   ✅ QA: 0.0%
+INFO:__main__:
+🔬 Running LRA benchmark for hyena-150m...
+INFO:__main__:   Testing ListOps @ 100 tokens...
+INFO:__main__:   ✅ ListOps: 0.0%
+INFO:__main__:   Testing TextClassification @ 100 tokens...
+INFO:__main__:   ✅ TextClassification: 0.0%
+INFO:__main__:   Testing Retrieval @ 100 tokens...
+INFO:__main__:   ✅ Retrieval: 0.0%
+INFO:__main__:   Testing Image @ 100 tokens...
+INFO:__main__:   ✅ Image: 0.0%
+INFO:__main__:   Testing Pathfinder @ 100 tokens...
+INFO:__main__:   ✅ Pathfinder: 0.0%
+INFO:__main__:
+📊 BENCHMARK SUMMARY for hyena-150m:
+INFO:__main__:   RULER:
+INFO:__main__:      NIAH: 100.0%
+INFO:__main__:      Aggregation: 0.0%
+INFO:__main__:      QA: 0.0%
+INFO:__main__:   LRA:
+INFO:__main__:      ListOps: 0.0%
+INFO:__main__:      TextClassification: 0.0%
+INFO:__main__:      Retrieval: 0.0%
+INFO:__main__:      Image: 0.0%
+INFO:__main__:      Pathfinder: 0.0%
+INFO:__main__:================================================================================
+INFO:__main__:
+📂 Checking for interpretability results: experiment_logs/interpretability_results.json
+INFO:__main__:   ✅ File exists, attempting to load...
+INFO:__main__:   ✅ JSON loaded successfully, checking for hyena-150m...
+WARNING:__main__:⚠️  No interpretability results for hyena-150m in file, re-running...
+INFO:__main__:   Available variants in file: ['moe-mamba']
+INFO:__main__:🔬 Running interpretability analysis for hyena-150m...
+INFO:__main__:
+================================================================================
+INFO:__main__:🔬 INTERPRETABILITY ANALYSIS: HYENA-150M
+INFO:__main__:================================================================================
+INFO:__main__:✅ Found layers at path: backbone.layers (18 layers)
+INFO:__main__:📊 Collecting activations from layers: [0, 6, 9, 13, 14, 17]
+WARNING:__main__:⚠️  Error running SimpleLMHeadModel forward: SimpleLMHeadModel.forward() got an unexpected keyword argument 'attention_mask'
+WARNING:__main__:⚠️  Error running SimpleLMHeadModel forward: SimpleLMHeadModel.forward() got an unexpected keyword argument 'attention_mask'
+WARNING:__main__:⚠️  Error running SimpleLMHeadModel forward: SimpleLMHeadModel.forward() got an unexpected keyword argument 'attention_mask'
+INFO:__main__:✅ Collected activations from 6 layers
+ERROR:__main__:❌ Interpretability analysis failed for hyena-150m: Must collect activations first
+ERROR:__main__:Traceback (most recent call last):
+  File "/home/HDD/ATAF/LLM_paper/post_hoc_extention_1/steering_s6_types_hyena.py", line 2653, in run_comprehensive_analysis
+    interpretability_results = run_interpretability_analysis(model, tokenizer, variant_name)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/HDD/ATAF/LLM_paper/post_hoc_extention_1/steering_s6_types_hyena.py", line 2135, in run_interpretability_analysis
+    layer_scores = analyzer.analyze_layer_importance()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/HDD/ATAF/LLM_paper/post_hoc_extention_1/steering_s6_types_hyena.py", line 332, in analyze_layer_importance
+    raise ValueError("Must collect activations first")
+ValueError: Must collect activations first
+
+INFO:__main__:✅ Found layers at path: backbone.layers (18 layers)
+INFO:__main__:
+================================================================================
+INFO:__main__:🧪 BOTTLENECK STEERING TEST: HYENA-150M
+INFO:__main__:================================================================================
+INFO:__main__:
+📊 Baseline (No Steering)
+WARNING:__main__:⚠️  Bottleneck steering test failed: 
+INFO:__main__:
+================================================================================
+INFO:__main__:🧪 STEERING TEST: HYENA-150M
+INFO:__main__:================================================================================
+INFO:__main__:
+📊 Baseline (No Steering)
+WARNING:__main__:⚠️  Steering universality test failed: 
+INFO:__main__:
+================================================================================
+INFO:__main__:🧪 STEERING TEST: HYENA-150M
+INFO:__main__:================================================================================
+INFO:__main__:
+📊 Baseline (No Steering)
+WARNING:__main__:⚠️  Cluster 9 steering test failed: 
+INFO:__main__:
+================================================================================
+INFO:__main__:🧪 TESTING ALL PROGRESSIVE LEVELS WITH STEERING
+INFO:__main__:================================================================================
+INFO:__main__:
+================================================================================
+INFO:__main__:🧪 COMPREHENSIVE PROGRESSIVE TEST WITH STEERING: HYENA-150M
+INFO:__main__:================================================================================
+INFO:__main__:
+================================================================================
+INFO:__main__:🔬 TESTING MULTIPLE STEERING STRATEGIES
+INFO:__main__:================================================================================
+INFO:__main__:🔍 Detected Hyena/H3 (Safari), inspecting structure...
+INFO:__main__:✅ Found layers in SimpleLMHeadModel: backbone.layers (18 layers)
+INFO:__main__:Testing 7 strategies on sample cases...
+INFO:__main__:🔍 Detected Hyena/H3 (Safari), inspecting structure...
+INFO:__main__:✅ Found layers in SimpleLMHeadModel: backbone.layers (18 layers)
+INFO:__main__:🎯 Applying bottleneck steering:
+INFO:__main__:   Model type: hyena-150m
+INFO:__main__:   Layer: 9/18
+INFO:__main__:   Target: dt_proj.bias (temporal gate)
+INFO:__main__:   Strength: 1.5x (increases temporal resolution)
+WARNING:__main__:   ⚠️ dt_proj/conv not found, hooking entire layer
+WARNING:__main__:⚠️  Strategy 'Bottleneck Steering (dt_proj.bias)' failed: 
+INFO:__main__:✅ Steering removed
+INFO:__main__:🔍 Detected Hyena/H3 (Safari), inspecting structure...
+INFO:__main__:✅ Found layers in SimpleLMHeadModel: backbone.layers (18 layers)
+INFO:__main__:🎯 Applying steering:
+INFO:__main__:   Model type: hyena-150m
+INFO:__main__:   Layer: 9/18
+INFO:__main__:   Neurons: 16 neurons
+INFO:__main__:   Strength: 1.5x
+INFO:__main__:✅ Steering applied successfully!
+WARNING:__main__:⚠️  Strategy 'Neuron Steering (strength 1.5x)' failed: 
+INFO:__main__:✅ Steering removed
+INFO:__main__:🔍 Detected Hyena/H3 (Safari), inspecting structure...
+INFO:__main__:✅ Found layers in SimpleLMHeadModel: backbone.layers (18 layers)
+INFO:__main__:🎯 Applying steering:
+INFO:__main__:   Model type: hyena-150m
+INFO:__main__:   Layer: 9/18
+INFO:__main__:   Neurons: 16 neurons
+INFO:__main__:   Strength: 2.0x
+INFO:__main__:✅ Steering applied successfully!
+WARNING:__main__:⚠️  Strategy 'Neuron Steering (strength 2.0x)' failed: 
+INFO:__main__:✅ Steering removed
+INFO:__main__:🔍 Detected Hyena/H3 (Safari), inspecting structure...
+INFO:__main__:✅ Found layers in SimpleLMHeadModel: backbone.layers (18 layers)
+INFO:__main__:🎯 Applying steering:
+INFO:__main__:   Model type: hyena-150m
+INFO:__main__:   Layer: 9/18
+INFO:__main__:   Neurons: 16 neurons
+INFO:__main__:   Strength: 3.0x
+INFO:__main__:✅ Steering applied successfully!
+WARNING:__main__:⚠️  Strategy 'Neuron Steering (strength 3.0x)' failed: 
+INFO:__main__:✅ Steering removed
+INFO:__main__:🔍 Detected Hyena/H3 (Safari), inspecting structure...
+INFO:__main__:✅ Found layers in SimpleLMHeadModel: backbone.layers (18 layers)
+INFO:__main__:🎯 Applying steering:
+INFO:__main__:   Model type: hyena-150m
+INFO:__main__:   Layer: 9/18
+INFO:__main__:   Neurons: 16 neurons
+INFO:__main__:   Strength: 5.0x
+INFO:__main__:✅ Steering applied successfully!
+WARNING:__main__:⚠️  Strategy 'Neuron Steering (strength 5.0x)' failed: 
+INFO:__main__:✅ Steering removed
+INFO:__main__:🔍 Detected Hyena/H3 (Safari), inspecting structure...
+INFO:__main__:✅ Found layers in SimpleLMHeadModel: backbone.layers (18 layers)
+INFO:__main__:🎯 Applying steering:
+INFO:__main__:   Model type: hyena-150m
+INFO:__main__:   Layer: 4/18
+INFO:__main__:   Neurons: 16 neurons
+INFO:__main__:   Strength: 2.0x
+INFO:__main__:✅ Steering applied successfully!
+WARNING:__main__:⚠️  Strategy 'Neuron Steering (Layer 4, strength 2.0x)' failed: 
+INFO:__main__:✅ Steering removed
+INFO:__main__:🔍 Detected Hyena/H3 (Safari), inspecting structure...
+INFO:__main__:✅ Found layers in SimpleLMHeadModel: backbone.layers (18 layers)
+INFO:__main__:🎯 Applying steering:
+INFO:__main__:   Model type: hyena-150m
+INFO:__main__:   Layer: 14/18
+INFO:__main__:   Neurons: 16 neurons
+INFO:__main__:   Strength: 2.0x
+INFO:__main__:✅ Steering applied successfully!
+WARNING:__main__:⚠️  Strategy 'Neuron Steering (Layer 14, strength 2.0x)' failed: 
+INFO:__main__:✅ Steering removed
+WARNING:__main__:⚠️  All strategies failed, using default
+INFO:__main__:🔍 Detected Hyena/H3 (Safari), inspecting structure...
+INFO:__main__:✅ Found layers in SimpleLMHeadModel: backbone.layers (18 layers)
+INFO:__main__:🎯 Applying steering:
+INFO:__main__:   Model type: hyena-150m
+INFO:__main__:   Layer: 9/18
+INFO:__main__:   Neurons: 16 neurons
+INFO:__main__:   Strength: 2.0x
+INFO:__main__:✅ Steering applied successfully!
+INFO:__main__:✅ Steering verified ACTIVE: 1 hook(s) registered
+INFO:__main__:
+================================================================================
+INFO:__main__:📊 BASELINE TEST (No Steering)
+INFO:__main__:================================================================================
+WARNING:__main__:⚠️  Progressive tests failed: 
+INFO:__main__:
+================================================================================
+INFO:__main__:✅ STEERING VERIFICATION SUMMARY: HYENA-150M
+INFO:__main__:================================================================================
+INFO:__main__:   ✅ All test cases were run with steering ACTIVE
+INFO:__main__:   ✅ Steering was verified before, during, and after evaluation
+INFO:__main__:   ✅ Bottleneck steering: 0 test cases
+INFO:__main__:   ✅ Neuron steering (identified): 0 test cases
+INFO:__main__:   ✅ Neuron steering (Cluster 9): 0 test cases
+INFO:__main__:================================================================================
+INFO:__main__:
+================================================================================
+INFO:__main__:Testing: H3
+INFO:__main__:================================================================================
+INFO:__main__:🔧 Attempting to load h3...
+INFO:__main__:📦 Loading H3 model...
+Universal Interpretability and Steering for Hyena Models
+================================================================================
+
+Based on Safari repository: https://github.com/HazyResearch/safari
+
+This script performs:
+  1. Interpretability analysis on Hyena/H3 models
+  2. Identifies critical layers and cluster neurons
+  3. Tests universal steering across Hyena variants
+  4. Verifies if steering works for convolutional architectures
+
+================================================================================
+
+      [NIAH] City: Rome
+      Expected: 2867825
+      Extracted: 2867825
+      Score: 1.0
+      Response: 
+
+      [Aggregation] Expected: ['BIRD', 'CAT', 'DOG'], Found: 0/3
+
+      [QA] Expected: KEY8724, Response: 
+
+      [TextClassification] Expected: question, Response: '', Score: 0.0
+
+      [Pathfinder] Expected: exists
+      Best response: '...'
+      Score: 0.0
+
+      [NIAH] City: Rome
+      Expected: 2867825
+      Extracted: 2867825
+      Score: 1.0
+      Response: 
+
+      [Aggregation] Expected: ['BIRD', 'CAT', 'DOG'], Found: 0/3
+
+      [QA] Expected: KEY8724, Response: 
+
+      [TextClassification] Expected: question, Response: '', Score: 0.0
+
+      [Pathfinder] Expected: exists
+      Best response: '...'
+      Score: 0.0
+[pyKeOps] Compiling nvrtc binder for python ... 
+[KeOps] Warning : There were warnings or errors :
+In file included from /home/vamshi/new-env/lib/python3.12/site-packages/pybind11/include/pybind11/detail/common.h:12,
+                 from /home/vamshi/new-env/lib/python3.12/site-packages/pybind11/include/pybind11/attr.h:13,
+                 from /home/vamshi/new-env/lib/python3.12/site-packages/pybind11/include/pybind11/detail/class.h:12,
+                 from /home/vamshi/new-env/lib/python3.12/site-packages/pybind11/include/pybind11/pybind11.h:12,
+                 from /home/vamshi/new-env/lib/python3.12/site-packages/pykeops/common/keops_io/pykeops_nvrtc.cpp:9:
+/home/vamshi/new-env/lib/python3.12/site-packages/pybind11/include/pybind11/conduit/wrap_include_python_h.h:44:10: fatal error: Python.h: No such file or directory
+   44 | #include <Python.h>
+      |          ^~~~~~~~~~
+compilation terminated.
+
+OK
+INFO:src.models.sequence.ssm.ss_kernel_diag:Pykeops installation found.
+ERROR:__main__:❌ Could not import Safari model classes: cannot import name 'H3Operator' from 'src.models.sequence.h3' (/home/vamshi/safari/src/models/sequence/h3.py)
+INFO:__main__:   Make sure the Safari repository is properly set up
+INFO:__main__:   Repository path: /home/vamshi/safari
+INFO:__main__:   The Safari repo doesn't need to be installed as a package.
+INFO:__main__:   Just ensure all dependencies from requirements.txt are installed.
+WARNING:__main__:⚠️ Skipping h3 (model or tokenizer is None)
+WARNING:__main__:   Model: None, Tokenizer: None
+INFO:__main__:
+================================================================================
+INFO:__main__:📊 SUMMARY: UNIVERSALITY ANALYSIS
+INFO:__main__:================================================================================
+INFO:__main__:
+================================================================================
+INFO:__main__:HYENA:
+INFO:__main__:================================================================================
+INFO:__main__:
+📊 INTERPRETABILITY RESULTS:
+INFO:__main__:   Total layers: 18
+INFO:__main__:   Bottleneck layer: 9 (50.0% depth)
+INFO:__main__:   Critical layer: 9 (50.0% depth)
+INFO:__main__:   Cluster neurons identified: 20
+INFO:__main__:   Cluster 9 overlap: 0/16
+INFO:__main__:   Sample neurons: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+INFO:__main__:
+🎯 STEERING TEST RESULTS:
+INFO:__main__:   Bottleneck steering: ❌ ERROR - 
+INFO:__main__:   Steering (identified neurons): ❌ ERROR - 
+INFO:__main__:   Steering (Cluster 9): ❌ ERROR - 
+INFO:__main__:================================================================================
+INFO:__main__:
+================================================================================
+INFO:__main__:HYENA-150M:
+INFO:__main__:================================================================================
+INFO:__main__:
+📊 INTERPRETABILITY RESULTS:
+INFO:__main__:   Total layers: 18
+INFO:__main__:   Bottleneck layer: 9 (50.0% depth)
+INFO:__main__:   Critical layer: 9 (50.0% depth)
+INFO:__main__:   Cluster neurons identified: 20
+INFO:__main__:   Cluster 9 overlap: 0/16
+INFO:__main__:   Sample neurons: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+INFO:__main__:
+🎯 STEERING TEST RESULTS:
+INFO:__main__:   Bottleneck steering: ❌ ERROR - 
+INFO:__main__:   Steering (identified neurons): ❌ ERROR - 
+INFO:__main__:   Steering (Cluster 9): ❌ ERROR - 
+INFO:__main__:================================================================================
+INFO:__main__:
+================================================================================
+INFO:__main__:H3:
+INFO:__main__:================================================================================
+WARNING:__main__:   ⚠️ SKIPPED: Model or tokenizer loading returned None
+INFO:__main__:================================================================================
+INFO:__main__:
+💾 Results saved to: experiment_logs/universal_steering_analysis.json
+
+================================================================================
+📊 SUMMARY: UNIVERSALITY ANALYSIS
+================================================================================
+
+================================================================================
+HYENA:
+================================================================================
+================================================================================
+
+================================================================================
+HYENA-150M:
+================================================================================
+================================================================================
+
+================================================================================
+H3:
+================================================================================
+   ⚠️ SKIPPED: Model or tokenizer loading returned None
+================================================================================
+
+💾 Results saved to: experiment_logs/universal_steering_analysis.json
+
+================================================================================
+✅ ANALYSIS COMPLETE
+================================================================================
+
+📊 Tested 3 variant(s):
+   - hyena
+   - hyena-150m
+   - h3
+
+📈 Key Results Summary:
+
+   HYENA:
+      Progressive Levels: ⚠️ Skipped or error
+      Bottleneck Steering: ⚠️ 
+      Cluster 9 Steering: ⚠️ 
+
+   HYENA-150M:
+      Progressive Levels: ⚠️ Skipped or error
+      Bottleneck Steering: ⚠️ 
+      Cluster 9 Steering: ⚠️ 
+
+   H3:
+
+================================================================================
+💾 Full results saved to: experiment_logs/universal_steering_analysis.json
+================================================================================

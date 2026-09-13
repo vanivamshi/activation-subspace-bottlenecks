@@ -1,0 +1,112 @@
+{
+  "model": "./models/mamba_trained_on_pile",
+  "trained_on_pile": true,
+  "prompting_strategy": "query_focus",
+  "test_datasets": [
+    "squad"
+  ],
+  "query_tasks_included": true,
+  "steering_config": {
+    "method": "cluster9_neurons",
+    "strength": 5.0,
+    "layer": 20
+  },
+  "baseline_results": {
+    "level1_simple_recall": {
+      "accuracy": 0.94,
+      "correct": 94,
+      "total": 100
+    },
+    "level2_two_hop": {
+      "accuracy": 0.26,
+      "correct": 52,
+      "total": 200
+    },
+    "level3_three_hop": {
+      "accuracy": 0.56,
+      "correct": 56,
+      "total": 100
+    },
+    "level4_long_context": {
+      "accuracy": 0.38,
+      "correct": 76,
+      "total": 200
+    },
+    "level5_combined": {
+      "accuracy": 0.245,
+      "correct": 49,
+      "total": 200
+    },
+    "level6_stress_test": {
+      "accuracy": 0.795,
+      "correct": 159,
+      "total": 200
+    },
+    "query_dataset_tasks": {
+      "accuracy": 0.4,
+      "correct": 8,
+      "total": 20
+    }
+  },
+  "steering_results": {
+    "level1_simple_recall": {
+      "accuracy": 0.91,
+      "correct": 91,
+      "total": 100
+    },
+    "level2_two_hop": {
+      "accuracy": 0.275,
+      "correct": 55,
+      "total": 200
+    },
+    "level3_three_hop": {
+      "accuracy": 0.53,
+      "correct": 53,
+      "total": 100
+    },
+    "level4_long_context": {
+      "accuracy": 0.4,
+      "correct": 80,
+      "total": 200
+    },
+    "level5_combined": {
+      "accuracy": 0.3,
+      "correct": 60,
+      "total": 200
+    },
+    "level6_stress_test": {
+      "accuracy": 0.775,
+      "correct": 155,
+      "total": 200
+    },
+    "query_dataset_tasks": {
+      "accuracy": 0.45,
+      "correct": 9,
+      "total": 20
+    }
+  },
+  "comparison": {
+    "baseline": {
+      "simple_recall": 0.94,
+      "moderate_reasoning": 0.41000000000000003,
+      "hard_tasks": 0.3125,
+      "extreme_tasks": 0.795,
+      "overall": 0.614375
+    },
+    "steering": {
+      "simple_recall": 0.91,
+      "moderate_reasoning": 0.4025,
+      "hard_tasks": 0.35,
+      "extreme_tasks": 0.775,
+      "overall": 0.609375
+    },
+    "improvements": {
+      "simple_recall": -0.029999999999999916,
+      "moderate_reasoning": -0.007500000000000007,
+      "hard_tasks": 0.03749999999999998,
+      "extreme_tasks": -0.020000000000000018,
+      "overall": -0.0050000000000000044
+    }
+  },
+  "capability_ceiling": "simple_recall"
+}

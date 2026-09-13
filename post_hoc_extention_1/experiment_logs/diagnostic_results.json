@@ -1,0 +1,143 @@
+{
+  "experiment": "memory_diagnostic",
+  "model": "state-spaces/mamba-130m-hf",
+  "trained_on_pile": false,
+  "test_datasets": [
+    "squad",
+    "triviaqa"
+  ],
+  "query_tasks_included": true,
+  "baseline_prompting": {
+    "original_memory": {
+      "accuracy": 0.5,
+      "correct": 2,
+      "total": 4
+    },
+    "explicit_cue": {
+      "accuracy": 0.75,
+      "correct": 3,
+      "total": 4
+    },
+    "repetition": {
+      "accuracy": 0.75,
+      "correct": 3,
+      "total": 4
+    },
+    "query_focus": {
+      "accuracy": 1.0,
+      "correct": 4,
+      "total": 4
+    },
+    "associative_pairs": {
+      "accuracy": 0.6666666666666666,
+      "correct": 2,
+      "total": 3
+    },
+    "squad_queries": {
+      "accuracy": 0.3,
+      "correct": 9,
+      "total": 30
+    },
+    "triviaqa_queries": {
+      "accuracy": 0.23333333333333334,
+      "correct": 7,
+      "total": 30
+    }
+  },
+  "combined_results": {
+    "triviaqa_queries + anti_decay": {
+      "accuracy": 0.26666666666666666,
+      "correct": 8,
+      "total": 30
+    },
+    "triviaqa_queries + associative": {
+      "accuracy": 0.2,
+      "correct": 6,
+      "total": 30
+    },
+    "triviaqa_queries + minimal": {
+      "accuracy": 0.23333333333333334,
+      "correct": 7,
+      "total": 30
+    },
+    "squad_queries + anti_decay": {
+      "accuracy": 0.3333333333333333,
+      "correct": 10,
+      "total": 30
+    },
+    "squad_queries + associative": {
+      "accuracy": 0.3,
+      "correct": 9,
+      "total": 30
+    },
+    "squad_queries + minimal": {
+      "accuracy": 0.36666666666666664,
+      "correct": 11,
+      "total": 30
+    },
+    "original_memory + anti_decay": {
+      "accuracy": 0.5,
+      "correct": 2,
+      "total": 4
+    },
+    "original_memory + associative": {
+      "accuracy": 0.5,
+      "correct": 2,
+      "total": 4
+    },
+    "original_memory + minimal": {
+      "accuracy": 0.5,
+      "correct": 2,
+      "total": 4
+    },
+    "associative_pairs + anti_decay": {
+      "accuracy": 0.6666666666666666,
+      "correct": 2,
+      "total": 3
+    },
+    "associative_pairs + associative": {
+      "accuracy": 0.3333333333333333,
+      "correct": 1,
+      "total": 3
+    },
+    "associative_pairs + minimal": {
+      "accuracy": 0.3333333333333333,
+      "correct": 1,
+      "total": 3
+    },
+    "explicit_cue + anti_decay": {
+      "accuracy": 0.75,
+      "correct": 3,
+      "total": 4
+    },
+    "explicit_cue + associative": {
+      "accuracy": 0.5,
+      "correct": 2,
+      "total": 4
+    },
+    "explicit_cue + minimal": {
+      "accuracy": 1.0,
+      "correct": 4,
+      "total": 4
+    },
+    "repetition + anti_decay": {
+      "accuracy": 0.75,
+      "correct": 3,
+      "total": 4
+    },
+    "repetition + associative": {
+      "accuracy": 0.5,
+      "correct": 2,
+      "total": 4
+    },
+    "repetition + minimal": {
+      "accuracy": 0.75,
+      "correct": 3,
+      "total": 4
+    }
+  },
+  "best_improvement": 0.25,
+  "best_combination": "explicit_cue + minimal",
+  "best_strategy": "explicit_cue",
+  "original_baseline": 0.5
+}

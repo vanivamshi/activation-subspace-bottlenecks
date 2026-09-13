@@ -1,0 +1,50 @@
+{
+  "experiment": "memory_focused_steering",
+  "model": "state-spaces/mamba-130m-hf",
+  "trained_on_pile": false,
+  "focus": "long_context_recall_and_associative_memory",
+  "test_datasets": [
+    "squad"
+  ],
+  "query_tasks_included": true,
+  "results": {
+    "baseline": {
+      "memory_accuracy": 0.3157894736842105,
+      "instruction_accuracy": 0.3333333333333333,
+      "memory_improvement": 0.0,
+      "instruction_improvement": 0.0
+    },
+    "memory_retention": {
+      "memory_accuracy": 0.34210526315789475,
+      "instruction_accuracy": 0.3333333333333333,
+      "memory_improvement": 0.026315789473684237,
+      "instruction_improvement": 0.0
+    },
+    "anti_decay": {
+      "memory_accuracy": 0.34210526315789475,
+      "instruction_accuracy": 0.6666666666666666,
+      "memory_improvement": 0.026315789473684237,
+      "instruction_improvement": 0.3333333333333333
+    },
+    "associative": {
+      "memory_accuracy": 0.2894736842105263,
+      "instruction_accuracy": 0.6666666666666666,
+      "memory_improvement": -0.02631578947368418,
+      "instruction_improvement": 0.3333333333333333
+    },
+    "cascade": {
+      "memory_accuracy": 0.23684210526315788,
+      "instruction_accuracy": 0.3333333333333333,
+      "memory_improvement": -0.07894736842105263,
+      "instruction_improvement": 0.0
+    },
+    "minimal": {
+      "memory_accuracy": 0.3684210526315789,
+      "instruction_accuracy": 0.6666666666666666,
+      "memory_improvement": 0.05263157894736842,
+      "instruction_improvement": 0.3333333333333333
+    }
+  },
+  "best_method": "minimal",
+  "best_improvement": 0.05263157894736842
+}

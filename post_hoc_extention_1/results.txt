@@ -1,0 +1,428 @@
+Results
+1) Query-Focus: 50% → 100% (memory tasks)
+2) Anti-Decay: 33% → 67% (instructions)
+3) Combined: 67% → 100% (long-context)
+
+----------------------------------------------------------------
+Mamba Architecture
+MambaModel
+├── backbone
+│   └── layers (24 layers for 130M)
+│       ├── Layer 0-23
+│           ├── mixer (SSM component) ← STEERING APPLIED HERE
+│           │   ├── in_proj
+│           │   ├── conv1d
+│           │   ├── x_proj
+│           │   ├── dt_proj
+│           │   └── out_proj
+│           └── norm
+
+------------------------------------------------------------------
+Steering hook location
+# Find target component
+if hasattr(layer, 'mixer'):
+    target = layer.mixer  # ← Hook registered here
+elif hasattr(layer, 'ssm'):
+    target = layer.ssm
+else:
+    target = layer
+
+# Register hook
+hook = target.register_forward_hook(steering_function)
+
+-----------------------------------------------
+Steering methods used
+-----------------------------------------------
+1. Anti-Decay Steering ✅ +33.3% (Instructions)
+What Was Modified:
+
+Layers: 5, 8, 12 (early layers for memory encoding)
+Operation: Uniform amplification of all hidden dimensions
+Strength: 1.3x multiplier
+
+Code Location
+def _apply_anti_decay(self):
+    for layer_idx in [5, 8, 12]:
+        layer = self.layers[layer_idx]
+        target = getattr(layer, 'mixer', getattr(layer, 'ssm', layer))
+        
+        def hook(module, input, output):
+            if isinstance(output, tuple):
+                hidden = output[0]
+                rest = output[1:]
+            else:
+                hidden = output
+                rest = ()
+            
+            # MODIFICATION: Amplify all dimensions
+            h_mod = hidden * 1.3  # ← Upscaling factor
+            
+            if rest:
+                return (h_mod,) + rest
+            return h_mod
+```
+
+#### **Results:**
+```
+Task: Instruction-Following
+
+Baseline (no steering):
+- Accuracy: 33.3%
+- Example: "Repeat after me: hello" → Fails
+
+With Anti-Decay Steering:
+- Accuracy: 66.7% (+33.3%)
+- Example: "Repeat after me: hello" → "hello" ✅
+
+
+2. Associative Steering ✅ +33.3% (Instructions)
+What Was Modified:
+
+Early Layer: 6 (encoding)
+Late Layer: 18 (retrieval with Cluster 9 neurons)
+Operation: Two-stage amplification
+
+Code Location:
+def _apply_associative(self):
+    # Stage 1: Early encoding boost
+    layer = self.layers[6]
+    target = getattr(layer, 'mixer', getattr(layer, 'ssm', layer))
+    
+    def early_hook(module, input, output):
+        hidden = output[0] if isinstance(output, tuple) else output
+        # MODIFICATION: Amplify all dimensions
+        h_mod = hidden * 2.0  # ← Encoding upscaling
+        return (h_mod,) + rest if isinstance(output, tuple) else h_mod
+    
+    # Stage 2: Late retrieval with Cluster 9
+    layer = self.layers[18]
+    target = getattr(layer, 'mixer', getattr(layer, 'ssm', layer))
+    
+    def late_hook(module, input, output):
+        h_mod = hidden.clone()
+        
+        # MODIFICATION: Boost specific Cluster 9 neurons
+        for idx in [4, 38, 84, 94, 163, 171, 268, 363, 401, 497, 
+                    564, 568, 582, 654, 659, 686]:
+            if idx < h_mod.shape[-1]:
+                h_mod[..., idx] *= 3.0  # ← Retrieval upscaling
+        
+        return (h_mod,) + rest if isinstance(output, tuple) else h_mod
+```
+
+#### **Results:**
+```
+Task: Instruction-Following
+
+Baseline:
+- Accuracy: 33.3%
+
+With Associative Steering (2.0x + 3.0x):
+- Accuracy: 66.7% (+33.3%)
+
+
+3. Minimal Steering ✅ +33.3% (Instructions)
+What Was Modified:
+
+Layer: 20 only (final output layer)
+Operation: Boost Cluster 9 neurons only
+Strength: 4.0x on 16 specific dimensions
+
+Code location:
+def _apply_minimal(self):
+    layer = self.layers[20]
+    target = getattr(layer, 'mixer', getattr(layer, 'ssm', layer))
+    
+    def hook(module, input, output):
+        h_mod = hidden.clone()
+        
+        # MODIFICATION: Boost only Cluster 9 neurons at output
+        cluster9 = [4, 38, 84, 94, 163, 171, 268, 363, 401, 497, 
+                    564, 568, 582, 654, 659, 686]
+        
+        for idx in cluster9:
+            if idx < h_mod.shape[-1]:
+                h_mod[..., idx] *= 4.0  # ← Selective upscaling
+        
+        return (h_mod,) + rest if isinstance(output, tuple) else h_mod
+```
+
+#### **Results:**
+```
+Task: Instruction-Following
+
+Baseline:
+- Accuracy: 33.3%
+
+With Minimal Steering (4.0x on Cluster 9):
+- Accuracy: 66.7% (+33.3%)
+
+
+4. Multi-Scale Steering ✅ +16.7% (Instructions)
+What Was Modified:
+
+Layers: 10, 15, 20 (cascade across depth)
+Operation: Progressive amplification with different strategies per layer
+Strengths: 2.0x, 3.0x, 2.5x
+
+Code Location:
+def apply_multi_scale_steering(self):
+    layers = [10, 15, 20]
+    strengths = [2.0, 3.0, 2.5]
+    
+    for layer_idx, strength in zip(layers, strengths):
+        layer = self.layers[layer_idx]
+        target = getattr(layer, 'mixer', getattr(layer, 'ssm', layer))
+        
+        if layer_idx < 15:
+            # MODIFICATION: Early layer - variance-based
+            def hook(module, input, output):
+                hidden = output[0] if isinstance(output, tuple) else output
+                delta_mask = compute_delta_mask(hidden.shape[-1])
+                h_mod = hidden * (1 + (strength - 1) * delta_mask)
+                # ↑ Adaptive upscaling based on dimension importance
+                return (h_mod,) + rest if isinstance(output, tuple) else h_mod
+        
+        elif layer_idx < 20:
+            # MODIFICATION: Mid layer - temporal contrast
+            # (Amplifies rate of change: h_t - h_{t-1})
+            pass
+        
+        else:
+            # MODIFICATION: Late layer - uniform amplification
+            h_mod = hidden * strength  # ← Direct upscaling
+```
+
+#### **Results:**
+```
+Task: Instruction-Following
+
+Baseline:
+- Accuracy: 50.0%
+
+With Multi-Scale Steering:
+- Accuracy: 66.7% (+16.7%)
+
+
+5. Strong 10x Steering ✅ +11.1% (Challenging Tasks)
+What Was Modified:
+
+Layer: 20 (output)
+Operation: Very strong boost on Cluster 9 + bias addition
+Strength: 10.0x multiplier + 2.0 bias
+
+Code Location:
+def apply_strong_steering(self):
+    layer = self.layers[20]
+    target = getattr(layer, 'mixer', getattr(layer, 'ssm', layer))
+    
+    neurons = [4, 38, 84, 94, 163, 171, 268, 363, 401, 497, 
+               564, 568, 582, 654, 659, 686]
+    
+    def hook(module, input, output):
+        h_mod = hidden.clone()
+        
+        for idx in neurons:
+            if idx < h_mod.shape[-1]:
+                # MODIFICATION: Aggressive boost + bias
+                h_mod[..., idx] *= 10.0  # ← Strong upscaling
+                h_mod[..., idx] += 2.0   # ← Add positive bias
+        
+        return (h_mod,) + rest if isinstance(output, tuple) else h_mod
+```
+
+#### **Results:**
+```
+Task: Challenging Tasks (array indexing, property completion)
+
+Baseline:
+- Accuracy: 60.0%
+
+With Strong 10x Steering:
+- Accuracy: 80.0% (+20%)
+- Overall: 66.7% → 77.8% (+11.1%)
+```
+
+---
+
+### **6. Combined: Query-Focus + Anti-Decay** ✅ +33.3% (Long-Context)
+
+#### **What Was Modified:**
+- **Prompt:** Query-focus format (architectural change in input)
+- **Steering:** Anti-Decay (1.3x on layers 5, 8, 12)
+
+#### **Results:**
+```
+Task: Long-Context Recall (5-7 facts)
+
+Baseline (standard prompts, no steering):
+- Accuracy: 67%
+- Example: "Alice is 25, lives in Paris, likes cats, favorite color blue.
+           What is Alice's favorite color?"
+- Response: Often fails
+
+With Query-Focus Prompts ONLY:
+- Accuracy: ~75% (estimated)
+
+With Query-Focus + Anti-Decay Steering:
+- Accuracy: 100% (+33%)
+- Example prompt:
+  "Question: What is Alice's favorite color?
+   Facts: Alice is 25, lives in Paris, likes cats, favorite color blue.
+   Question: What is Alice's favorite color?
+   Answer:"
+- Response: "blue" ✅
+
+
+Summary Table: All Improvements
+
+| Method             | Layers Modified      | Upscaling Factor    | Baseline | Result | Improvement | Task Type |
+|--------------------|----------------------|---------------------|----------|--------|-------------|-----------|
+| Anti-Decay         | 5, 8, 12             | 1.3x uniform        | 33.3%    | 66.7%  | +33.3%      | Instructions |
+| Associative        | 6 (2.0x) + 18 (3.0x) | 2.0x → 3.0x         | 33.3%    | 66.7%  | +33.3%      | Instructions |
+| Minimal            | 20 only              | 4.0x on Cluster 9   | 33.3%    | 66.7%  | +33.3%      | Instructions |
+| Multi-Scale        | 10, 15, 20           | 2.0x, 3.0x, 2.5x    | 50.0%    | 66.7%  | +16.7%      | Instructions |
+| Strong 10x         | 20 only              | 10.0x + 2.0 bias    | 66.7%    | 77.8%  | +11.1%      | Challenging |
+| Query + Anti-Decay | Prompt + 5,8,12      | Query-focus + 1.3x  | 67%      | 100%   | +33%        | Long-context |
+| Query-Focus ONLY   | None (prompt only)   | No steering         | 50%      | 100%   | +50%        | Memory recall |
+
+**Task Type Definitions:**
+- **Instructions**: Simple instruction-following tasks (exact repetition, concise answers, binary yes/no)
+  - Examples: "Repeat after me: hello", "Answer with just the number: What is 5+3?", "Say YES or NO only: Is water wet?"
+  - NOT needle-in-haystack or long memory recall
+- **Challenging**: Complex tasks requiring reasoning (array indexing, property completion, single word responses)
+- **Long-context**: Tasks requiring recall from 5-7 facts in context
+- **Memory recall**: Tasks requiring retrieval of specific information from context
+
+---------------------------------------------------------------
+Components Upscaled
+
+1) Hidden State Dimensions (h_t):
+Shape: [batch, seq_len, hidden_dim] (e.g., [1, 50, 768])
+Specific indices (Cluster 9): 16 dimensions out of 768
+On all dimensions uniformly
+
+2) Layers Upscaled:
+5, 8, 12, 18, 20
+
+3) Upscaling Factors:
+Gentle: 1.3x - 2.0x (early layers, memory preservation)
+Moderate: 3.0x - 4.0x (output layers, instruction following)
+Aggressive: 10.0x + bias (challenging tasks)
+---------------------------------------------------------------------------------------------
+
+Final Results
+1) Query-Focus: 50% → 100% (memory tasks)
+File: targeted_approach_5.py
+Lines 20-23: Shows original_memory at 50.0% and query_focus at 100.0%
+Line 43: Shows "+50.0%" improvement over original
+Also documented in: results.txt (lines 2, 287)
+2) Anti-Decay: 33% → 67% (instructions)
+File: targeted_approach_4.py
+Lines 22-24: Shows baseline at 33.3% and Anti Decay at 66.7% (+33.3%)
+Lines 445-457: Code that generates these results (TEST 2: Anti-Decay)
+Also documented in: results.txt (lines 3, 36, 281)
+3) Combined: 67% → 100% (long-context)
+File: targeted_approach_6.py
+Line 18: Shows "Long Context (5-7 facts)" going from 66.7% baseline to 100.0% with steering (+33.3%)
+Lines 607-619: Code that calculates and displays these results
+
+-------------------------------------------------------------------------------
+Understanding Test Strategies: triviaqa_queries, squad_queries, explicit_cue
+-------------------------------------------------------------------------------
+
+1. triviaqa_queries (23.3% baseline)
+-------------------------------------------------------------------------------
+What it is:
+- Real-world trivia questions from the TriviaQA dataset
+- Examples: "Who created Alvin and the Chipmunks?" → "David Seville"
+- Questions require factual knowledge and recall
+
+Why it's hard:
+- Long contexts (Wikipedia articles)
+- Answers may be far from the question
+- Requires finding specific facts in long text
+
+Results:
+- Baseline: 23.3% (7/30 correct)
+- With steering: 20-26.7% (mostly no improvement)
+- Steering doesn't help much because:
+  - Answers are common names/places (not rare tokens)
+  - Contexts are too long (beyond Mamba's ~10 token memory)
+
+Steering Results:
+- triviaqa_queries + anti_decay: 23.3% → 26.7% (+3.3%)
+- triviaqa_queries + associative: 23.3% → 20.0% (-3.3%)
+- triviaqa_queries + minimal: 23.3% → 23.3% (+0.0%)
+
+
+2. squad_queries (30.0% baseline)
+-------------------------------------------------------------------------------
+What it is:
+- Reading comprehension questions from SQuAD (Stanford Question Answering Dataset)
+- Format: Context paragraph + Question → Answer
+- Example:
+  Context: "Newton's law states that gravitational force decreases at larger distances."
+  Question: "The force decreases at what?"
+  Answer: "at larger distances."
+
+Why it's hard:
+- Need to extract answers from context
+- Answers are often phrases, not single words
+- Context can be long
+
+Results:
+- Baseline: 30.0% (9/30 correct)
+- With minimal steering: 36.7% (+6.7% improvement) ✅
+- Best improvement: minimal steering helps slightly
+- Still low because contexts are long
+
+Steering Results:
+- squad_queries + anti_decay: 30.0% → 33.3% (+3.3%)
+- squad_queries + associative: 30.0% → 30.0% (+0.0%)
+- squad_queries + minimal: 30.0% → 36.7% (+6.7%) ✅ BEST
+
+
+3. explicit_cue (75.0% baseline)
+-------------------------------------------------------------------------------
+What it is:
+- A prompting strategy that adds structure to help the model
+- Uses key-value format: NAME=Alice, CODE=BLUE42
+- Makes the task explicit and structured
+
+Example:
+❌ Original: "My name is Alice. What is my name?"
+✅ Explicit: "NAME=Alice. What is NAME?"
+
+Why it works:
+- Clear structure (KEY=VALUE)
+- Immediate repetition of the key
+- Matches Mamba's short memory window
+
+Results:
+- Baseline: 75.0% (3/4 correct)
+- With minimal steering: 100.0% (+25% improvement) ✅✅
+- Best result: explicit_cue + minimal steering = 100%
+- Works well because:
+  - Structure helps the model
+  - Answers are close to the question
+  - Minimal steering amplifies the right neurons
+
+Steering Results:
+- explicit_cue + anti_decay: 75.0% → 75.0% (+0.0%)
+- explicit_cue + associative: 75.0% → 50.0% (-25.0%)
+- explicit_cue + minimal: 75.0% → 100.0% (+25.0%) ✅✅ BEST
+
+
+Summary Table: Strategy Performance
+-------------------------------------------------------------------------------
+| Strategy          | What It Tests              | Baseline | Best With Steering | Why |
+|-------------------|----------------------------|----------|-------------------|-----|
+| triviaqa_queries  | Real trivia questions      | 23.3%    | 26.7%             | Too hard: long contexts, common answers |
+| squad_queries     | Reading comprehension      | 30.0%    | 36.7%             | Moderate: long contexts, but some improvement |
+| explicit_cue      | Structured prompts         | 75.0%    | 100.0%            | Works well: clear structure + steering |
+
+Key Insight:
+- Explicit structure + minimal steering works best
+- Long-context QA (SQuAD/TriviaQA) is harder because it exceeds Mamba's effective memory window
+- Steering helps more with structured, short-range tasks than long-context retrieval

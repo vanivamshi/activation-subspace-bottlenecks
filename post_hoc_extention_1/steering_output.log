@@ -1,0 +1,205 @@
+2025-12-24 15:49:47.389105: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-12-24 15:49:47.437054: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-12-24 15:49:48.411412: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+INFO:__main__:
+================================================================================
+INFO:__main__:🚀 COMPREHENSIVE MAMBA VARIANT ANALYSIS
+INFO:__main__:================================================================================
+INFO:__main__:Using device: cuda
+INFO:__main__:
+================================================================================
+INFO:__main__:Testing: HYENA
+INFO:__main__:================================================================================
+INFO:__main__:🔧 Attempting to load hyena...
+INFO:__main__:📦 Loading Hyena model...
+/home/vamshi/new-env/lib/python3.12/site-packages/lightning_lite/__init__.py:29: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  __import__("pkg_resources").declare_namespace(__name__)
+INFO:__main__:   ✅ Found Safari model classes
+INFO:__main__:   Creating Hyena model:
+INFO:__main__:   - Model size: 150M
+INFO:__main__:   - Hidden dim: 768, Layers: 12
+INFO:__main__:   - Vocab size: 50257
+INFO:__main__:   Creating Hyena model architecture (random weights)
+WARNING:__main__:   ⚠️  Model has random weights - not suitable for real evaluation
+INFO:__main__:   ✅ Successfully loaded Hyena model
+INFO:__main__:   Model architecture: 12 layers, 768 dim
+WARNING:__main__:   ⚠️  Model has random weights - not suitable for real evaluation
+INFO:__main__:
+   🔍 Inspecting Hyena model structure:
+INFO:__main__:      Model type: SimpleLMHeadModel
+INFO:__main__:      Has 'backbone': True
+INFO:__main__:      Backbone type: LMBackbone
+INFO:__main__:      Has 'layers': True
+INFO:__main__:      Number of layers: 12
+INFO:__main__:      First layer type: Block
+INFO:__main__:      First layer has 'mixer': True
+INFO:__main__:      Mixer type: HyenaOperator
+INFO:__main__:✅ Successfully loaded hyena
+INFO:__main__:
+================================================================================
+INFO:__main__:📊 STEP 1: BENCHMARKING (BEFORE STEERING)
+INFO:__main__:================================================================================
+ERROR:__main__:❌ Error testing hyena: name 'run_benchmarking_for_model' is not defined
+ERROR:__main__:Traceback (most recent call last):
+  File "/home/HDD/ATAF/LLM_paper/post_hoc_extention_1/steering_s6_types_hyena.py", line 2368, in run_comprehensive_analysis
+    benchmark_results = run_benchmarking_for_model(model, tokenizer, variant_name)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'run_benchmarking_for_model' is not defined
+
+Traceback (most recent call last):
+  File "/home/HDD/ATAF/LLM_paper/post_hoc_extention_1/steering_s6_types_hyena.py", line 2368, in run_comprehensive_analysis
+    benchmark_results = run_benchmarking_for_model(model, tokenizer, variant_name)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'run_benchmarking_for_model' is not defined
+INFO:__main__:
+================================================================================
+INFO:__main__:Testing: HYENA-150M
+INFO:__main__:================================================================================
+INFO:__main__:🔧 Attempting to load hyena-150m...
+INFO:__main__:📦 Loading Hyena model...
+INFO:__main__:   ✅ Found Safari model classes
+INFO:__main__:   Creating Hyena model:
+INFO:__main__:   - Model size: 150M
+INFO:__main__:   - Hidden dim: 768, Layers: 12
+INFO:__main__:   - Vocab size: 50257
+INFO:__main__:   Creating Hyena model architecture (random weights)
+WARNING:__main__:   ⚠️  Model has random weights - not suitable for real evaluation
+INFO:__main__:   ✅ Successfully loaded Hyena model
+INFO:__main__:   Model architecture: 12 layers, 768 dim
+WARNING:__main__:   ⚠️  Model has random weights - not suitable for real evaluation
+INFO:__main__:
+   🔍 Inspecting Hyena model structure:
+INFO:__main__:      Model type: SimpleLMHeadModel
+INFO:__main__:      Has 'backbone': True
+INFO:__main__:      Backbone type: LMBackbone
+INFO:__main__:      Has 'layers': True
+INFO:__main__:      Number of layers: 12
+INFO:__main__:      First layer type: Block
+INFO:__main__:      First layer has 'mixer': True
+INFO:__main__:      Mixer type: HyenaOperator
+INFO:__main__:✅ Successfully loaded hyena-150m
+INFO:__main__:
+================================================================================
+INFO:__main__:📊 STEP 1: BENCHMARKING (BEFORE STEERING)
+INFO:__main__:================================================================================
+ERROR:__main__:❌ Error testing hyena-150m: name 'run_benchmarking_for_model' is not defined
+ERROR:__main__:Traceback (most recent call last):
+  File "/home/HDD/ATAF/LLM_paper/post_hoc_extention_1/steering_s6_types_hyena.py", line 2368, in run_comprehensive_analysis
+    benchmark_results = run_benchmarking_for_model(model, tokenizer, variant_name)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'run_benchmarking_for_model' is not defined
+
+Traceback (most recent call last):
+  File "/home/HDD/ATAF/LLM_paper/post_hoc_extention_1/steering_s6_types_hyena.py", line 2368, in run_comprehensive_analysis
+    benchmark_results = run_benchmarking_for_model(model, tokenizer, variant_name)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'run_benchmarking_for_model' is not defined
+INFO:__main__:
+================================================================================
+INFO:__main__:Testing: H3
+INFO:__main__:================================================================================
+INFO:__main__:🔧 Attempting to load h3...
+INFO:__main__:📦 Loading H3 model...
+Universal Interpretability and Steering for Hyena Models
+================================================================================
+
+Based on Safari repository: https://github.com/HazyResearch/safari
+
+This script performs:
+  1. Interpretability analysis on Hyena/H3 models
+  2. Identifies critical layers and cluster neurons
+  3. Tests universal steering across Hyena variants
+  4. Verifies if steering works for convolutional architectures
+
+================================================================================
+[pyKeOps] Compiling nvrtc binder for python ... 
+[KeOps] Warning : There were warnings or errors :
+In file included from /home/vamshi/new-env/lib/python3.12/site-packages/pybind11/include/pybind11/detail/common.h:12,
+                 from /home/vamshi/new-env/lib/python3.12/site-packages/pybind11/include/pybind11/attr.h:13,
+                 from /home/vamshi/new-env/lib/python3.12/site-packages/pybind11/include/pybind11/detail/class.h:12,
+                 from /home/vamshi/new-env/lib/python3.12/site-packages/pybind11/include/pybind11/pybind11.h:12,
+                 from /home/vamshi/new-env/lib/python3.12/site-packages/pykeops/common/keops_io/pykeops_nvrtc.cpp:9:
+/home/vamshi/new-env/lib/python3.12/site-packages/pybind11/include/pybind11/conduit/wrap_include_python_h.h:44:10: fatal error: Python.h: No such file or directory
+   44 | #include <Python.h>
+      |          ^~~~~~~~~~
+compilation terminated.
+
+OK
+INFO:src.models.sequence.ssm.ss_kernel_diag:Pykeops installation found.
+ERROR:__main__:❌ Could not import Safari model classes: cannot import name 'H3Operator' from 'src.models.sequence.h3' (/home/vamshi/safari/src/models/sequence/h3.py)
+INFO:__main__:   Make sure the Safari repository is properly set up
+INFO:__main__:   Repository path: /home/vamshi/safari
+INFO:__main__:   The Safari repo doesn't need to be installed as a package.
+INFO:__main__:   Just ensure all dependencies from requirements.txt are installed.
+WARNING:__main__:⚠️ Skipping h3 (model or tokenizer is None)
+WARNING:__main__:   Model: None, Tokenizer: None
+INFO:__main__:
+================================================================================
+INFO:__main__:📊 SUMMARY: UNIVERSALITY ANALYSIS
+INFO:__main__:================================================================================
+INFO:__main__:
+================================================================================
+INFO:__main__:HYENA:
+INFO:__main__:================================================================================
+WARNING:__main__:   ⚠️ No interpretability results available
+INFO:__main__:================================================================================
+INFO:__main__:
+================================================================================
+INFO:__main__:HYENA-150M:
+INFO:__main__:================================================================================
+WARNING:__main__:   ⚠️ No interpretability results available
+INFO:__main__:================================================================================
+INFO:__main__:
+================================================================================
+INFO:__main__:H3:
+INFO:__main__:================================================================================
+WARNING:__main__:   ⚠️ SKIPPED: Model or tokenizer loading returned None
+INFO:__main__:================================================================================
+INFO:__main__:
+💾 Results saved to: experiment_logs/universal_steering_analysis.json
+
+================================================================================
+📊 SUMMARY: UNIVERSALITY ANALYSIS
+================================================================================
+
+================================================================================
+HYENA:
+================================================================================
+   ⚠️ No interpretability results available
+================================================================================
+
+================================================================================
+HYENA-150M:
+================================================================================
+   ⚠️ No interpretability results available
+================================================================================
+
+================================================================================
+H3:
+================================================================================
+   ⚠️ SKIPPED: Model or tokenizer loading returned None
+================================================================================
+
+💾 Results saved to: experiment_logs/universal_steering_analysis.json
+
+================================================================================
+✅ ANALYSIS COMPLETE
+================================================================================
+
+📊 Tested 3 variant(s):
+   - hyena
+   - hyena-150m
+   - h3
+
+📈 Key Results Summary:
+
+   HYENA:
+
+   HYENA-150M:
+
+   H3:
+
+================================================================================
+💾 Full results saved to: experiment_logs/universal_steering_analysis.json
+================================================================================

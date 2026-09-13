@@ -1,0 +1,405 @@
+INFO:__main__:================================================================================
+INFO:__main__:DATASET LOADING DEBUG SCRIPT
+INFO:__main__:================================================================================
+INFO:__main__:This script tests all dataset loaders to verify they work correctly.
+INFO:__main__:================================================================================
+INFO:__main__:================================================================================
+INFO:__main__:TESTING DATASET CLASSIFIER
+INFO:__main__:================================================================================
+INFO:__main__:
+================================================================================
+INFO:__main__:Testing SQUAD
+INFO:__main__:================================================================================
+INFO:dataset_classifier:📖 Loading SQuAD (10 samples)...
+INFO:dataset_classifier:✅ Classified SQuAD: 10 questions
+INFO:dataset_classifier:   simple_recall: 2 questions
+INFO:dataset_classifier:   two_hop_reasoning: 1 questions
+INFO:dataset_classifier:   long_context: 7 questions
+INFO:__main__:✅ squad: SUCCESS - Loaded 10 questions
+INFO:__main__:   - simple_recall: 2 questions
+INFO:__main__:   - two_hop_reasoning: 1 questions
+INFO:__main__:   - long_context: 7 questions
+INFO:__main__:
+================================================================================
+INFO:__main__:Testing HOTPOTQA
+INFO:__main__:================================================================================
+INFO:dataset_classifier:📖 Loading HotpotQA (10 samples)...
+INFO:dataset_classifier:✅ Classified HotpotQA: 10 questions
+INFO:dataset_classifier:   two_hop_reasoning: 10 questions
+INFO:__main__:✅ hotpotqa: SUCCESS - Loaded 10 questions
+INFO:__main__:   - two_hop_reasoning: 10 questions
+INFO:__main__:
+================================================================================
+INFO:__main__:Testing TRIVIAQA
+INFO:__main__:================================================================================
+INFO:dataset_classifier:📖 Loading TriviaQA (10 samples)...
+ERROR:dataset_classifier:❌ Error loading TriviaQA: list index out of range
+WARNING:__main__:⚠️  triviaqa: LOADED BUT EMPTY - No questions found
+INFO:__main__:
+================================================================================
+INFO:__main__:Testing MUSIQUE
+INFO:__main__:================================================================================
+INFO:dataset_classifier:📖 Loading MuSiQue (10 samples)...
+ERROR:dataset_classifier:❌ Error loading MuSiQue: Dataset 'allenai/musique' doesn't exist on the Hub or cannot be accessed.
+WARNING:__main__:⚠️  musique: LOADED BUT EMPTY - No questions found
+INFO:__main__:
+================================================================================
+INFO:__main__:Testing DROP
+INFO:__main__:================================================================================
+INFO:dataset_classifier:📖 Loading DROP (10 samples)...
+INFO:dataset_classifier:✅ Loaded DROP: 10 questions
+INFO:__main__:✅ drop: SUCCESS - Loaded 10 questions
+INFO:__main__:   - combined_reasoning_memory: 10 questions
+INFO:__main__:
+================================================================================
+INFO:__main__:Testing NATURAL_QUESTIONS
+INFO:__main__:================================================================================
+INFO:dataset_classifier:📖 Loading Natural Questions (10 samples)...
+ERROR:dataset_classifier:❌ Error loading Natural Questions: slice indices must be integers or None or have an __index__ method
+WARNING:__main__:⚠️  natural_questions: LOADED BUT EMPTY - No questions found
+INFO:__main__:
+================================================================================
+INFO:__main__:Testing RULER
+INFO:__main__:================================================================================
+INFO:dataset_classifier:📖 Loading RULER benchmark (10 samples)...
+INFO:dataset_classifier:   Trying allenai/ruler (test)...
+WARNING:dataset_classifier:   ⚠️  Failed to load allenai/ruler: Dataset 'allenai/ruler' doesn't exist on the Hub or cannot be accessed.
+INFO:dataset_classifier:   Trying allenai/ruler (validation)...
+WARNING:dataset_classifier:   ⚠️  Failed to load allenai/ruler: Dataset 'allenai/ruler' doesn't exist on the Hub or cannot be accessed.
+INFO:dataset_classifier:   Trying ruler (test)...
+WARNING:dataset_classifier:   ⚠️  Failed to load ruler: Dataset 'ruler' doesn't exist on the Hub or cannot be accessed.
+INFO:dataset_classifier:   Trying RULER (test)...
+WARNING:dataset_classifier:   ⚠️  Failed to load RULER: Dataset 'RULER' doesn't exist on the Hub or cannot be accessed.
+WARNING:dataset_classifier:⚠️  RULER dataset not found on HuggingFace, using fallback
+WARNING:__main__:⚠️  ruler: LOADED BUT EMPTY - No questions found
+INFO:__main__:
+================================================================================
+INFO:__main__:Testing IFEVAL
+INFO:__main__:================================================================================
+INFO:dataset_classifier:📖 Loading IFEval dataset (10 samples)...
+INFO:dataset_classifier:   Trying google/ifeval (test)...
+WARNING:dataset_classifier:   ⚠️  Failed to load google/ifeval: Unknown split "test". Should be one of ['train'].
+INFO:dataset_classifier:   Trying google/ifeval (validation)...
+WARNING:dataset_classifier:   ⚠️  Failed to load google/ifeval: Unknown split "validation". Should be one of ['train'].
+INFO:dataset_classifier:   Trying ifeval (test)...
+WARNING:dataset_classifier:   ⚠️  Failed to load ifeval: Dataset 'ifeval' doesn't exist on the Hub or cannot be accessed.
+INFO:dataset_classifier:   Trying IFEval (test)...
+WARNING:dataset_classifier:   ⚠️  Failed to load IFEval: Dataset 'IFEval' doesn't exist on the Hub or cannot be accessed.
+WARNING:dataset_classifier:⚠️  IFEval dataset not found on HuggingFace, using fallback
+WARNING:__main__:⚠️  ifeval: LOADED BUT EMPTY - No questions found
+INFO:__main__:
+================================================================================
+INFO:__main__:TESTING QUERY DATASET LOADER
+INFO:__main__:================================================================================
+INFO:__main__:
+================================================================================
+INFO:__main__:Testing SQUAD queries
+INFO:__main__:================================================================================
+INFO:query_dataset_loader:📖 Loading SQuAD queries (10 samples)...
+INFO:query_dataset_loader:   Trying rajpurkar/squad_v2...
+WARNING:query_dataset_loader:   ⚠️  Failed to load rajpurkar/squad_v2: Feature type 'List' not found. Available feature types: ['Value', 'ClassLabel', 'Translation', 'TranslationVariableLanguages', 'LargeList', 'Sequence', 'Array2D', 'Array3D', 'Array4D', 'Array5D', 'Audio', 'Image', 'Video', 'Pdf']
+INFO:query_dataset_loader:   Trying squad...
+INFO:query_dataset_loader:   ✅ Successfully loaded squad
+INFO:query_dataset_loader:✅ Loaded 10 SQuAD queries
+INFO:__main__:✅ squad: SUCCESS - Loaded 10 queries
+INFO:__main__:   Sample keys: ['prompt', 'prompt_pile_style', 'expected', 'alternatives', 'task', 'source', 'context']
+INFO:__main__:   Sample prompt (first 100 chars): Context: Newton came to realize that the effects of gravity might be observed in different ways at l...
+INFO:__main__:
+================================================================================
+INFO:__main__:Testing NATURAL_QUESTIONS queries
+INFO:__main__:================================================================================
+INFO:query_dataset_loader:📖 Loading Natural Questions (10 samples)...
+ERROR:query_dataset_loader:❌ Error loading Natural Questions: 0
+WARNING:__main__:⚠️  natural_questions: LOADED BUT EMPTY - No queries found
+INFO:__main__:
+================================================================================
+INFO:__main__:Testing TRIVIAQA queries
+INFO:__main__:================================================================================
+INFO:query_dataset_loader:📖 Loading TriviaQA (10 samples)...
+INFO:query_dataset_loader:✅ Loaded 10 TriviaQA queries
+INFO:__main__:✅ triviaqa: SUCCESS - Loaded 10 queries
+INFO:__main__:   Sample keys: ['prompt', 'expected', 'alternatives', 'task', 'source', 'context']
+INFO:__main__:   Sample prompt (first 100 chars): Context: Alvin and the Chipmunks (2007) - IMDb
+IMDb
+17 January 2017 4:34 PM, UTC
+NEWS
+There was an e...
+INFO:__main__:
+================================================================================
+INFO:__main__:TESTING CLASSIFY_ALL_DATASETS
+INFO:__main__:================================================================================
+INFO:__main__:
+================================================================================
+INFO:__main__:Testing with datasets: squad, hotpotqa, triviaqa, musique, drop, natural_questions
+INFO:__main__:================================================================================
+INFO:dataset_classifier:
+📊 First Pass: Loading initial samples...
+INFO:dataset_classifier:📖 Loading SQuAD (40 samples)...
+INFO:dataset_classifier:✅ Classified SQuAD: 40 questions
+INFO:dataset_classifier:   simple_recall: 13 questions
+INFO:dataset_classifier:   two_hop_reasoning: 4 questions
+INFO:dataset_classifier:   long_context: 19 questions
+INFO:dataset_classifier:   stress_test: 4 questions
+INFO:dataset_classifier:📖 Loading Natural Questions (40 samples)...
+ERROR:dataset_classifier:❌ Error loading Natural Questions: slice indices must be integers or None or have an __index__ method
+INFO:dataset_classifier:📖 Loading HotpotQA (40 samples)...
+INFO:dataset_classifier:✅ Classified HotpotQA: 40 questions
+INFO:dataset_classifier:   two_hop_reasoning: 40 questions
+INFO:dataset_classifier:📖 Loading TriviaQA (20 samples)...
+ERROR:dataset_classifier:❌ Error loading TriviaQA: list index out of range
+INFO:dataset_classifier:📖 Loading MuSiQue (40 samples)...
+ERROR:dataset_classifier:❌ Error loading MuSiQue: Dataset 'allenai/musique' doesn't exist on the Hub or cannot be accessed.
+INFO:dataset_classifier:📖 Loading DROP (20 samples)...
+INFO:dataset_classifier:✅ Loaded DROP: 20 questions
+INFO:dataset_classifier:
+📊 Second Pass: Filling gaps to reach ~20 per category...
+INFO:dataset_classifier:📖 Loading SQuAD (21 samples)...
+INFO:dataset_classifier:✅ Classified SQuAD: 21 questions
+INFO:dataset_classifier:   simple_recall: 3 questions
+INFO:dataset_classifier:   two_hop_reasoning: 4 questions
+INFO:dataset_classifier:   three_hop_reasoning: 1 questions
+INFO:dataset_classifier:   long_context: 11 questions
+INFO:dataset_classifier:   stress_test: 2 questions
+INFO:dataset_classifier:📖 Loading SQuAD (2 samples)...
+INFO:dataset_classifier:✅ Classified SQuAD: 2 questions
+INFO:dataset_classifier:   two_hop_reasoning: 1 questions
+INFO:dataset_classifier:   long_context: 1 questions
+INFO:dataset_classifier:📖 Loading Natural Questions (32 samples)...
+ERROR:dataset_classifier:❌ Error loading Natural Questions: slice indices must be integers or None or have an __index__ method
+INFO:dataset_classifier:📖 Loading SQuAD (32 samples)...
+INFO:dataset_classifier:✅ Classified SQuAD: 32 questions
+INFO:dataset_classifier:   simple_recall: 7 questions
+INFO:dataset_classifier:   two_hop_reasoning: 6 questions
+INFO:dataset_classifier:   three_hop_reasoning: 3 questions
+INFO:dataset_classifier:   long_context: 14 questions
+INFO:dataset_classifier:   stress_test: 2 questions
+INFO:dataset_classifier:📖 Loading HotpotQA (20 samples)...
+INFO:dataset_classifier:✅ Classified HotpotQA: 20 questions
+INFO:dataset_classifier:   two_hop_reasoning: 20 questions
+INFO:dataset_classifier:📖 Loading MuSiQue (20 samples)...
+ERROR:dataset_classifier:❌ Error loading MuSiQue: Dataset 'allenai/musique' doesn't exist on the Hub or cannot be accessed.
+INFO:dataset_classifier:
+📊 Final Classification Summary (Target: ~20 per category):
+INFO:dataset_classifier:   ✅ simple_recall: 16 questions (target: 20)
+INFO:dataset_classifier:   ✅ two_hop_reasoning: 20 questions (target: 20)
+INFO:dataset_classifier:   ⚠️ three_hop_reasoning: 0 questions (target: 20)
+INFO:dataset_classifier:   ✅ long_context: 20 questions (target: 20)
+INFO:dataset_classifier:   ✅ combined_reasoning_memory: 20 questions (target: 20)
+INFO:dataset_classifier:   ⚠️ stress_test: 6 questions (target: 20)
+INFO:dataset_classifier:   ⚠️ query_dataset_tasks: 0 questions (target: 20)
+INFO:dataset_classifier:   Total: 82 questions across all categories
+INFO:__main__:✅ classify_all_datasets: SUCCESS - Total 82 questions
+INFO:__main__:   - simple_recall: 16 questions
+INFO:__main__:     Sources: {'squad': 16}
+INFO:__main__:   - two_hop_reasoning: 20 questions
+INFO:__main__:     Sources: {'squad': 4, 'hotpotqa': 16}
+WARNING:__main__:   - three_hop_reasoning: 0 questions (EMPTY)
+INFO:__main__:   - long_context: 20 questions
+INFO:__main__:     Sources: {'squad': 20}
+INFO:__main__:   - combined_reasoning_memory: 20 questions
+INFO:__main__:     Sources: {'drop': 20}
+INFO:__main__:   - stress_test: 6 questions
+INFO:__main__:     Sources: {'squad': 6}
+WARNING:__main__:   - query_dataset_tasks: 0 questions (EMPTY)
+INFO:__main__:
+================================================================================
+INFO:__main__:Testing with datasets: squad, hotpotqa, triviaqa, musique, drop, natural_questions, ruler, ifeval
+INFO:__main__:================================================================================
+INFO:dataset_classifier:
+📊 First Pass: Loading initial samples...
+INFO:dataset_classifier:📖 Loading RULER benchmark (20 samples)...
+INFO:dataset_classifier:   Trying allenai/ruler (test)...
+WARNING:dataset_classifier:   ⚠️  Failed to load allenai/ruler: Dataset 'allenai/ruler' doesn't exist on the Hub or cannot be accessed.
+INFO:dataset_classifier:   Trying allenai/ruler (validation)...
+WARNING:dataset_classifier:   ⚠️  Failed to load allenai/ruler: Dataset 'allenai/ruler' doesn't exist on the Hub or cannot be accessed.
+INFO:dataset_classifier:   Trying ruler (test)...
+WARNING:dataset_classifier:   ⚠️  Failed to load ruler: Dataset 'ruler' doesn't exist on the Hub or cannot be accessed.
+INFO:dataset_classifier:   Trying RULER (test)...
+WARNING:dataset_classifier:   ⚠️  Failed to load RULER: Dataset 'RULER' doesn't exist on the Hub or cannot be accessed.
+WARNING:dataset_classifier:⚠️  RULER dataset not found on HuggingFace, using fallback
+INFO:dataset_classifier:📖 Loading IFEval dataset (20 samples)...
+INFO:dataset_classifier:   Trying google/ifeval (test)...
+WARNING:dataset_classifier:   ⚠️  Failed to load google/ifeval: Unknown split "test". Should be one of ['train'].
+INFO:dataset_classifier:   Trying google/ifeval (validation)...
+WARNING:dataset_classifier:   ⚠️  Failed to load google/ifeval: Unknown split "validation". Should be one of ['train'].
+INFO:dataset_classifier:   Trying ifeval (test)...
+WARNING:dataset_classifier:   ⚠️  Failed to load ifeval: Dataset 'ifeval' doesn't exist on the Hub or cannot be accessed.
+INFO:dataset_classifier:   Trying IFEval (test)...
+WARNING:dataset_classifier:   ⚠️  Failed to load IFEval: Dataset 'IFEval' doesn't exist on the Hub or cannot be accessed.
+WARNING:dataset_classifier:⚠️  IFEval dataset not found on HuggingFace, using fallback
+INFO:dataset_classifier:📖 Loading SQuAD (40 samples)...
+INFO:dataset_classifier:✅ Classified SQuAD: 40 questions
+INFO:dataset_classifier:   simple_recall: 10 questions
+INFO:dataset_classifier:   two_hop_reasoning: 4 questions
+INFO:dataset_classifier:   three_hop_reasoning: 2 questions
+INFO:dataset_classifier:   long_context: 20 questions
+INFO:dataset_classifier:   stress_test: 4 questions
+INFO:dataset_classifier:📖 Loading Natural Questions (40 samples)...
+ERROR:dataset_classifier:❌ Error loading Natural Questions: slice indices must be integers or None or have an __index__ method
+INFO:dataset_classifier:📖 Loading HotpotQA (40 samples)...
+ERROR:dataset_classifier:❌ Error loading HotpotQA: list index out of range
+INFO:dataset_classifier:📖 Loading TriviaQA (20 samples)...
+ERROR:dataset_classifier:❌ Error loading TriviaQA: list index out of range
+INFO:dataset_classifier:📖 Loading MuSiQue (40 samples)...
+ERROR:dataset_classifier:❌ Error loading MuSiQue: Dataset 'allenai/musique' doesn't exist on the Hub or cannot be accessed.
+INFO:dataset_classifier:📖 Loading DROP (20 samples)...
+INFO:dataset_classifier:✅ Loaded DROP: 20 questions
+INFO:dataset_classifier:
+📊 Second Pass: Filling gaps to reach ~20 per category...
+INFO:dataset_classifier:📖 Loading SQuAD (30 samples)...
+INFO:dataset_classifier:✅ Classified SQuAD: 30 questions
+INFO:dataset_classifier:   simple_recall: 6 questions
+INFO:dataset_classifier:   two_hop_reasoning: 7 questions
+INFO:dataset_classifier:   long_context: 15 questions
+INFO:dataset_classifier:   stress_test: 2 questions
+INFO:dataset_classifier:📖 Loading IFEval dataset (16 samples)...
+INFO:dataset_classifier:   Trying google/ifeval (test)...
+WARNING:dataset_classifier:   ⚠️  Failed to load google/ifeval: Unknown split "test". Should be one of ['train'].
+INFO:dataset_classifier:   Trying google/ifeval (validation)...
+WARNING:dataset_classifier:   ⚠️  Failed to load google/ifeval: Unknown split "validation". Should be one of ['train'].
+INFO:dataset_classifier:   Trying ifeval (test)...
+WARNING:dataset_classifier:   ⚠️  Failed to load ifeval: Dataset 'ifeval' doesn't exist on the Hub or cannot be accessed.
+INFO:dataset_classifier:   Trying IFEval (test)...
+WARNING:dataset_classifier:   ⚠️  Failed to load IFEval: Dataset 'IFEval' doesn't exist on the Hub or cannot be accessed.
+WARNING:dataset_classifier:⚠️  IFEval dataset not found on HuggingFace, using fallback
+INFO:dataset_classifier:📖 Loading Natural Questions (32 samples)...
+ERROR:dataset_classifier:❌ Error loading Natural Questions: slice indices must be integers or None or have an __index__ method
+INFO:dataset_classifier:📖 Loading SQuAD (32 samples)...
+INFO:dataset_classifier:✅ Classified SQuAD: 32 questions
+INFO:dataset_classifier:   simple_recall: 8 questions
+INFO:dataset_classifier:   two_hop_reasoning: 2 questions
+INFO:dataset_classifier:   three_hop_reasoning: 1 questions
+INFO:dataset_classifier:   long_context: 19 questions
+INFO:dataset_classifier:   stress_test: 2 questions
+INFO:dataset_classifier:📖 Loading HotpotQA (16 samples)...
+INFO:dataset_classifier:✅ Classified HotpotQA: 16 questions
+INFO:dataset_classifier:   two_hop_reasoning: 16 questions
+INFO:dataset_classifier:📖 Loading HotpotQA (18 samples)...
+INFO:dataset_classifier:✅ Classified HotpotQA: 18 questions
+INFO:dataset_classifier:   two_hop_reasoning: 18 questions
+INFO:dataset_classifier:📖 Loading MuSiQue (18 samples)...
+ERROR:dataset_classifier:❌ Error loading MuSiQue: Dataset 'allenai/musique' doesn't exist on the Hub or cannot be accessed.
+INFO:dataset_classifier:
+📊 Final Classification Summary (Target: ~20 per category):
+INFO:dataset_classifier:   ✅ simple_recall: 16 questions (target: 20)
+INFO:dataset_classifier:   ✅ two_hop_reasoning: 20 questions (target: 20)
+INFO:dataset_classifier:   ⚠️ three_hop_reasoning: 2 questions (target: 20)
+INFO:dataset_classifier:   ✅ long_context: 20 questions (target: 20)
+INFO:dataset_classifier:   ✅ combined_reasoning_memory: 20 questions (target: 20)
+INFO:dataset_classifier:   ⚠️ stress_test: 6 questions (target: 20)
+INFO:dataset_classifier:   ⚠️ query_dataset_tasks: 0 questions (target: 20)
+INFO:dataset_classifier:   Total: 84 questions across all categories
+INFO:__main__:✅ classify_all_datasets: SUCCESS - Total 84 questions
+INFO:__main__:   - simple_recall: 16 questions
+INFO:__main__:     Sources: {'squad': 16}
+INFO:__main__:   - two_hop_reasoning: 20 questions
+INFO:__main__:     Sources: {'squad': 4, 'hotpotqa': 16}
+INFO:__main__:   - three_hop_reasoning: 2 questions
+INFO:__main__:     Sources: {'squad': 2}
+INFO:__main__:   - long_context: 20 questions
+INFO:__main__:     Sources: {'squad': 20}
+INFO:__main__:   - combined_reasoning_memory: 20 questions
+INFO:__main__:     Sources: {'drop': 20}
+INFO:__main__:   - stress_test: 6 questions
+INFO:__main__:     Sources: {'squad': 6}
+WARNING:__main__:   - query_dataset_tasks: 0 questions (EMPTY)
+INFO:__main__:
+================================================================================
+INFO:__main__:TESTING GET_QUERY_TASKS
+INFO:__main__:================================================================================
+INFO:__main__:
+================================================================================
+INFO:__main__:Testing with datasets: squad
+INFO:__main__:================================================================================
+INFO:query_dataset_loader:📖 Loading SQuAD queries (10 samples)...
+INFO:query_dataset_loader:   Trying rajpurkar/squad_v2...
+WARNING:query_dataset_loader:   ⚠️  Failed to load rajpurkar/squad_v2: Feature type 'List' not found. Available feature types: ['Value', 'ClassLabel', 'Translation', 'TranslationVariableLanguages', 'LargeList', 'Sequence', 'Array2D', 'Array3D', 'Array4D', 'Array5D', 'Audio', 'Image', 'Video', 'Pdf']
+INFO:query_dataset_loader:   Trying squad...
+INFO:query_dataset_loader:   ✅ Successfully loaded squad
+INFO:query_dataset_loader:✅ Loaded 10 SQuAD queries
+INFO:query_dataset_loader:✅ Total queries loaded: 10
+INFO:__main__:✅ get_query_tasks: SUCCESS - Total 10 queries
+INFO:__main__:   - squad_queries: 10 queries
+INFO:__main__:
+================================================================================
+INFO:__main__:Testing with datasets: squad, natural_questions
+INFO:__main__:================================================================================
+INFO:query_dataset_loader:📖 Loading SQuAD queries (10 samples)...
+INFO:query_dataset_loader:   Trying rajpurkar/squad_v2...
+WARNING:query_dataset_loader:   ⚠️  Failed to load rajpurkar/squad_v2: Feature type 'List' not found. Available feature types: ['Value', 'ClassLabel', 'Translation', 'TranslationVariableLanguages', 'LargeList', 'Sequence', 'Array2D', 'Array3D', 'Array4D', 'Array5D', 'Audio', 'Image', 'Video', 'Pdf']
+INFO:query_dataset_loader:   Trying squad...
+INFO:query_dataset_loader:   ✅ Successfully loaded squad
+INFO:query_dataset_loader:✅ Loaded 10 SQuAD queries
+INFO:query_dataset_loader:📖 Loading Natural Questions (10 samples)...
+ERROR:query_dataset_loader:❌ Error loading Natural Questions: 0
+INFO:query_dataset_loader:✅ Total queries loaded: 10
+INFO:__main__:✅ get_query_tasks: SUCCESS - Total 10 queries
+INFO:__main__:   - squad_queries: 10 queries
+INFO:__main__:
+================================================================================
+INFO:__main__:Testing with datasets: squad, natural_questions, triviaqa
+INFO:__main__:================================================================================
+INFO:query_dataset_loader:📖 Loading SQuAD queries (10 samples)...
+INFO:query_dataset_loader:   Trying rajpurkar/squad_v2...
+WARNING:query_dataset_loader:   ⚠️  Failed to load rajpurkar/squad_v2: Feature type 'List' not found. Available feature types: ['Value', 'ClassLabel', 'Translation', 'TranslationVariableLanguages', 'LargeList', 'Sequence', 'Array2D', 'Array3D', 'Array4D', 'Array5D', 'Audio', 'Image', 'Video', 'Pdf']
+INFO:query_dataset_loader:   Trying squad...
+INFO:query_dataset_loader:   ✅ Successfully loaded squad
+INFO:query_dataset_loader:✅ Loaded 10 SQuAD queries
+INFO:query_dataset_loader:📖 Loading Natural Questions (10 samples)...
+ERROR:query_dataset_loader:❌ Error loading Natural Questions: 0
+INFO:query_dataset_loader:📖 Loading TriviaQA (10 samples)...
+INFO:query_dataset_loader:✅ Loaded 10 TriviaQA queries
+INFO:query_dataset_loader:✅ Total queries loaded: 20
+INFO:__main__:✅ get_query_tasks: SUCCESS - Total 20 queries
+INFO:__main__:   - squad_queries: 10 queries
+INFO:__main__:   - triviaqa_queries: 10 queries
+INFO:__main__:
+================================================================================
+INFO:__main__:SUMMARY
+INFO:__main__:================================================================================
+INFO:__main__:
+📊 Dataset Classifier Results:
+INFO:__main__:   ✅ Success: 3/8
+INFO:__main__:   ⚠️  Empty: 5/8
+INFO:__main__:   ❌ Failed: 0/8
+INFO:__main__:
+📊 Query Dataset Loader Results:
+INFO:__main__:   ✅ Success: 2/3
+INFO:__main__:   ⚠️  Empty: 1/3
+INFO:__main__:   ❌ Failed: 0/3
+INFO:__main__:
+🔍 Detailed Results:
+INFO:__main__:
+Dataset Classifier:
+INFO:__main__:   ✅ squad: SUCCESS
+INFO:__main__:      Total: 10 questions
+INFO:__main__:      - simple_recall: 2
+INFO:__main__:      - two_hop_reasoning: 1
+INFO:__main__:      - long_context: 7
+INFO:__main__:   ✅ hotpotqa: SUCCESS
+INFO:__main__:      Total: 10 questions
+INFO:__main__:      - two_hop_reasoning: 10
+INFO:__main__:   ⚠️ triviaqa: EMPTY
+INFO:__main__:   ⚠️ musique: EMPTY
+INFO:__main__:   ✅ drop: SUCCESS
+INFO:__main__:      Total: 10 questions
+INFO:__main__:      - combined_reasoning_memory: 10
+INFO:__main__:   ⚠️ natural_questions: EMPTY
+INFO:__main__:   ⚠️ ruler: EMPTY
+INFO:__main__:   ⚠️ ifeval: EMPTY
+INFO:__main__:
+Query Dataset Loader:
+INFO:__main__:   ✅ squad: SUCCESS
+INFO:__main__:      Count: 10 queries
+INFO:__main__:   ⚠️ natural_questions: EMPTY
+INFO:__main__:   ✅ triviaqa: SUCCESS
+INFO:__main__:      Count: 10 queries
+INFO:__main__:
+================================================================================
+INFO:__main__:DEBUG COMPLETE
+INFO:__main__:================================================================================
+Fatal Python error: PyGILState_Release: thread state 0x71ecf001bbf0 must be current when releasing
+Python runtime state: finalizing (tstate=0x000071eeb35f40c0)
+
+Thread 0x000071eeb36a0740 (most recent call first):
+  <no Python frame>

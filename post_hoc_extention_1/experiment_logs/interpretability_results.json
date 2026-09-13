@@ -1,0 +1,46 @@
+{
+  "moe-mamba": {
+    "variant": "moe-mamba",
+    "num_layers": 6,
+    "bottleneck_layer": 4,
+    "bottleneck_pct": 66.66666666666666,
+    "bottleneck_score": 0.0,
+    "critical_layer": 4,
+    "critical_layer_pct": 66.66666666666666,
+    "layer_scores": {
+      "0": 1.0,
+      "2": 2.2399753465753968e-05,
+      "3": 2.560745587741737e-05,
+      "4": 2.8882052063151708e-05,
+      "5": 2.4614853787779e-05
+    },
+    "cluster_neurons": [
+      342,
+      47,
+      259,
+      498,
+      296,
+      496,
+      383,
+      328,
+      382,
+      165,
+      364,
+      488,
+      483,
+      28,
+      199,
+      81,
+      52,
+      458,
+      256,
+      53
+    ],
+    "cluster_9_overlap": 0,
+    "bottleneck_analysis": {
+      "gradient_analysis": {},
+      "attribution_scores": {},
+      "stability_scores": {}
+    }
+  }
+}
